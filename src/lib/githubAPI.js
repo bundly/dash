@@ -6,9 +6,7 @@ query summaryQuery($from: DateTime!) {
   viewer {
     issueComments(last: 100) {
       nodes {
-        id
         updatedAt
-        url
       }
     }
     contributionsCollection(from: $from) {
@@ -25,7 +23,7 @@ query summaryQuery($from: DateTime!) {
         nodes {
           issue {
             title
-            id
+            number
             url
           }
         }
@@ -33,22 +31,23 @@ query summaryQuery($from: DateTime!) {
       }
       pullRequestContributions(last: 100) {
         nodes {
-          url
           pullRequest {
             state
             title
             url
+            number
           }
         }
         totalCount
       }
       pullRequestReviewContributions(last: 100) {
         nodes {
-          pullRequestReview {
-            id
+          pullRequest {
+            number
+            url
+            title
           }
         }
-        totalCount
       }
       startedAt
       totalCommitContributions
