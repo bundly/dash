@@ -13,7 +13,7 @@ export default [
     _tag: 'CSidebarNavItem',
     name: 'Search',
     to: '/workspace/search',
-    icon: 'cil-search',
+    icon: 'cil-zoom',
   },
 
   {
