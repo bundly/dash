@@ -48,6 +48,8 @@
     "swr": "^0.2.3"
   },
   "devDependencies": {
+    "lodash": "^4.17.19",
+    "node-fetch": "^2.6.0",
     "react-scripts": "^3.4.1"
   },
   "scripts": {
