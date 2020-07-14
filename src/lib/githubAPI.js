@@ -58,12 +58,12 @@ query summaryQuery($from: DateTime!) {
   }
 }
 
-`
+`;
 
-export function githubQuery({query, variables}) {
+export function githubQuery({ query, variables }) {
   return axios.post('https://api.github.com/graphql', {
-    query: query,
-    variables: variables
+    query,
+    variables,
   }, { headers: auth });
 }
 
