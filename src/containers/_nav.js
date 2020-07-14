@@ -15,6 +15,13 @@ export default [
   },
   {
     _tag: 'CSidebarNavItem',
+    name: 'Search',
+    to: '/theme/search',
+    icon: 'cil-search',
+  },
+
+  {
+    _tag: 'CSidebarNavItem',
     name: 'Colors',
     to: '/theme/colors',
     icon: 'cil-drop',
