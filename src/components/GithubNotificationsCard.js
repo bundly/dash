@@ -11,7 +11,7 @@ import {
 } from '@coreui/react';
 
 import useSWR from 'swr';
-import { githubNotificationFetcher } from '../lib/githubAPI';
+import { githubFetcher } from '../lib/githubAPI';
 
 const getBadge = (type) => {
   switch (type) {
@@ -23,7 +23,7 @@ const getBadge = (type) => {
 };
 
 const GithubNotificationsCard = () => {
-  const { data, error } = useSWR('https://api.github.com/notifications', githubNotificationFetcher);
+  const { data, error } = useSWR('https://api.github.com/notifications', githubFetcher);
 
   const fields = ['notification', 'type', 'status'];
   const scopedSlots = {
