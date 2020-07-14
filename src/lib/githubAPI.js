@@ -1,9 +1,16 @@
 import axios from 'axios';
 
 const auth = { Authorization: `Token ${process.env.REACT_APP_GITHUB_TOKEN}` }; // Temporary till OAuth is implemented
-const summaryQuery = `
+export const summaryQuery = `
 query summaryQuery($from: DateTime!) {
   viewer {
+    issueComments(last: 100) {
+      nodes {
+        id
+        updatedAt
+        url
+      }
+    }
     contributionsCollection(from: $from) {
       commitContributionsByRepository(maxRepositories: 10) {
         repository {
@@ -53,21 +60,8 @@ query summaryQuery($from: DateTime!) {
 }
 
 `
-const issuecommentsQuery = `
-{
-  viewer {
-    issueComments(last: 100) {
-      nodes {
-        id
-        updatedAt
-        url
-      }
-    }
-  }
-}
-`
 
-export function githubSummaryQuery({query, variables}) {
+export function githubQuery({query, variables}) {
   return axios.post('https://api.github.com/graphql', {
     query: query,
     variables: variables
