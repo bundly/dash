@@ -1,6 +1,6 @@
 {
-  "short_name": "CoreUI-React",
-  "name": "CoreUI-React sample",
+  "short_name": "Bundly",
+  "name": "Bundly - Your MLH assitant",
   "icons": [
     {
       "src": "./assets/img/favicon.png",
