@@ -7,11 +7,11 @@ const passport = require('passport');
 const User = require('../models/User');
 
 router.get('/login', (req, res) => {
-    res.render('login')
+    // render login page 
 })
 
 router.get('/register', (req, res) => {
-    res.render('register')
+    // render registration page
 })
 
 // Register Handle
@@ -34,7 +34,7 @@ router.post('/register', (req, res) => {
     }
 
     if(errors.length > 0){
-        res.render('register', {
+        res.send({
             errors, // same as errors:errors
             name, email, password, password2
         })
@@ -45,7 +45,7 @@ router.post('/register', (req, res) => {
                 if(user){
                     // user exists
                     errors.push({message: 'Email is already registered'});
-                    res.render('register', {
+                    res.send({
                         errors,
                         name, email, password, password2
                     });
