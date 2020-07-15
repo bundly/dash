@@ -1,15 +1,11 @@
 import axios from 'axios';
 
 const auth = { Authorization: `Token ${process.env.REACT_APP_GITHUB_TOKEN}` }; // Temporary till OAuth is implemented
-export const summaryQuery = `
-query summaryQuery($from: DateTime!) {
-  viewer {
-    issueComments(last: 100) {
-      nodes {
-        updatedAt
-      }
-    }
-    contributionsCollection(from: $from) {
+/*
+
+GraphiQl seems to be fine having this query, does not work anywhere else
+Internal Server error xD
+
       commitContributionsByRepository(maxRepositories: 10) {
         repository {
           nameWithOwner
@@ -19,6 +15,18 @@ query summaryQuery($from: DateTime!) {
           totalCount
         }
       }
+
+*/
+
+export const summaryQuery = `
+query summaryQuery($from: DateTime!) {
+  viewer {
+    issueComments(last: 100) {
+      nodes {
+        updatedAt
+      }
+    }
+    contributionsCollection(from: $from) {
       issueContributions(last: 100) {
         nodes {
           issue {
@@ -56,15 +64,19 @@ query summaryQuery($from: DateTime!) {
       totalPullRequestReviewContributions
     }
   }
+}`;
+
+export function githubQuery(time) {
+  const targetTime = new Date(time);
+  targetTime.setHours(targetTime.getHours() - 24);
+  return axios({
+    url: 'https://api.github.com/graphql',
+    method: 'post',
+    data: JSON.stringify({
+      query: summaryQuery,
+      variables: { from: targetTime.toISOString() },
+    }),
+    headers: auth,
+  });
 }
-
-`;
-
-export function githubQuery({ query, variables }) {
-  return axios.post('https://api.github.com/graphql', {
-    query,
-    variables,
-  }, { headers: auth });
-}
-
 export const githubFetcher = (url) => axios.get(url, { headers: auth }).then((res) => res.data);

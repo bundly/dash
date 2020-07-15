@@ -19,9 +19,10 @@ export default function yesterdayNotes(datadump, currentTime) {
     pr = pr.pullRequest;
     yesterday = yesterday.concat(`    - Worked on PR [${pr.title} #${pr.number}](${pr.url}) (Status: ${pr.state.toLowerCase()})\n`);
   });
-  summaryData.contributionsCollection.commitContributionsByRepository.map((contribution) => {
-    yesterday = yesterday.concat(`    - Pushed ${contribution.contributions.totalCount} Commits to [${contribution.repository.nameWithOwner}](${contribution.repository.url})\n`);
-  });
+  // Commented cuz of bug in github api
+  // summaryData.contributionsCollection.commitContributionsByRepository.map((contribution) => {
+  //   yesterday = yesterday.concat(`    - Pushed ${contribution.contributions.totalCount} Commits to [${contribution.repository.nameWithOwner}](${contribution.repository.url})\n`);
+  // });
   summaryData.contributionsCollection.issueContributions.nodes.map((issue) => {
     issue = issue.issue;
     yesterday = yesterday.concat(`    - Opened Issue [${issue.title} #${issue.number}](${issue.url})\n`);
