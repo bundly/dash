@@ -27,7 +27,7 @@ export default new Logger({
                 switch (level) {
                     case 'DEBUG':
                         level = grey(level);
-                        message = grey(message)
+                        message = grey(message);
                         break;
 
                     case 'INFO':

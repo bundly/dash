@@ -12,7 +12,7 @@ const db = mongoose.connection;
 
 // When successfully connected
 db.on('connected', () => {
-    logger.info('Mongoose connection open to ATLAS Server');
+    logger.info('Mongoose connection opened');
 });
 
 // If the connection throws an error
