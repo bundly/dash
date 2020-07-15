@@ -6,15 +6,6 @@ const auth = { Authorization: `Token ${process.env.REACT_APP_GITHUB_TOKEN}` }; /
 GraphiQl seems to be fine having this query, does not work anywhere else
 Internal Server error xD
 
-      commitContributionsByRepository(maxRepositories: 10) {
-        repository {
-          nameWithOwner
-          url
-        }
-        contributions(orderBy: {field: OCCURRED_AT, direction: ASC}) {
-          totalCount
-        }
-      }
 
 */
 
@@ -27,6 +18,15 @@ query summaryQuery($from: DateTime!) {
       }
     }
     contributionsCollection(from: $from) {
+      commitContributionsByRepository(maxRepositories: 10) {
+        repository {
+          nameWithOwner
+          url
+        }
+        contributions(orderBy: {field: OCCURRED_AT, direction: ASC}) {
+          totalCount
+        }
+      }
       issueContributions(last: 100) {
         nodes {
           issue {
