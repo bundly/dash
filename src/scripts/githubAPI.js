@@ -1,13 +1,6 @@
 import axios from 'axios';
 
 const auth = { Authorization: `Token ${process.env.REACT_APP_GITHUB_TOKEN}` }; // Temporary till OAuth is implemented
-/*
-
-GraphiQl seems to be fine having this query, does not work anywhere else
-Internal Server error xD
-
-
-*/
 
 export const summaryQuery = `
 query summaryQuery($from: DateTime!) {
