@@ -11,7 +11,7 @@ import {
 } from '@coreui/react';
 
 import useSWR from 'swr';
-import { githubFetcher } from '../lib/githubAPI';
+import { githubNotificationFetcher } from '../../../scripts/githubAPI';
 
 const getBadge = (type) => {
   switch (type) {
@@ -22,15 +22,15 @@ const getBadge = (type) => {
   }
 };
 
-const GithubNotificationsCard = () => {
-  const { data, error } = useSWR('https://api.github.com/notifications', githubFetcher);
+const GithubNotifications = () => {
+  const { data, error } = useSWR('https://api.github.com/notifications', githubNotificationFetcher);
 
   const fields = ['notification', 'type', 'status'];
   const scopedSlots = {
     type:
       (item) => (
         <td>
-          <CBadge color={getBadge(item.subject.type)}>
+          <CBadge color={getBadge(item.subject.type)} shape='pill'>
             {item.subject.type}
           </CBadge>
         </td>
@@ -42,7 +42,7 @@ const GithubNotificationsCard = () => {
     ),
     status: (item) => (
       <td>
-        <CButton block variant="outline" color="primary">{ item.unread ? 'Mark Read' : 'Mark Unread'}</CButton>
+        <CButton block variant="outline" color="dark">{ item.unread ? 'Mark Read' : 'Mark Unread'}</CButton>
         <CButton block variant="outline" color="success">Add to ToDo</CButton>
       </td>
     ),
@@ -76,4 +76,4 @@ const GithubNotificationsCard = () => {
   );
 };
 
-export default GithubNotificationsCard;
+export default GithubNotifications;

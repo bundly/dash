@@ -1,1 +1,21 @@
 // Variable overrides
+$teal:      #04aaa2;
+$dark-teal: #017896;
+$dark-bg:   #0a3536;
+$light-body:#cacaca;
+
+$colors: (
+  teal:            $teal,
+  blue:            $dark-teal,
+) !default;
+
+$theme-colors: (
+  "primary":       $teal,
+  "info":          $dark-teal,
+);
+
+// This doesn't seem to work - look into later
+$body-theme-map: (
+    "body-bg":     $dark-bg,
+    "body-color":  $light-body
+)
