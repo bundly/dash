@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 import usersSchema from './../schema/users';
 
-const Users = mongoose.model('Users', usersSchema);
+const User = mongoose.model('User', usersSchema);
 
-export default Users;
+export default User;
 
 /**
  * Checks if username already exists

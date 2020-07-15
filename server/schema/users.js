@@ -1,26 +1,33 @@
 import mongoose from 'mongoose';
 
-const usersSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     // Github username
     username: {
-        type: String
+        type: String,
+        unique: true,
+        required: true
+    },
+    profile: {
+        // id, username, displayName, profileUrl, emails (emails[0].value, etc), photos (photos[0].value, etc)
+        type: Object
     },
     accounts: [
         // { kind: 'github', uid: 'fred.rogers' }
         {
-            kind: String,
-            uid: String,
-            // {
+            kind: String, // github, discord, etc
+            uid: String, // profile.id
+            // token = {
             //     "access_token": "6qrZcUqja7812RVdnEKjpzOL4CvHBFG",
-            //     "token_type": "Bearer",
-            //     "expires_in": 604800,
             //     "refresh_token": "D43f5y0ahjqew82jZ4NViEr2YafMKhue",
             //     "scope": "identify"
-            // }
+            //     }
             token: Object
         }
     ],
-    commits: Number
+    commits: {
+        type: Number,
+        default: 0
+    }
 });
 
-export default usersSchema;
+export default userSchema;
