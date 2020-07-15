@@ -5,7 +5,11 @@ import { API_KEY, SALT_ROUNDS } from '../env';
 import Users, { checkExisting } from './../models/usersModel';
 import { ErrorHandler, verifyToken } from '../middlewares';
 
-// DEPRECATED: SUBJECT TO CHANGE
+/**
+ * @deprecated
+ * This auth controller is not supported further
+ * Use passport authentication in `passportControllers.js` instead.
+ */
 const authController = {
     login: async (req, res, next) => {
         try {

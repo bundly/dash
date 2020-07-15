@@ -1,28 +1,22 @@
+import passport from 'passport';
 import usersController from './controller/usersController';
-import authController from './controller/authController';
 
 const routes = router => {
     router.get('/', (req, res) => {
-        res.send(`Api server in running (${new Date()})`);
+        res.send(`Api is Live -> Current Time: (${new Date()})`);
     });
 
-    router.route('/auth/google/login').post(authController.login);
+    router.route('/auth/google/login').post(passport.authenticate('google'));
 
-    router.route('/auth/github/login').post(authController.login);
+    router.route('/auth/github/login').post(passport.authenticate('github'));
 
-    router.route('/auth/discord/login').post(authController.login);
+    router.route('/auth/discord/login').post(passport.authenticate('discord'));
 
-    router.route('/auth/google/callback').get(authController.register);
+    router.route('/auth/google/callback').get(passport.authenticate('google'), usersController.getOne);
 
-    router.route('/auth/github/callback').get(authController.register);
+    router.route('/auth/github/callback').get(passport.authenticate('github'), usersController.getOne);
 
-    router.route('/auth/discord/callback').get(authController.register);
-
-    router.route('/auth/verify').post(authController.verify);
-
-    router.route('/users').get(usersController.getAll).post(usersController.create);
-
-    router.route('/users/:id').get(usersController.getOne).put(usersController.update).delete(usersController.delete);
+    router.route('/auth/discord/callback').get(passport.authenticate('discord'), usersController.getOne);
 };
 
 export default routes;

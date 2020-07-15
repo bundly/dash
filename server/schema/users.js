@@ -19,10 +19,9 @@ const userSchema = new mongoose.Schema({
     },
     accounts: [
         {
-            // type = 'github' | 'discord' | 'google'
-            type: String,
-            // token = {"access_token": "6qrZcUqja7812RVdnEKjpzOL4CvHBFG", "refresh_token": "D43f5y0ahjqew82jZ4NViEr2YafMKhue" }
-            token: Object
+            kind: String, // type = 'github' | 'discord' | 'google'
+            uid: { type: String, required: false }, // github profile id
+            token: Object // token = {"access_token": "6qrZcUqja7812RVdnEKjpzOL4CvHBFG", "refresh_token": "D43f5y0ahjqew82jZ4NViEr2YafMKhue" }
         }
     ],
     commits: {

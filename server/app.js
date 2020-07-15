@@ -3,8 +3,10 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import routes from './routes';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 
-import { handleError, authenticated, logger } from './middlewares';
+import { handleError, logger } from './middlewares';
+import passport from './controller/passportControllers';
 import { API_PORT, hosts } from './env';
 
 const app = express();
@@ -12,7 +14,9 @@ const app = express();
 app.use(cors({ origin: hosts, credentials: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/users', authenticated);
+app.use(cookieParser());
+app.use(passport.initialize());
+app.use(passport.session());
 
 routes(app);
 
