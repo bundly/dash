@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      // Server Source code
+      "name": "Bundly Server",
+      "path": "./server"
+    },
+    {
+      // React Bundly code
+      "name": "Bundly React",
+      "path": "/"
+    }
+  ]
+}

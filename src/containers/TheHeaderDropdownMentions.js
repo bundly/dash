@@ -9,7 +9,7 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-const TheHeaderDropdownMssg = () => {
+const TheHeaderDropdownMentions = () => {
   const itemsCount = 4
   return (
     <CDropdown
@@ -18,7 +18,7 @@ const TheHeaderDropdownMssg = () => {
       direction="down"
     >
       <CDropdownToggle className="c-header-nav-link" caret={false}>
-        <CIcon name="cil-envelope-open" /><CBadge shape="pill" color="info">{itemsCount}</CBadge>
+        <CIcon name="cil-bell" /><CBadge shape="pill" color="info">{itemsCount}</CBadge>
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
         <CDropdownItem
@@ -26,7 +26,7 @@ const TheHeaderDropdownMssg = () => {
           tag="div"
           color="light"
         >
-          <strong>You have {itemsCount} messages</strong>
+          <strong>You have {itemsCount} mentions on Github</strong>
         </CDropdownItem>
         <CDropdownItem href="#">
           <div className="message">
@@ -118,10 +118,10 @@ const TheHeaderDropdownMssg = () => {
             </div>
           </div>
         </CDropdownItem>
-        <CDropdownItem href="#" className="text-center border-top"><strong>View all messages</strong></CDropdownItem>
+        <CDropdownItem href="#" className="text-center border-top"><strong>View all notifications @Github</strong></CDropdownItem>
       </CDropdownMenu>
     </CDropdown>
   )
 }
 
-export default TheHeaderDropdownMssg
+export default TheHeaderDropdownMentions;
