@@ -10,7 +10,26 @@ function getCommentCount(issueComments, currentTime) {
   }).length;
 }
 
-export default function yesterdayNotes(datadump, currentTime) {
+
+// Handles Suggestions for multiple pods from discussions
+function getSuggestions(discussions, username){
+  let suggestions = `## Suggestions from Previous Discussions`
+  discussions.nodes.map(teamDiscussion => {
+    const podName = teamDiscussion.name
+    const discussionTitle = teamDiscussion.discussions.nodes[0].title
+    suggestions = suggestions.concat(`\n**From ${podName} - ${discussionTitle}:**\n\t\t`)
+    const discussionComment = teamDiscussion.discussions.nodes[0].comments.nodes.filter((comment)=> comment.author.login === username )
+    console.log(discussionComment)
+    discussionComment.map(comment=>{
+      suggestions = suggestions.concat('\n')
+      suggestions = suggestions.concat(comment.body)
+    })
+  })
+  return suggestions
+
+}
+
+export default function yesterdayNotes(datadump, currentTime, username) {
   let yesterday = `
   **Yesterday**:\n`;
   const summaryData = datadump.data.viewer;
@@ -31,7 +50,9 @@ export default function yesterdayNotes(datadump, currentTime) {
     yesterday = yesterday.concat(`    - Reviewed PR [${pr.title} #${pr.number}](${pr.url})\n`);
   });
   if (summaryData.contributionsCollection.totalPullRequestReviewContributions > 0) yesterday = yesterday.concat(`    - Reviewed ${summaryData.contributionsCollection.totalPullRequestReviewContributions} Pull Requests\n`);
-  yesterday = yesterday.concat(`    - ${commentCount} Comments on Issue Discussions\n`);
+  if (commentCount > 0) yesterday = yesterday.concat(`    - ${commentCount} Comments on Issue Discussions\n`);
+
+  yesterday = yesterday.concat(getSuggestions(summaryData.organization.team.childTeams, username))
 
   return yesterday;
 }

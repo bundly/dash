@@ -36,13 +36,20 @@ const StandupNotes = () => {
 **Shoutouts**:
  - @username for x
  `);
-  const [selectedTab, setSelectedTab] = useState("write");
-  const currentTime = new Date()
 
-  githubQuery(currentTime.toISOString())
+ const [selectedTab, setSelectedTab] = useState("write");
+ const currentTime = new Date()
+
+ const getUsername = ()=>{
+   // Get Username
+
+   return "darshkpatel"  // Hardcoded until OAuth complete
+ }
+ const username =  getUsername()
+  githubQuery({time: currentTime.toISOString(), username: username})
   .then((data)=>{
     console.log(data)
-    if(!data.errors) setValue(yesterdayNotes(data.data, currentTime.toISOString()))
+    if(!data.errors) setValue(yesterdayNotes(data.data, currentTime.toISOString(), username))
   })
 
   return(
