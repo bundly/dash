@@ -7,20 +7,21 @@ const userSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
-    profile: {
+    githubProfile: {
         // id, username, displayName, profileUrl, emails (emails[0].value, etc), photos (photos[0].value, etc)
-        type: Object
+        type: Object,
+        required: true
+    },
+    discordProfile: {
+        // all discord thingys idk
+        type: Object,
+        default: {}
     },
     accounts: [
-        // { kind: 'github', uid: 'fred.rogers' }
         {
-            kind: String, // github, discord, etc
-            uid: String, // profile.id
-            // token = {
-            //     "access_token": "6qrZcUqja7812RVdnEKjpzOL4CvHBFG",
-            //     "refresh_token": "D43f5y0ahjqew82jZ4NViEr2YafMKhue",
-            //     "scope": "identify"
-            //     }
+            // type = 'github' | 'discord' | 'google'
+            type: String,
+            // token = {"access_token": "6qrZcUqja7812RVdnEKjpzOL4CvHBFG", "refresh_token": "D43f5y0ahjqew82jZ4NViEr2YafMKhue" }
             token: Object
         }
     ],
