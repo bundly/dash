@@ -1,6 +1,6 @@
 const passport = require("passport");
-const GooleStrategy = require("passport-google-oauth20").Strategy;
-const FacebookStrategy = require("passport-facebook").Strategy;
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const GitHubStrategy = require("passport-github2").Strategy;
 const keys = require("../config/keys");
 const mongoose = require("mongoose");
 const User = mongoose.model("users");
@@ -19,7 +19,7 @@ passport.use(
   new GoogleStrategy({
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: "/auth/google/callback",
+      callbackURL: "/api/auth/google/callback",
       proxy: true
     },
     (accessToken, refreshToken, profile, done) => {
@@ -45,7 +45,7 @@ passport.use(
 passport.use(new GitHubStrategy({
     clientID: keys.githubClientID,
     clientSecret: keys.githubClientSecret,
-    callbackURL: "/auth/github/callback"
+    callbackURL: "/api/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     User.findOne({ userId: profile.id })

@@ -6,4 +6,3 @@ module.exports = {
   githubClientSecret: process.env.GITHUB_CLIENT_SECRET,
   cookieKey: process.env.COOKIE_KEY,
 };
-s
