@@ -32,7 +32,6 @@ passport.use(
               userId: profile.id,
               username: profile.displayName,
               picture: profile._json.picture
-
             }).save()
               .then((user) => {
                 done(null, user);
@@ -42,3 +41,27 @@ passport.use(
     }
   )
 );
+
+passport.use(new GitHubStrategy({
+    clientID: keys.githubClientID,
+    clientSecret: keys.githubClientSecret,
+    callbackURL: "/auth/github/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    User.findOne({ userId: profile.id })
+      .then((existingUser) => {
+        if (existingUser) {
+          done(null, existingUser);
+        } else {
+          new User({
+            userId: profile.id,
+            username: profile.displayName,
+            picture: profile._json.picture
+          }).save()
+            .then((user) => {
+              done(null, user);
+            });
+        }
+      });
+  }
+));
