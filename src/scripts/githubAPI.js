@@ -87,7 +87,6 @@ query summaryQuery($from: DateTime!, $username: [String!]) {
 
 export function githubQuery({time, username}) {
   const targetTime = new Date(time);
-  console.log({time, username})
   targetTime.setDate(targetTime.getDate() - 1);
   return axios({
     url: 'https://api.github.com/graphql',

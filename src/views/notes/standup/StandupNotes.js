@@ -4,7 +4,7 @@ import {
   CCardHeader,
   CCol,
 } from '@coreui/react';
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import ReactMde from "react-mde";
 import {Converter as ShowdownConverter} from "showdown";
 import "react-mde/lib/styles/css/react-mde-all.css";
@@ -46,11 +46,15 @@ const StandupNotes = () => {
    return "darshkpatel"  // Hardcoded until OAuth complete
  }
  const username =  getUsername()
+
+ useEffect(()=> {
   githubQuery({time: currentTime.toISOString(), username: username})
   .then((data)=>{
     console.log(data)
     if(!data.errors) setValue(yesterdayNotes(data.data, currentTime.toISOString(), username))
   })
+ }, [])
+
 
   return(
     <CCol xs="12" sm="6" md="6" >
