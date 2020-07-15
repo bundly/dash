@@ -17,7 +17,7 @@ export let hosts = [];
 export let TURN_INTERVAL = 0;
 if (process.env.NODE_ENV === 'production') {
     // React App Deployed URLs
-    hosts = ['https://dash-delta.vercel.app', 'https://bundly.space'];
+    hosts = ['https://dash-delta.vercel.app', 'https://bundly.tech', 'https://dash.bundly.tech'];
 } else {
     // React App URL
     hosts = ['http://localhost:3000'];
