@@ -8,8 +8,8 @@ import React, {useState} from "react";
 import ReactMde from "react-mde";
 import {Converter as ShowdownConverter} from "showdown";
 import "react-mde/lib/styles/css/react-mde-all.css";
-import yesterdayNotes from '../../scripts/notesGenerator'
-import {githubQuery} from '../../scripts/githubAPI'
+import yesterdayNotes from '../../../scripts/notesGenerator'
+import {githubQuery} from '../../../scripts/githubAPI'
 
 const converter = new ShowdownConverter({
   tables: true,

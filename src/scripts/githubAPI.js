@@ -79,4 +79,4 @@ export function githubQuery(time) {
     headers: auth,
   });
 }
-export const githubFetcher = (url) => axios.get(url, { headers: auth }).then((res) => res.data);
+export const githubNotificationFetcher = (url) => axios.get(url, { headers: auth }).then((res) => res.data);
