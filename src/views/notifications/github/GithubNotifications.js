@@ -11,7 +11,7 @@ import {
 } from '@coreui/react';
 
 import useSWR from 'swr';
-import { githubNotificationFetcher } from './githubAPI';
+import { githubNotificationFetcher } from '../../../scripts/githubAPI';
 
 const getBadge = (type) => {
   switch (type) {
