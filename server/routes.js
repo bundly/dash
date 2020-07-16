@@ -1,6 +1,15 @@
 import passport from 'passport';
 import usersController from './controller/usersController';
 import { customAuthenticator, authSuccess } from './middlewares/authenticated';
+import todoController from './controller/todoController';
+
+function ensureAuthenticated(req, res, next) {
+  if (!req.user) {
+    return res.status(401).json({'error':  'Unauthorized'});
+  }
+
+  next();
+}
 
 const routes = router => {
     router.get('/', (req, res) => {
@@ -8,6 +17,10 @@ const routes = router => {
     });
 
     router.route('/auth/verify').post(usersController.getOne);
+
+    router.route('/todo/:username').get(ensureAuthenticated, todoController.read);
+    router.route('/todo/:username').put(ensureAuthenticated,todoController.update);
+    router.route('/todo/:username').post(ensureAuthenticated,todoController.update);
 
     router.route('/auth/google/login').get(customAuthenticator);
 
