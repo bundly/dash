@@ -28,8 +28,26 @@
 </p>
 
 ## Key Features
+Let Bundly do its work, so you can focus on yours. 
+Bundly is a single heaven to find all your information regarding the MLH Fellowship at once place!
+It let's you take your utility tools, a step further. Designed specifically to enhance your Fellowship experience. 
+Here are the features that are offered:
+- Monitor your PRs and issues which let's you create a structure for what should be posted on your standup notes!
+    - Bundly automatically posts your daily standup notes generated from your TODO list.
+- Never miss out on the important stuff!
+    - Here you can search for the stuff that is trending over Discord/GitHub/Standup Notes
+    - This let's you focus on keeping your searches related to the MLH Fellowship
+- Quick access to all your calender events at one place
+- Take a note of giving and receiving feedback from your team mates using the progress GUI 
 
 ## How to use
+Login to Bundly using your GitHub & Discord account following which you will be directed to the Dashboard. 
+Here you can:
+- Search all the information related to your GitHub and Discord accounts at one place
+- Create stand up notes and visualize your progress using a GUI tool
+- Take a note of your calender events synced to Google for the day
+- Pin important channels and monitor the messages so that you don't miss out on the action!
+- Giving an taking feedback is important, see where you stand at the leaderboard and monitor the shoutouts that have been sent and received!  
 
 ## Credits
 ### Made with ❤️ by team Bundly
@@ -39,3 +57,6 @@
 
 ## License
 - [MIT License](https://github.com/bundly/dash/blob/master/LICENSE)
+
+## Contributing Guide
+- For information regarding how to make contributions, check out [CONTRIBUTING.md](https://github.com/bundly/dash/blob/master/CONTRIBUTING.md)
