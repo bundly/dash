@@ -34,12 +34,20 @@ It let's you take your utility tools, a step further. Designed specifically to e
 Here are the features that are offered:
 - Monitor your PRs and issues which let's you create a structure for what should be posted on your standup notes!
     - Bundly automatically posts your daily standup notes generated from your TODO list.
-- Never miss out on the important stuff!
+- Never miss out on the important stuff through the universal search menu!
     - Here you can search for the stuff that is trending over Discord/GitHub/Standup Notes
     - This let's you focus on keeping your searches related to the MLH Fellowship
-- Quick access to all your calender events at one place
+- Quick access to all your calender events at one place!
 - Take a note of giving and receiving feedback from your team mates using the progress GUI 
-
+- Say hello to your personal GitHub Assistant where you can receive personalized notifications for your repositories including:
+    - Issues and their comments
+    - Pull Requests and their comments
+    - Comments on any commits
+    - Notifications are also sent for conversations in unwatched repositories when the user is involved including:
+        - @mentions
+          - Issue assignments
+          - Commits the user authors or commits
+          - Any discussion in which the user actively participates 
 ## How to use
 Login to Bundly using your GitHub & Discord account following which you will be directed to the Dashboard. 
 Here you can:
