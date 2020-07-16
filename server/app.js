@@ -1,55 +1,29 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const flash = require("connect-flash");
-const session = require("express-session");
-const passport = require("passport");
+import './database/db';
+import express from 'express';
+import bodyParser from 'body-parser';
+import routes from './routes';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
+
+import { handleError, logger } from './middlewares';
+import passport from './controller/passportControllers';
+import { API_PORT, hosts } from './env';
 
 const app = express();
 
-// Passport config
-require("./config/passport")(passport);
-
-// Connect to Mongo
-mongoose
-  .connect("mongodb://localhost:27017", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(console.log("Connected to MongoDB service"))
-  .catch((err) => console.log(err));
-
-// Bodyparser
-app.use(express.urlencoded({ extended: false }));
-
-// Express Session
-app.use(
-  session({
-    secret: process.env.APP_SECRET || "secret",
-    resave: true,
-    saveUninitialized: true,
-  })
-);
-
+app.use(cors({ origin: hosts, credentials: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Connect Flash
-app.use(flash());
+routes(app);
 
-// Global variables
-app.use(function (req, res, next) {
-  res.locals.success_msg = req.flash("success_msg");
-  res.locals.error_msg = req.flash("error_msg");
-  res.locals.error = req.flash("error");
-  next();
+app.use((err, _req, res, _) => {
+    handleError(err, res);
 });
 
-//Routes
-app.use("/", require("./routes/index"));
-app.use("/users", require("./routes/users"));
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+app.listen(API_PORT, () => {
+    logger.info(`Api listening on port ${Number(API_PORT)}!`);
 });
