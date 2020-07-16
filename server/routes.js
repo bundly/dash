@@ -17,9 +17,9 @@ const routes = router => {
 
     router.route('/auth/verify').post(usersController.getOne);
 
-    router.route('/todo/:username').get(ensureAuthenticated, todoController.read);
-    router.route('/todo/:username').put(ensureAuthenticated,todoController.update);
-    router.route('/todo/:username').post(ensureAuthenticated,todoController.update);
+    router.route('/todo').get(ensureAuthenticated, todoController.read);
+    router.route('/todo').put(ensureAuthenticated,todoController.update);
+    router.route('/todo').post(ensureAuthenticated,todoController.update);
 
     router.route('/auth/google/login').get(customAuthenticator);
 
