@@ -4,6 +4,7 @@ import { Strategy as DiscordStrategy } from 'passport-discord';
 
 import User from '../models/usersModel';
 import { callbackUrl } from '../env';
+import { logger } from '../middlewares';
 
 const discordScopes = ['identify', 'email', 'guilds', 'messages.read'];
 
@@ -54,16 +55,27 @@ passport.use(
             clientID: process.env.DISCORD_CLIENT_ID,
             clientSecret: process.env.DISCORD_CLIENT_SECRET,
             callbackURL: `${callbackUrl}/auth/discord/callback`,
-            scope: discordScopes
+            scope: discordScopes,
+            passReqToCallback: true
         },
         async (req, accessToken, refreshToken, profile, cb) => {
-            const githubAccessToken = req.githubAccessToken;
+            const { state } = req.query;
+            if (!state) {
+                return cb(new Error('GitHub Login not found. Login with GitHub first'), null);
+            }
+
+            const { token } = JSON.parse(Buffer.from(state, 'base64').toString()); // token -> github access token
+
+            if (typeof token !== 'string' || !token) {
+                return cb(new Error('GitHub Login not found. Login with GitHub first'), null);
+            }
+
             const registeredUser = await User.findOne({
-                accounts: { $elemMatch: { kind: 'github', 'token.access_token': githubAccessToken } }
+                accounts: { $elemMatch: { kind: 'github', 'token.accessToken': token } }
             });
 
             if (!registeredUser) {
-                return cb('GitHub Login not found. Login with GitHub first', null);
+                return cb(new Error('Error with GitHub Login. Token expired, login again'), null);
             }
 
             try {
@@ -76,7 +88,7 @@ passport.use(
                 };
                 const updatedUser = await User.findOneAndUpdate(
                     {
-                        accounts: { $elemMatch: { kind: 'github', 'token.access_token': githubAccessToken } }
+                        accounts: { $elemMatch: { kind: 'github', 'token.accessToken': token } }
                     },
                     { discordProfile: profile, $push: { accounts: discordTokens } },
                     { new: true }
