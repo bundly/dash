@@ -32,14 +32,12 @@ Let Bundly do its work, so you can focus on yours.
 Bundly is a single heaven to find all your information regarding the MLH Fellowship at once place!
 It let's you take your utility tools, a step further. Designed specifically to enhance your Fellowship experience. 
 Here are the features that are offered:
-- Monitor your PRs and issues which let's you create a structure for what should be posted on your standup notes!
-    - Bundly automatically posts your daily standup notes generated from your TODO list.
-- Never miss out on the important stuff through the universal search menu!
-    - Here you can search for the stuff that is trending over Discord/GitHub/Standup Notes
-    - This let's you focus on keeping your searches related to the MLH Fellowship
-- Quick access to all your calender events at one place!
-- Take a note of giving and receiving feedback from your team mates using the progress GUI 
-- Say hello to your personal GitHub Assistant where you can receive personalized notifications for your repositories including:
+
+- Generate Standup Notes Automatically! Bundly Looks through the Pull Requests Reviewed, Issues inreracted with, Pull requests opened, commits made and even the previous day's standup and generates standup notes
+  - Also supports people in multiple pods and shows sugessions from previous day's standup notes from all pods ! 
+![Screenshot 2020-07-16 at 11 29 16 PM](https://user-images.githubusercontent.com/11258286/87705859-2cf11e80-c7bc-11ea-9827-8d92cab0c245.png)
+
+-  Receive personalized notifications for your repositories including:
     - Issues and their comments
     - Pull Requests and their comments
     - Comments on any commits
@@ -48,6 +46,9 @@ Here are the features that are offered:
           - Issue assignments
           - Commits the user authors or commits
           - Any discussion in which the user actively participates 
+       
+ - Quick access the MLH calender events at one place!
+
 ## How to use
 <h1 align="center">
   <a href="https://github.com/bundly/dash"><img src="https://github.com/bundly/dash/blob/master/login.gif" alt="Bundly"></a>
