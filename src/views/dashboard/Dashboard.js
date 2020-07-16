@@ -8,12 +8,12 @@ const Dashboard = () => {
     <>
       <CRow>
       <CCol sm="12" md="12" lg="12">
-        <ToDo height={200}/>
+      <GithubNotifications />
       </CCol>
       </CRow>
       <CRow>
       <CCol sm="12" md="6" lg="6">
-        <GithubNotifications />
+      <ToDo height={200}/>
       </CCol>
       <CCol sm="12" md="6" lg="6">
         <StandupNotes height={340} />
