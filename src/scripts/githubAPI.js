@@ -85,6 +85,11 @@ query summaryQuery($from: DateTime!, $username: [String!]) {
   }
 }`;
 
+export function markNotification(id) {
+  return axios.patch(`https://api.github.com/notifications/threads/${id}`, {
+  }, { headers: auth })
+}
+
 export function githubQuery({time, username}) {
   const targetTime = new Date(time);
   targetTime.setDate(targetTime.getDate() - 1);
@@ -98,4 +103,4 @@ export function githubQuery({time, username}) {
     headers: auth,
   });
 }
-export const githubNotificationFetcher = (url) => axios.get(url, { headers: auth }).then((res) => res.data);
+export const githubNotificationFetcher = () => axios.get('https://api.github.com/notifications', { headers: auth });
