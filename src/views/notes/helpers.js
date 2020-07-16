@@ -1,4 +1,5 @@
-export const getUsername = () =>
+export const getUsername = () => {
 // Get Username
 
-  'darshkpatel';
+ return 'darshkpatel' // Temporary till OAuth done
+}
