@@ -9,7 +9,7 @@ export default [
     _tag: 'CSidebarNavItem',
     name: 'Search',
     to: '/workspace/search',
-    icon: 'cilSearch',
+    icon: 'cilMagnifyingGlass',
     badge: {
       color: 'secondary',
       text: 'BETA',
