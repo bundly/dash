@@ -3,24 +3,17 @@ export default [
     _tag: 'CSidebarNavItem',
     name: 'Home',
     to: '/dashboard',
-    icon: 'cil-speedometer',
+    icon: 'cilHome',
   },
   {
     _tag: 'CSidebarNavTitle',
-    _children: ['Workspace']
+    _children: ['Dashboard']
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'Search',
     to: '/workspace/search',
-    icon: 'cil-zoom',
-  },
-
-  {
-    _tag: 'CSidebarNavItem',
-    name: 'Colors',
-    to: '/workspace/colors',
-    icon: 'cil-drop',
+    icon: 'cilSearch',
   },
 
   {
@@ -55,7 +48,7 @@ export default [
     _tag: 'CSidebarNavItem',
     name: 'Github',
     to: '/notifications/github',
-    icon: 'cil-github',
+    icon: 'cibGithub',
     badge: {
       color: 'secondary',
       text: 'BETA',

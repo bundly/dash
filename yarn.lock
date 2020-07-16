@@ -1175,6 +1175,11 @@
   resolved "https://registry.yarnpkg.com/@coreui/icons/-/icons-2.0.0-beta.4.tgz#40e85ccfea7c646df19ef6afeba31f7cd4484b99"
   integrity sha512-4BDmZYqcfGgoLRFgqJaOSsypoFykq8jFAmOHy9lyn2PB4lwrdAAuOMLLe6gjm6QFxZJLPXHcPRYZeEz7vsV4VQ==
 
+"@coreui/icons@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@coreui/icons/-/icons-1.0.1.tgz#8af0fe6450904ee1dbb0abf36bf107f35cfecf5e"
+  integrity sha512-DAlvdHRC+HHecdy52vskbNzNKEpu6wHDvSlsHGrwOqNxQl1YLhGEtqAW4sKpyVE3GgysNCywUWZGFlLp8I3LgA==
+
 "@coreui/react-chartjs@^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@coreui/react-chartjs/-/react-chartjs-1.0.1.tgz#149f5652b4369625147041332b633e189dac955c"
