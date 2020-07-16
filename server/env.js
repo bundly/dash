@@ -8,8 +8,6 @@ export const {
     SALT_ROUNDS
 } = process.env;
 
-// TODO: Replace with Atlas URL
-// export const DB_URL = `mongodb+srv://saurav:${MONGO_PASSWORD}@fifa.ejduy.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 export const DB_URL = 'mongodb://localhost:27017/dash';
 export const API_PORT = process.env.API_PORT || 5000;
 
