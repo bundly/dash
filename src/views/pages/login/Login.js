@@ -1,78 +1,68 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import {
-  CButton,
-  CCard,
-  CCardBody,
-  CCardGroup,
-  CCol,
-  CContainer,
-  CForm,
-  CInput,
-  CInputGroup,
-  CInputGroupPrepend,
-  CInputGroupText,
-  CRow
-} from '@coreui/react'
-import CIcon from '@coreui/icons-react'
+import React from "react";
+import axios from "axios";
+
+const loginUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://bundly.tech/api/auth/github/login"
+    : "http://localhost:5000/auth/github/login";
 
 const Login = () => {
   return (
-    <div className="c-app c-default-layout flex-row align-items-center">
-      <CContainer>
-        <CRow className="justify-content-center">
-          <CCol md="8">
-            <CCardGroup>
-              <CCard className="p-4">
-                <CCardBody>
-                  <CForm>
-                    <h1>Login</h1>
-                    <p className="text-muted">Sign In to your account</p>
-                    <CInputGroup className="mb-3">
-                      <CInputGroupPrepend>
-                        <CInputGroupText>
-                          <CIcon name="cil-user" />
-                        </CInputGroupText>
-                      </CInputGroupPrepend>
-                      <CInput type="text" placeholder="Username" autoComplete="username" />
-                    </CInputGroup>
-                    <CInputGroup className="mb-4">
-                      <CInputGroupPrepend>
-                        <CInputGroupText>
-                          <CIcon name="cil-lock-locked" />
-                        </CInputGroupText>
-                      </CInputGroupPrepend>
-                      <CInput type="password" placeholder="Password" autoComplete="current-password" />
-                    </CInputGroup>
-                    <CRow>
-                      <CCol xs="6">
-                        <CButton color="primary" className="px-4">Login</CButton>
-                      </CCol>
-                      <CCol xs="6" className="text-right">
-                        <CButton color="link" className="px-0">Forgot password?</CButton>
-                      </CCol>
-                    </CRow>
-                  </CForm>
-                </CCardBody>
-              </CCard>
-              <CCard className="text-white bg-primary py-5 d-md-down-none" style={{ width: '44%' }}>
-                <CCardBody className="text-center">
-                  <div>
-                    <h2>Sign up</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua.</p>
-                    <Link to="/register">
-                      <CButton color="primary" className="mt-3" active tabIndex={-1}>Register Now!</CButton>
-                    </Link>
-                  </div>
-                </CCardBody>
-              </CCard>
-            </CCardGroup>
-          </CCol>
-        </CRow>
-      </CContainer>
+    <div className="container">
+      <div className="container__item landing-page-container">
+        <div className="content__wrapper">
+          <header className="header">
+            <h1 className="d-flex justify-content-center display-1">BUNDLY</h1>
+            <ul className="social-container header__item">
+              <li className="social__icon social__icon--fb">
+                <img
+                  src="https://image.flaticon.com/icons/svg/2111/2111425.svg"
+                  alt="github"
+                />
+              </li>
+              <li className="social__icon social__icon--dr">
+                <img
+                  src="https://image.flaticon.com/icons/svg/841/841568.svg"
+                  alt="website"
+                />
+              </li>
+            </ul>
+          </header>
+          <p className="coords">N 49° 16' 35.173" / W 0° 42' 11.30"</p>
+          <div className="ellipses-container">
+            <div className="greeting">
+              <img
+                src="https://i.giphy.com/media/l0iVAuEtPF5KRbqmvd/source.gif"
+                alt="MLH thingy"
+              />
+            </div>
+            <div className="login-github" onClick={githubLogin}>
+              <div className="button button--social-login button--github">
+                <i className="cib-github"></i>Login With Github
+              </div>
+            </div>
+            <div className="ellipses ellipses__outer--thin">
+              <div className="ellipses ellipses__orbit" />
+            </div>
+            <div className="ellipses ellipses__outer--thick" />
+          </div>
+          <div className="scroller">
+            <p className="page-title">MLH</p>
+            <div className="timeline">
+              <span className="timeline__unit" />
+              <span className="timeline__unit timeline__unit--active" />
+              <span className="timeline__unit" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+const githubLogin = async () => {
+  const response = await axios.get(loginUrl);
+  console.log(response);
+};
+
+export default Login;
