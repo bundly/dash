@@ -35,7 +35,7 @@ const ToDo = () => {
   const username = getUsername();
 
   useEffect(() => {
-
+    // getToDo(username).then( (todo) => setValue(todo) )
   }, []);
 
   return (
