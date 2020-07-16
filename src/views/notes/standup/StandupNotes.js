@@ -10,6 +10,7 @@ import {Converter as ShowdownConverter} from "showdown";
 import "react-mde/lib/styles/css/react-mde-all.css";
 import yesterdayNotes from '../../../scripts/notesGenerator'
 import {githubQuery} from '../../../scripts/githubAPI'
+import {getUsername} from '../helpers'
 
 const converter = new ShowdownConverter({
   tables: true,
@@ -40,11 +41,6 @@ const StandupNotes = () => {
  const [selectedTab, setSelectedTab] = useState("write");
  const currentTime = new Date()
 
- const getUsername = ()=>{
-   // Get Username
-
-   return "darshkpatel"  // Hardcoded until OAuth complete
- }
  const username =  getUsername()
 
  useEffect(()=> {
