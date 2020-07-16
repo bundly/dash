@@ -61,5 +61,19 @@ export default [
       text: 'BETA',
     }
   },
+  {
+    _tag: 'CSidebarNavTitle',
+    _children: ['Calendar']
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Calendar',
+    to: '/calendar',
+    icon: 'cil-calendar',
+    badge: {
+      color: 'secondary',
+      text: 'BETA',
+    }
+  },
 ]
 
