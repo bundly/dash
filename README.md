@@ -49,6 +49,10 @@ Here are the features that are offered:
           - Commits the user authors or commits
           - Any discussion in which the user actively participates 
 ## How to use
+<h1 align="center">
+  <a href="https://github.com/bundly/dash"><img src="https://github.com/bundly/dash/blob/master/login.gif" alt="Bundly"></a>
+</h1>
+
 Login to Bundly using your GitHub & Discord account following which you will be directed to the Dashboard. 
 Here you can:
 - Search all the information related to your GitHub and Discord accounts at one place
