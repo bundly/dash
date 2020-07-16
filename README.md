@@ -37,7 +37,9 @@ Here are the features that are offered:
   - Also supports people in multiple pods and shows sugessions from previous day's standup notes from all pods ! 
 ![Screenshot 2020-07-16 at 11 29 16 PM](https://user-images.githubusercontent.com/11258286/87705859-2cf11e80-c7bc-11ea-9827-8d92cab0c245.png)
 
--  **Receive personalized notifications** for your repositories including:
+- **Internal discussions at your fingertips** quickly search through MLH Fellowship Org discussions with the search tool
+
+-  **Never miss out on the important stuff** Receive personalized notifications for your repositories including:
     - Issues and their comments
     - Pull Requests and their comments
     - Comments on any commits
