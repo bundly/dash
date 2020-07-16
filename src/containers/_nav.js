@@ -1,19 +1,19 @@
 export default [
   {
     _tag: 'CSidebarNavItem',
-    name: 'Home',
+    name: 'Dashboard',
     to: '/dashboard',
     icon: 'cilHome',
-  },
-  {
-    _tag: 'CSidebarNavTitle',
-    _children: ['Dashboard']
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'Search',
     to: '/workspace/search',
     icon: 'cilSearch',
+    badge: {
+      color: 'secondary',
+      text: 'BETA',
+    }
   },
 
   {
@@ -25,20 +25,12 @@ export default [
     name: 'Standup Notes',
     to: '/notes/standup',
     icon: 'cil-notes',
-    badge: {
-      color: 'secondary',
-      text: 'BETA',
-    }
   },
   {
     _tag: 'CSidebarNavItem',
     name: 'To Do',
     to: '/notes/todo',
     icon: 'cil-notes',
-    badge: {
-      color: 'secondary',
-      text: 'BETA',
-    }
   },
   {
     _tag: 'CSidebarNavTitle',
@@ -49,10 +41,6 @@ export default [
     name: 'Github',
     to: '/notifications/github',
     icon: 'cibGithub',
-    badge: {
-      color: 'secondary',
-      text: 'BETA',
-    }
   },
   {
     _tag: 'CSidebarNavTitle',
@@ -63,10 +51,6 @@ export default [
     name: 'Calendar',
     to: '/calendar',
     icon: 'cil-calendar',
-    badge: {
-      color: 'secondary',
-      text: 'BETA',
-    }
   },
 ]
 
