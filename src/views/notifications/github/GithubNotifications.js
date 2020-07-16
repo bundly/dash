@@ -83,16 +83,13 @@ const cleanData = (data) => {
     // ),
     actions: (item) => (
       <td>
-        <CButton block variant="outline" color="dark" onClick={()=>handleRead(item.id)}>{ item.unread ? 'Mark Read' : 'Mark Unread'}</CButton>
-        <CButton block variant="outline" color="success">Add to ToDo</CButton>
+        <CButton block variant="outline" color="dark" size="sm" onClick={()=>handleRead(item.id)}>{ item.unread ? 'Mark Read' : 'Mark Unread'}</CButton>
+        {/* <CButton block variant="outline" color="success">Add to ToDo</CButton> */}
       </td>
     ),
 
   };
   return (
-    <>
-      <CRow>
-        <CCol>
           <CCard>
             <CCardHeader>
               Github Notifications
@@ -103,20 +100,17 @@ const cleanData = (data) => {
               <CDataTable
                 items={cleanedData}
                 fields={fields}
-                itemsPerPage={5}
                 pagination
                 tableFilter
                 sorter
                 striped
                 hover
+                itemsPerPage={3}
                 scopedSlots={scopedSlots}
                 loading={!cleanedData && !error }
               />
             </CCardBody>
           </CCard>
-        </CCol>
-      </CRow>
-    </>
   );
 };
 

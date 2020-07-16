@@ -20,10 +20,10 @@ const converter = new ShowdownConverter({
 });
 
 
-const StandupNotes = () => {
+const StandupNotes = (props) => {
 
 
-  const [value, setValue] = useState(`
+const [value, setValue] = useState(`
 ### Generating Standup Notes
 **Yesterday**:
  -
@@ -53,8 +53,7 @@ const StandupNotes = () => {
 
 
   return(
-    <CCol xs="12" sm="6" md="6" >
-    <CCard accentColor="primary">
+    <CCard accentColor="primary" >
     <CCardHeader>
       Standup Notes
     </CCardHeader>
@@ -64,13 +63,14 @@ const StandupNotes = () => {
         onChange={setValue}
         selectedTab={selectedTab}
         onTabChange={setSelectedTab}
+        minEditorHeight={props.height??650}
+        minPreviewHeight={props.height??650}
         generateMarkdownPreview={markdown =>
           Promise.resolve(converter.makeHtml(markdown))
         }
       />
     </CCardBody>
     </CCard>
-    </CCol>
   )
 };
 

@@ -22,7 +22,7 @@ const converter = new ShowdownConverter({
   tasklists: true,
 });
 
-const ToDo = () => {
+const ToDo = (props) => {
   const [value, setValue] = useState(`
 ## To Do
  - Example Task
@@ -62,6 +62,8 @@ const ToDo = () => {
               onChange={setValue}
               selectedTab={selectedTab}
               onTabChange={setSelectedTab}
+              minEditorHeight={props.height??650}
+              minPreviewHeight={props.height??650}
               generateMarkdownPreview={(markdown) => Promise.resolve(converter.makeHtml(markdown))}
             />
      {/* <CTextarea

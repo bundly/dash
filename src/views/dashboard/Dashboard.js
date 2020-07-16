@@ -1,12 +1,23 @@
 import React from "react";
 import { CCard, CCardBody, CCardHeader, CCol, CRow } from "@coreui/react";
+import GithubNotifications from '../notifications/github/GithubNotifications'
+import StandupNotes from '../notes/standup/StandupNotes'
+import ToDo from '../notes/todo/ToDo'
 const Dashboard = () => {
   return (
     <>
       <CRow>
-        <CCol>
-
-        </CCol>
+      <CCol sm="12" md="12" lg="12">
+        <ToDo height={200}/>
+      </CCol>
+      </CRow>
+      <CRow>
+      <CCol sm="12" md="6" lg="6">
+        <GithubNotifications />
+      </CCol>
+      <CCol sm="12" md="6" lg="6">
+        <StandupNotes height={340} />
+      </CCol>
       </CRow>
     </>
   );
