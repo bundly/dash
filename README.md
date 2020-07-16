@@ -27,6 +27,10 @@
   <a href="https://github.com/bundly/dash/blob/master/LICENSE">License</a>
 </p>
 
+<h1 align="center">
+  <a href="https://github.com/bundly/dash"><img src="https://github.com/bundly/dash/blob/master/login.gif" alt="Bundly"></a>
+</h1>
+
 ## Key Features
 Let Bundly do its work, so you can focus on yours. 
 Bundly is a single heaven to find all your information regarding the MLH Fellowship at once place!
@@ -56,9 +60,6 @@ Here are the features that are offered:
 
 
 ## How to use
-<h1 align="center">
-  <a href="https://github.com/bundly/dash"><img src="https://github.com/bundly/dash/blob/master/login.gif" alt="Bundly"></a>
-</h1>
 
 Login to Bundly using your GitHub & Discord account following which you will be directed to the Dashboard. 
 Here you can:
@@ -67,6 +68,10 @@ Here you can:
 - Take a note of your calender events synced to Google for the day
 - Pin important channels and monitor the messages so that you don't miss out on the action!
 - Giving an taking feedback is important, see where you stand at the leaderboard and monitor the shoutouts that have been sent and received!  
+
+## Development
+
+Want to live on the edge of development with new features? Stay up-to-date with our contributor discussions and road-mapping in the [@Bundly/dash-Wiki](https://github.com/bundly/dash/wiki).
 
 ## Credits
 ### Made with ❤️ by team Bundly
