@@ -32,5 +32,10 @@
 ## How to use
 
 ## Credits
+### Made with ❤️ by team Bundly
+- [Darsh Patel](https://github.com/darshkpatel)
+- [Saurav M H](https://github.com/sauravhiremath)
+- [Kunal Kushwaha](https://github.com/kunal-kushwaha)
 
 ## License
+- [MIT License](https://github.com/bundly/dash/blob/master/LICENSE)
