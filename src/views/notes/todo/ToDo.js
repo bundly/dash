@@ -13,7 +13,7 @@ import ReactMde from 'react-mde';
 import { Converter as ShowdownConverter } from 'showdown';
 import 'react-mde/lib/styles/css/react-mde-all.css';
 import ReactMarkdown from 'react-markdown';
-import {getUsername, saveToDo, getToDo} from '../helpers'
+import {saveToDo, getToDo} from '../helpers'
 
 const converter = new ShowdownConverter({
   tables: true,
@@ -32,10 +32,9 @@ const ToDo = () => {
   const [preview, setPreview] = useState(true);
 
 
-  const username = getUsername();
 
   useEffect(() => {
-    // getToDo(username).then( (todo) => setValue(todo) )
+    getToDo().then( (todo) => { setValue(todo.data.markdown)} )
   }, []);
 
   return (
@@ -51,7 +50,7 @@ const ToDo = () => {
           <CSwitch variant="3d" className="float-right mb-0" color="info" size="lg" tabIndex="1 " type="checkbox" checked={preview} onChange={()=>setPreview(!preview)}/>
           </CCol>
           <CCol sm="2" md="2" lg="2">
-          <CButton active block color="primary" onClick={()=>saveToDo(username, value)}>Save</CButton>
+          <CButton active block color="primary" onClick={()=>saveToDo(value)}>Save</CButton>
           </CCol>
   </CRow>
       </CCardHeader>

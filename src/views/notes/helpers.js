@@ -1,3 +1,7 @@
+import axios from 'axios';
+
+const apiURL = process.env.REACT_APP_API_ENDPOINT || "http://localhost:5000"
+
 export const getUsername = () => {
 // Get Username
 
@@ -5,18 +9,9 @@ export const getUsername = () => {
 }
 
 export const getToDo = () => {
-
-   return {
-    markdown: `
-    ## To Do
-     - Example Task LOADED
-     `,
-    lastUpdated: new Date()
-  } // Temporary till OAuth done
+   return axios.get(`${apiURL}/todo`, {headers: ''}) // add auth headers
   }
 
-export const saveToDo = (username, value) => {
-    // Get Username
-    console.log(`saving for ${username}`, value)
-     return; // // Temporary till OAuth done
+export const saveToDo = (value) => {
+   return axios.post(`${apiURL}/todo`, {headers: '', data: {markdown: value}}) // add auth headers
 }
