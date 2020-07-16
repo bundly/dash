@@ -63,6 +63,20 @@ export default [
   },
   {
     _tag: "CSidebarNavTitle",
+    _children: ["Calendar"],
+  },
+  {
+    _tag: "CSidebarNavItem",
+    name: "Calendar",
+    to: "/calendar/GoogleCalendar",
+    icon: "cil-calendar",
+    badge: {
+      color: "secondary",
+      text: "BETA",
+    },
+  },
+  {
+    _tag: "CSidebarNavTitle",
     _children: ["Authentications"],
   },
   {
@@ -73,20 +87,6 @@ export default [
     badge: {
       color: "secondary",
       text: "ALPHA",
-    },
-  },
-  {
-    _tag: "CSidebarNavTitle",
-    _children: ["Calendar"],
-  },
-  {
-    _tag: "CSidebarNavItem",
-    name: "Calendar",
-    to: "/calendar",
-    icon: "cil-calendar",
-    badge: {
-      color: "secondary",
-      text: "BETA",
     },
   },
 ];
