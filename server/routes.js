@@ -1,11 +1,13 @@
 import passport from 'passport';
 import usersController from './controller/usersController';
-import { customAuthenticator } from './middlewares/authenticated';
+import { customAuthenticator, authSuccess } from './middlewares/authenticated';
 
 const routes = router => {
     router.get('/', (req, res) => {
         res.send(`Api is Live -> Current Time: (${new Date()})`);
     });
+
+    router.route('/auth/verify').post(usersController.getOne);
 
     router.route('/auth/google/login').get(customAuthenticator);
 
@@ -13,11 +15,11 @@ const routes = router => {
 
     router.route('/auth/discord/login').get(customAuthenticator);
 
-    router.route('/auth/google/callback').get(passport.authenticate('google'), usersController.getOne);
+    router.route('/auth/google/callback').get(passport.authenticate('google'), authSuccess);
 
-    router.route('/auth/github/callback').get(passport.authenticate('github'), usersController.getOne);
+    router.route('/auth/github/callback').get(passport.authenticate('github'), authSuccess);
 
-    router.route('/auth/discord/callback').get(passport.authenticate('discord'), usersController.getOne);
+    router.route('/auth/discord/callback').get(passport.authenticate('discord'), authSuccess);
 };
 
 export default routes;
