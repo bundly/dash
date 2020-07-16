@@ -22,9 +22,9 @@
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
+  <a href="https://github.com/bundly/dash/blob/master/CONTRIBUTING.md">How To Use</a> •
   <a href="#credits">Credits</a> •
-  <a href="#license">License</a>
+  <a href="https://github.com/bundly/dash/blob/master/LICENSE">License</a>
 </p>
 
 ## Key Features
