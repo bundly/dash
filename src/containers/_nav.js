@@ -22,6 +22,31 @@ export default [
     to: '/workspace/colors',
     icon: 'cil-drop',
   },
+
+  {
+    _tag: 'CSidebarNavTitle',
+    _children: ['Notes']
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'Standup Notes',
+    to: '/notes/standup',
+    icon: 'cil-notes',
+    badge: {
+      color: 'secondary',
+      text: 'BETA',
+    }
+  },
+  {
+    _tag: 'CSidebarNavItem',
+    name: 'To Do',
+    to: '/notes/standup',
+    icon: 'cil-notes',
+    badge: {
+      color: 'secondary',
+      text: 'BETA',
+    }
+  },
   {
     _tag: 'CSidebarNavTitle',
     _children: ['Notifications']

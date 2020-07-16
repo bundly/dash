@@ -2,7 +2,7 @@
 
 const fetch = require('node-fetch');
 const fs = require('fs');
-const _ = require('lodash');
+
 const query = `
 {
   organization(login: "MLH-Fellowship") {
@@ -24,7 +24,6 @@ const query = `
     }
   }
 }`;
-
 
 const fetchUsers = async () => {
   const response = await fetch(
@@ -63,17 +62,17 @@ const fetchUsers = async () => {
 };
 
 const saveUsers = async (users) => {
-
   // Merge Pod ids for people in multiple pods
-  users = [...users.reduce(function(m,o){
-    var username = o.username;
-         obj = m.get(username);
-    return obj ? m.set(username,{     username: username,
-                             pod_ids: [...new Set(obj.pod_ids.concat(o.pod_ids))]
-                            })
-               : m.set(username,o);
-  },new Map())
-.values()];
+  users = [...users.reduce((m, o) => {
+    const { username } = o;
+    const obj = m.get(username);
+    return obj ? m.set(username, {
+      username,
+      pod_ids: [...new Set(obj.pod_ids.concat(o.pod_ids))],
+    })
+      : m.set(username, o);
+  }, new Map())
+    .values()];
   const usersCount = users.length;
 
   // save all users as a single big JSON file
