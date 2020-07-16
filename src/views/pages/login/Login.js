@@ -36,10 +36,13 @@ const Login = () => {
                 alt="MLH thingy"
               />
             </div>
-            <div className="login-github" onClick={githubLogin}>
-              <div className="button button--social-login button--github">
+            <div className="login-github">
+              <a
+                className="button button--social-login button--github"
+                href={loginUrl}
+              >
                 <i className="cib-github"></i>Login With Github
-              </div>
+              </a>
             </div>
             <div className="ellipses ellipses__outer--thin">
               <div className="ellipses ellipses__orbit" />
