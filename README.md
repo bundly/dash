@@ -22,9 +22,9 @@
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
+  <a href="https://github.com/bundly/dash/blob/master/CONTRIBUTING.md">How To Use</a> •
   <a href="#credits">Credits</a> •
-  <a href="#license">License</a>
+  <a href="https://github.com/bundly/dash/blob/master/LICENSE">License</a>
 </p>
 
 ## Key Features
@@ -32,5 +32,10 @@
 ## How to use
 
 ## Credits
+### Made with ❤️ by team Bundly
+- [Darsh Patel](https://github.com/darshkpatel)
+- [Saurav M H](https://github.com/sauravhiremath)
+- [Kunal Kushwaha](https://github.com/kunal-kushwaha)
 
 ## License
+- [MIT License](https://github.com/bundly/dash/blob/master/LICENSE)

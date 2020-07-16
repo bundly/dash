@@ -1,27 +1,4 @@
 import passport from '../controller/passportControllers';
-import jwt from 'jsonwebtoken';
-import { API_KEY } from '../env';
-import logger from './logger';
-
-const authenticated = (req, res, next) => {
-    const token = req.headers.authorization;
-    jwt.verify(token, API_KEY, (err, _) => {
-        if (err) {
-            res.json('Token not provided');
-        } else {
-            next();
-        }
-    });
-};
-
-export const verifyToken = token => {
-    try {
-        const decoded = jwt.verify(token, API_KEY);
-        return decoded;
-    } catch {
-        return false;
-    }
-};
 
 export const customAuthenticator = (req, res, next) => {
     const { token } = req.query;
@@ -35,4 +12,9 @@ export const customAuthenticator = (req, res, next) => {
     authenticator(req, res, next);
 };
 
-export default authenticated;
+export const authSuccess = (req, res) => {
+    return res.json({
+        success: true,
+        data: req.user
+    });
+};

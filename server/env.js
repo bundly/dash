@@ -8,7 +8,7 @@ export const API_PORT = process.env.API_PORT || 5000;
 
 export let hosts = [];
 export let callbackUrl = '';
-export let TURN_INTERVAL = 0;
+export const TURN_INTERVAL = 0;
 if (process.env.NODE_ENV === 'production') {
     // React App Deployed URLs
     hosts = ['https://bundly.tech', 'https://dash-delta.vercel.app', 'https://dash.bundly.tech'];

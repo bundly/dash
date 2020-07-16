@@ -27,6 +27,10 @@ const userSchema = new mongoose.Schema({
     commits: {
         type: Number,
         default: 0
+    },
+    todo: {
+      markdown: {type: String, default: ''}, // Markdown String for to do
+      lastUpdated: {type: Date, default: new Date()}
     }
 });
 
