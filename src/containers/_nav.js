@@ -40,7 +40,7 @@ export default [
   {
     _tag: 'CSidebarNavItem',
     name: 'To Do',
-    to: '/notes/standup',
+    to: '/notes/todo',
     icon: 'cil-notes',
     badge: {
       color: 'secondary',
