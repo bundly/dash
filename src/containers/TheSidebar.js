@@ -29,7 +29,7 @@ const TheSidebar = () => {
       <CSidebarBrand className="d-md-down-none" to="/">
         <CIcon
           className="c-sidebar-brand-full"
-          src="https://user-images.githubusercontent.com/28642011/87392319-eb991d00-c5c9-11ea-9f78-5ffd0bc56b0a.png"
+          src="https://user-images.githubusercontent.com/11258286/87696518-894d4180-c7ae-11ea-9805-11b61dbbf7ff.png"
           name="logo-light"
           height={70}
         />
