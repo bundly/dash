@@ -11,8 +11,8 @@ const discordScopes = ['identify', 'email', 'guilds', 'messages.read'];
 passport.use(
     new GitHubStrategy(
         {
-            clientID: process.env.GITHUB_CLIENT_ID,
-            clientSecret: process.env.GITHUB_CLIENT_SECRET,
+            clientID: process.env.GH_CLIENT_ID,
+            clientSecret: process.env.GH_CLIENT_SECRET,
             callbackURL: `${callbackUrl}/auth/github/callback`
         },
         async (accessToken, refreshToken, profile, cb) => {
