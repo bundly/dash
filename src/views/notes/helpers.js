@@ -19,4 +19,5 @@ const apiURL = process.env.REACT_APP_API_ENDPOINT || 'http://localhost:5000';
 
 export const getToDo = () => axios.get(`${apiURL}/todo`, { headers: getToken() }); // add auth headers
 
-export const saveToDo = (value) => axios.post(`${apiURL}/todo`, { headers: getToken() , data: { markdown: value } }); // add auth headers
+// export const saveToDo = (value) => axios.post(`${apiURL}/todo`, { headers: getToken() , data: { markdown: value } }); // add auth headers
+export const saveToDo = (value) => localStorage.setItem('todo', value) // add auth headers

@@ -31,9 +31,10 @@ const ToDo = (props) => {
   const [preview, setPreview] = useState(false);
 
   useEffect(() => {
-    getToDo().then((todo) => {
-      setValue(todo.data.markdown);
-    });
+    // getToDo().then((todo) => {
+    //   setValue(todo.data.markdown);
+    // });
+    setValue(localStorage.getItem('todo'))
   }, []);
 
   return (
