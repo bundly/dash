@@ -43,35 +43,44 @@ As MLH Fellows, we use a lot of applications in our daily life, such as:
 
 Wouldn't it be nice, if there was a platform where all these things mentioned above could be found and modified according to your preferences, all at one place? We present to you, **Bundly** 🎉
 
-## Key Features
-Let Bundly do its work, so you can focus on yours. 
-Bundly is a single heaven to find all your information regarding the MLH Fellowship at once place!
-It let's you take your utility tools, a step further. Designed specifically to enhance your Fellowship experience. 
-Here are the features that are offered:
+## About
+- Let Bundly do its work, so you can focus on yours. 
+- Bundly is a single heaven to find all your information regarding the MLH Fellowship at once place!
+- It let's you take your utility tools, a step further. Designed specifically to enhance your Fellowship experience. 
 
-- **Generate Standup Notes in markdown automatically!🙀**: Bundly Looks through the Pull Requests Reviewed, Issues inreracted with, Pull requests opened, commits made and even the previous day's standup and generates standup notes
-  - Also supports people in multiple pods and shows sugessions from previous day's standup notes from all pods ! 
-![todo-gif](https://user-images.githubusercontent.com/11258286/87809620-50c66a00-c879-11ea-8f1b-b7885c828333.gif)
-- **Internal discussions at your fingertips**: Quickly search through MLH Fellowship Org discussions with the search tool
+## Here are the features that are offered:
 
--  **Never miss out on the important stuff 😎**: Receive personalized notifications for your repositories including:
-    - Issues and their comments
-    - Pull Requests and their comments
-    - Comments on any commits
-    - Notifications are also sent for conversations in unwatched repositories when the user is involved including:
-        - @mentions
-          - Issue assignments
-          - Commits the user authors or commits
-          - Any discussion in which the user actively participates 
+### **Generate Standup Notes in markdown automatically!🙀**
+- Bundly Looks through the Pull Requests Reviewed, Issues inreracted with, Pull requests opened, commits made and even the previous day's standup and generates standup notes
+- Also supports people in multiple pods and shows sugessions from previous day's standup notes from all pods !
+  <img src="https://user-images.githubusercontent.com/11258286/87809620-50c66a00-c879-11ea-8f1b-b7885c828333.gif">
+
+
+### **Internal discussions at your fingertips**
+Quickly search through MLH Fellowship Org discussions with the search tool
+<img src="https://user-images.githubusercontent.com/28642011/87812445-d6e4af80-c87d-11ea-923e-5efeebf950dc.gif">
+
+
+### **Never miss out on the important stuff 😎**
+Receive personalized notifications for your repositories including:
+  - Issues and their comments
+  - Pull Requests and their comments
+  - Comments on any commits
+  - Notifications are also sent for conversations in unwatched repositories when the user is involved including:
+    - @mentions
+    - Issue assignments
+    - Commits the user authors or commits
+    - Any discussion in which the user actively participates 
           
- - **Track tasks easily** by adding notifications from github to your ToDo list directly
-     ![todo-gif](https://user-images.githubusercontent.com/11258286/87809923-cfbba280-c879-11ea-8364-a0dee9df61e2.gif)
+          
+ ### **Track tasks easily** 
+ Add notifications from github to your ToDo list directly
+ <img src="https://user-images.githubusercontent.com/11258286/87809923-cfbba280-c879-11ea-8364-a0dee9df61e2.gif" width="100%"/>
 
- - Quick access the MLH calender events at one place!
+ ### Quick access the MLH calender events at one place!
 
-### How it looks
+## How it looks
 ![Screenshot](https://user-images.githubusercontent.com/11258286/87809483-1c52ae00-c879-11ea-84e6-d24d22d887b8.png)
-
 
 ## How to use
 
