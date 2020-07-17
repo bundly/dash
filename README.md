@@ -51,7 +51,7 @@ Here are the features that are offered:
 
 - **Generate Standup Notes in markdown automatically!🙀**: Bundly Looks through the Pull Requests Reviewed, Issues inreracted with, Pull requests opened, commits made and even the previous day's standup and generates standup notes
   - Also supports people in multiple pods and shows sugessions from previous day's standup notes from all pods ! 
-![Screenshot 2020-07-16 at 11 29 16 PM](https://user-images.githubusercontent.com/11258286/87705859-2cf11e80-c7bc-11ea-9827-8d92cab0c245.png)
+![todo-gif](https://user-images.githubusercontent.com/11258286/87809620-50c66a00-c879-11ea-8f1b-b7885c828333.gif)
 - **Internal discussions at your fingertips**: Quickly search through MLH Fellowship Org discussions with the search tool
 
 -  **Never miss out on the important stuff 😎**: Receive personalized notifications for your repositories including:
@@ -65,7 +65,8 @@ Here are the features that are offered:
           - Any discussion in which the user actively participates 
           
  - **Track tasks easily** by adding notifications from github to your ToDo list directly
-     
+     ![todo-gif](https://user-images.githubusercontent.com/11258286/87809923-cfbba280-c879-11ea-8364-a0dee9df61e2.gif)
+
  - Quick access the MLH calender events at one place!
 
 ### How it looks
