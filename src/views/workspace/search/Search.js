@@ -16,7 +16,7 @@ const style = {
 const processResults = (searchResults) => {
   const results = searchResults.map((result) => {
     return (
-      <CCol xs="12" sm="6" md="12">
+      <CCol xs="12" sm="6" md="12" key={result.id}>
         <CCard accentColor="success">
           <CCardHeader>
             <b>
@@ -61,7 +61,7 @@ const Search = () => {
     <>
       <CCard>
         <CCardHeader>
-          Search your discord and github
+          Search Fellowship Discussions
           <div className="card-header-actions">
             <a href="https://github.com/bundly" className="card-header-action">
               {/* <small className="text-muted">@discord</small> */}
@@ -80,7 +80,7 @@ const Search = () => {
           </div>
         </CCardBody>
         <CCardBody>
-          {count > 0 ? `Found ${count} results` : ""}
+          {count!==undefined && `Found ${count} results`}
           <CRow>{processResults(results)}</CRow>
         </CCardBody>
       </CCard>
