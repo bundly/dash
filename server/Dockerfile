@@ -6,7 +6,9 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm install
+RUN npm i -g yarn
+RUN npm i -g nodemon
+RUN yarn install
 
 EXPOSE 5000
 
