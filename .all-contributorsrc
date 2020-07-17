@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "kunal",
+      "name": "Kunal P.Bharati",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/24815?v=4",
+      "profile": "http://bharatikunal.wordpress.com",
+      "contributions": [
+        "doc",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "dash",
+  "projectOwner": "bundly",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
