@@ -11,7 +11,7 @@ export let callbackUrl = '';
 export const TURN_INTERVAL = 0;
 if (process.env.NODE_ENV === 'production') {
     // React App Deployed URLs
-    hosts = ['https://dash-delta.vercel.app', 'https://bundly.tech', 'https://dash.bundly.tech'];
+    hosts = ['https://bundly.tech', 'https://dash-delta.vercel.app', 'https://dash.bundly.tech'];
     callbackUrl = 'https://bundly.tech/api';
 } else {
     // React App URL

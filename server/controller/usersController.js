@@ -1,7 +1,7 @@
 import User from '../models/usersModel';
 
 const usersController = {
-    getOne: async (req, res, _) => {
+    getOneAndVerify: async (req, res, _) => {
         const response = {
             success: false,
             authenticated: {
@@ -17,10 +17,12 @@ const usersController = {
                 username,
                 accounts: { $elemMatch: { kind: 'github', 'token.accessToken': githubToken } }
             });
+
             const userDiscord = await User.findOne({
                 username,
                 accounts: { $elemMatch: { kind: 'discord', 'token.accessToken': discordToken } }
             });
+
             const userGoogle = await User.findOne({
                 username,
                 accounts: { $elemMatch: { kind: 'google', 'token.accessToken': googleToken } }
@@ -35,7 +37,6 @@ const usersController = {
                 discord: userDiscord ? true : false,
                 google: userGoogle ? true : false
             };
-
             return res.json(response);
         } catch {
             return res.json(response);

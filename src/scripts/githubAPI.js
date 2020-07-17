@@ -104,3 +104,4 @@ export function githubQuery({time, username}) {
   });
 }
 export const githubNotificationFetcher = () => axios.get('https://api.github.com/notifications', { headers: auth });
+export const githubSearch = (text) => axios.get(`https://api.github.com/search/issues?q=${encodeURI(text)}%20org%3Amlh-Fellowship`, { headers: auth });

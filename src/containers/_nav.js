@@ -17,8 +17,8 @@ export default [
   },
 
   {
-    _tag: 'CSidebarNavTitle',
-    _children: ['Notes']
+    _tag: "CSidebarNavTitle",
+    _children: ["Notes"],
   },
   {
     _tag: 'CSidebarNavItem',
@@ -33,8 +33,8 @@ export default [
     icon: 'cil-notes',
   },
   {
-    _tag: 'CSidebarNavTitle',
-    _children: ['Notifications']
+    _tag: "CSidebarNavTitle",
+    _children: ["Notifications"],
   },
   {
     _tag: 'CSidebarNavItem',
@@ -43,8 +43,8 @@ export default [
     icon: 'cibGithub',
   },
   {
-    _tag: 'CSidebarNavTitle',
-    _children: ['Calendar']
+    _tag: "CSidebarNavTitle",
+    _children: ["Calendar"],
   },
   {
     _tag: 'CSidebarNavItem',
@@ -52,5 +52,18 @@ export default [
     to: '/calendar',
     icon: 'cil-calendar',
   },
-]
-
+  {
+    _tag: "CSidebarNavTitle",
+    _children: ["Authentications"],
+  },
+  {
+    _tag: "CSidebarNavItem",
+    name: "Authentication",
+    to: "/auth/Auth",
+    icon: "cil-zoom",
+    badge: {
+      color: "secondary",
+      text: "ALPHA",
+    },
+  },
+];

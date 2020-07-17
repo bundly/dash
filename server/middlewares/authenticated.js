@@ -1,3 +1,5 @@
+import jwt from 'jsonwebtoken';
+import { API_KEY, hosts } from '../env';
 import passport from '../controller/passportControllers';
 
 export const customAuthenticator = (req, res, next) => {
@@ -13,8 +15,18 @@ export const customAuthenticator = (req, res, next) => {
 };
 
 export const authSuccess = (req, res) => {
-    return res.json({
-        success: true,
-        data: req.user
-    });
+    const data = {
+        username: req.user.username,
+        tokens: req.user.accounts
+    };
+    const token = jwt.sign(data, API_KEY);
+    res.redirect(`${hosts[0]}/#/auth?token=${token}`);
+};
+
+export const ensureAuthenticated = (req, res, next) => {
+    if (!req.user) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    next();
 };
