@@ -31,19 +31,30 @@
   <a href="https://github.com/bundly/dash"><img src="https://github.com/bundly/dash/blob/master/login.gif" alt="Bundly"></a>
 </h1>
 
+## Inspiration
+As MLH Fellows, we use a lot of applications in our daily life, such as:
+- Contributing to the projects using GitHub
+  - Maintaining issues created or assigned
+  - Staying in touch with PRs you participated in and across your projects
+  - Sharing your daily notes before standup
+- Keeping in sync with the Google Calendar for current events
+- Monitoring the super active Discord channels so that you don't miss out on any important messages
+- and much more!
+Wouldn't it be nice, if there was a platform where all these things mentioned above could be found and modified according to your preferences, all at one place? We present to you, **Bundly** 🎉
+
 ## Key Features
 Let Bundly do its work, so you can focus on yours. 
 Bundly is a single heaven to find all your information regarding the MLH Fellowship at once place!
 It let's you take your utility tools, a step further. Designed specifically to enhance your Fellowship experience. 
 Here are the features that are offered:
 
-- **Generate Standup Notes in markdown automatically!** Bundly Looks through the Pull Requests Reviewed, Issues inreracted with, Pull requests opened, commits made and even the previous day's standup and generates standup notes
+- **Generate Standup Notes in markdown automatically!🙀**: Bundly Looks through the Pull Requests Reviewed, Issues inreracted with, Pull requests opened, commits made and even the previous day's standup and generates standup notes
   - Also supports people in multiple pods and shows sugessions from previous day's standup notes from all pods ! 
 ![Screenshot 2020-07-16 at 11 29 16 PM](https://user-images.githubusercontent.com/11258286/87705859-2cf11e80-c7bc-11ea-9827-8d92cab0c245.png)
 
-- **Internal discussions at your fingertips** quickly search through MLH Fellowship Org discussions with the search tool
+- **Internal discussions at your fingertips**: Quickly search through MLH Fellowship Org discussions with the search tool
 
--  **Never miss out on the important stuff** Receive personalized notifications for your repositories including:
+-  **Never miss out on the important stuff 😎**: Receive personalized notifications for your repositories including:
     - Issues and their comments
     - Pull Requests and their comments
     - Comments on any commits
@@ -72,6 +83,14 @@ Here you can:
 ## Development
 
 Want to live on the edge of development with new features? Stay up-to-date with our contributor discussions and road-mapping in the [@Bundly/dash-Wiki](https://github.com/bundly/dash/wiki).
+
+## Tech Stack Used
+- React - SSR
+- Passport for authentication
+- Apollo
+- GitHub API
+- Express
+- MongoDB
 
 ## Credits
 ### Made with ❤️ by team Bundly
