@@ -30,6 +30,25 @@ passport.use(
             const duplicate = await User.findOne({ username });
 
             if (duplicate) {
+                let needsUpdate = false;
+                duplicate.accounts.forEach(account => {
+                    if (account.kind === 'github' && account.token.accessToken !== accessToken) {
+                        needsUpdate = true;
+                    }
+                });
+
+                if (needsUpdate) {
+                    const updatedUser = await User.findOneAndUpdate(
+                        {
+                            username: duplicate.username,
+                            'accounts.kind': 'github'
+                        },
+                        { $set: { 'accounts.$.token.accessToken': accessToken } },
+                        { new: true }
+                    );
+
+                    return cb(null, updatedUser);
+                }
                 return cb(null, duplicate);
             }
 
