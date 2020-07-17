@@ -50,7 +50,12 @@ export default function yesterdayNotes(datadump, currentTime, username) {
   if (commentCount > 0) yesterday = yesterday.concat(`\r\n - ${commentCount} Comments on Issue Discussions 💬\r\n `);
 
   yesterday = yesterday.concat(`\r\n**Today:**\r\n `);
-  yesterday = yesterday.concat(getSuggestions(summaryData.organization.team.childTeams, username))
+  try {
+    yesterday = yesterday.concat(getSuggestions(summaryData.organization.team.childTeams, username))
+
+  } catch (error) {
+    console.log('BUNDLY NOT ALLOWED IN ORG PLEASE ASK FOR PERMISSION')
+  }
 
   return yesterday;
 }
