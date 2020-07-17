@@ -2,7 +2,6 @@ import React from 'react';
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'));
 const Search = React.lazy(() => import('./views/workspace/search/Search'));
-const Colors = React.lazy(() => import('./views/workspace/colors/Colors'));
 const GithubNotifications = React.lazy(() => import('./views/notifications/github/GithubNotifications'));
 const StandupNotes = React.lazy(() => import('./views/notes/standup/StandupNotes'));
 const ToDo = React.lazy(() => import('./views/notes/todo/ToDo'));
@@ -15,7 +14,6 @@ const routes = [
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/workspace', name: 'Workspace', component: Search, exact: true },
   { path: '/workspace/search', name: 'Search', component: Search },
-  { path: '/workspace/colors', name: 'Colors', component: Colors },
   { path: '/notifications', name: 'Notifications', component: GithubNotifications, exact: true },
   { path: '/notifications/github', name: 'Github', component: GithubNotifications },
   { path: '/notes/', name: 'Notes', exact: true },
