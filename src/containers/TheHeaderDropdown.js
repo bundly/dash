@@ -35,23 +35,9 @@ const TheHeaderDropdown = () => {
           <strong>Settings</strong>
         </CDropdownItem>
         <CDropdownItem>
-          <CIcon name="cil-user" className="mfe-2" />Profile
+          <CIcon name="cil-user" className="mfe-2" />Logout
         </CDropdownItem>
-        <CDropdownItem>
-          <CIcon name="cil-settings" className="mfe-2" /> 
-          Settings
-        </CDropdownItem>
-        <CDropdownItem divider />
-        <CDropdownItem>
-          <CIcon name="cil-github" className="mfe-2" /> 
-          Go to github
-          <CBadge color="primary" className="mfs-auto">7</CBadge>
-        </CDropdownItem>
-        <CDropdownItem>
-          <CIcon name="cil-discord" className="mfe-2" /> 
-          Go to Discord
-          <CBadge color="primary" className="mfs-auto">38</CBadge>
-        </CDropdownItem>
+
       </CDropdownMenu>
     </CDropdown>
   )
