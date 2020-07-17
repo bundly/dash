@@ -13,7 +13,7 @@ const Login = ({ authenticate }) => {
       return authenticate(authorized);
     }
     fetchData();
-  }, []);
+  }, [authenticate]);
 
   return (
     <div className="container">
