@@ -123,3 +123,6 @@ Want to live on the edge of development with new features? Stay up-to-date with 
 
 ## Contributing Guide
 - For information regarding how to make contributions, check out [CONTRIBUTING.md](https://github.com/bundly/dash/blob/master/CONTRIBUTING.md)
+
+## Contributors ✨
+
