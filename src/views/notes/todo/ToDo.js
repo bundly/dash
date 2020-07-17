@@ -12,7 +12,7 @@ import ReactMde from "react-mde";
 import { Converter as ShowdownConverter } from "showdown";
 import "react-mde/lib/styles/css/react-mde-all.css";
 import ReactMarkdown from "react-markdown";
-import { saveToDo, getToDo } from "../helpers";
+import { saveToDo } from "../helpers";
 
 const converter = new ShowdownConverter({
   tables: true,
