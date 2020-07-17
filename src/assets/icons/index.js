@@ -7,7 +7,6 @@ import {
   cibTumblr,
   cibXing,
   cibGithub,
-  cibStackoverflow,
   cibYoutube,
   cibDribbble,
   cibInstagram,
@@ -24,14 +23,7 @@ import {
   cibGooglePay,
   cibCcAmex
 } from '@coreui/icons'
-import {
-  cifUs,
-  cifBr,
-  cifIn,
-  cifFr,
-  cifEs,
-  cifPl
-} from '@coreui/icons'
+
 import {
   cilAlignCenter,
   cilAlignLeft,
@@ -218,14 +210,7 @@ export const icons = Object.assign({}, {
   cilX,
   cilXCircle,
   cilWarning
-}, {
-  cifUs,
-  cifBr,
-  cifIn,
-  cifFr,
-  cifEs,
-  cifPl
-}, {
+},{
   cibSkype,
   cibFacebook,
   cibTwitter,
@@ -234,7 +219,6 @@ export const icons = Object.assign({}, {
   cibTumblr,
   cibXing,
   cibGithub,
-  cibStackoverflow,
   cibYoutube,
   cibDribbble,
   cibInstagram,
@@ -250,4 +234,4 @@ export const icons = Object.assign({}, {
   cibPaypal,
   cibGooglePay,
   cibCcAmex
-})
+} )

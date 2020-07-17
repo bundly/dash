@@ -34,20 +34,20 @@ export default function yesterdayNotes(datadump, currentTime, username) {
   const commentCount = getCommentCount(summaryData.issueComments, currentTime);
   summaryData.contributionsCollection.pullRequestContributions.nodes.map((pr) => {
     pr = pr.pullRequest;
-    yesterday = yesterday.concat(`\r\n - Worked on PR [${pr.title} #${pr.number}](${pr.url}) (Status: ${pr.state.toLowerCase()})\r\n `);
+    yesterday = yesterday.concat(`\r\n - Worked on PR [${pr.title} #${pr.number}](${pr.url}) (**Status:** ${pr.state.toLowerCase()} ${pr.state === 'MERGED' ? '🔥':'🕐'})\r\n `);
+  });
+  summaryData.contributionsCollection.pullRequestReviewContributions.nodes.map((review) => {
+    const pr = review.pullRequest;
+    yesterday = yesterday.concat(`\r\n - Reviewed PR [${pr.title} #${pr.number}](${pr.url}) 👀\r\n `);
   });
   summaryData.contributionsCollection.commitContributionsByRepository.map((contribution) => {
     yesterday = yesterday.concat(`\r\n - Pushed ${contribution.contributions.totalCount} Commits to [${contribution.repository.nameWithOwner}](${contribution.repository.url})\r\n `);
   });
   summaryData.contributionsCollection.issueContributions.nodes.map((issue) => {
     issue = issue.issue;
-    yesterday = yesterday.concat(`\r\n - Opened Issue [${issue.title} #${issue.number}](${issue.url})\r\n `);
+    yesterday = yesterday.concat(`\r\n - Opened Issue [${issue.title} #${issue.number}](${issue.url}) ❗\r\n `);
   });
-  summaryData.contributionsCollection.pullRequestReviewContributions.nodes.map((review) => {
-    const pr = review.pullRequest;
-    yesterday = yesterday.concat(`\r\n - Reviewed PR [${pr.title} #${pr.number}](${pr.url})\r\n `);
-  });
-  if (commentCount > 0) yesterday = yesterday.concat(`\r\n - ${commentCount} Comments on Issue Discussions\r\n `);
+  if (commentCount > 0) yesterday = yesterday.concat(`\r\n - ${commentCount} Comments on Issue Discussions 💬\r\n `);
 
   yesterday = yesterday.concat(`\r\n**Today:**\r\n `);
   yesterday = yesterday.concat(getSuggestions(summaryData.organization.team.childTeams, username))

@@ -19,7 +19,7 @@ export const authSuccess = (req, res) => {
         username: req.user.username,
         tokens: req.user.accounts
     };
-    const token = jwt.sign(data, API_KEY);
+    const token = Buffer.from(JSON.stringify(data)).toString('base64')
     res.redirect(`${hosts[0]}/#/auth?token=${token}`);
 };
 

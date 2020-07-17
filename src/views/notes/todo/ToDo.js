@@ -22,14 +22,14 @@ const converter = new ShowdownConverter({
   tasklists: true,
 });
 
-const ToDo = () => {
+const ToDo = (props) => {
   const [value, setValue] = useState(`
 ## To Do
  - Example Task
  `);
 
   const [selectedTab, setSelectedTab] = useState('write');
-  const [preview, setPreview] = useState(true);
+  const [preview, setPreview] = useState(false);
 
 
 
@@ -46,7 +46,6 @@ const ToDo = () => {
           <h5>To Do</h5>
           </CCol>
           <CCol sm="1" md="1" lg="1">
-            Preview
           <CSwitch variant="3d" className="float-right mb-0" color="info" size="lg" tabIndex="1 " type="checkbox" checked={preview} onChange={()=>setPreview(!preview)}/>
           </CCol>
           <CCol sm="2" md="2" lg="2">
@@ -62,6 +61,8 @@ const ToDo = () => {
               onChange={setValue}
               selectedTab={selectedTab}
               onTabChange={setSelectedTab}
+              minEditorHeight={props.height??650}
+              minPreviewHeight={props.height??650}
               generateMarkdownPreview={(markdown) => Promise.resolve(converter.makeHtml(markdown))}
             />
      {/* <CTextarea
