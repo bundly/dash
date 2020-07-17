@@ -13,7 +13,17 @@ passport.use(
         {
             clientID: process.env.GH_CLIENT_ID,
             clientSecret: process.env.GH_CLIENT_SECRET,
-            callbackURL: `${callbackUrl}/auth/github/callback`
+            callbackURL: `${callbackUrl}/auth/github/callback`,
+            scope: [
+                'repo:status',
+                'public_repo',
+                'read:org',
+                'notifications',
+                'read:user',
+                'user:email',
+                'user:follow',
+                'read:discussion'
+            ]
         },
         async (accessToken, refreshToken, profile, cb) => {
             const username = profile.username;
