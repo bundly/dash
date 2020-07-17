@@ -107,7 +107,12 @@ Want to live on the edge of development with new features? Stay up-to-date with 
 - Express
 - MongoDB
 
+## Privacy Policy (**Strictly Open-source**)
+- We respect your privacy and data, hence none of your data are stored on our servers. All requests are made on client side using the `access_token` provided from your login.
+- Only data stored with us, would be the ones publicly available - like your public repository number of commits (private repository commits number if allowed by you) - for leaderboards.
+
 ## Credits
+
 ### Made with ❤️ by team Bundly
 - [Darsh Patel](https://github.com/darshkpatel)
 - [Saurav M H](https://github.com/sauravhiremath)
