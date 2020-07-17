@@ -88,8 +88,8 @@ const isLoggedIn = async () => {
     }
   });
 
-  console.log(`${host}/auth/verify`);
-  console.log(JSON.stringify({ username: tokenb64.username, ...tokens }));
+  // console.log(`${host}/auth/verify`);
+  // console.log(JSON.stringify({ username: tokenb64.username, ...tokens }));
 
   const isAuthorized = await axios.post(`${host}/auth/verify`, {
     username: tokenb64.username,
