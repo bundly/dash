@@ -69,7 +69,7 @@ Here are the features that are offered:
  - Quick access the MLH calender events at one place!
 
 ### How it looks
-<img width="1437" alt="Screenshot 2020-07-16 at 11 41 27 PM" src="https://user-images.githubusercontent.com/11258286/87706954-f7e5cb80-c7bd-11ea-888a-24ef526abb9c.png">
+![Screenshot](https://user-images.githubusercontent.com/11258286/87809483-1c52ae00-c879-11ea-84e6-d24d22d887b8.png)
 
 
 ## How to use
