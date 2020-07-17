@@ -5,7 +5,6 @@ import { Converter as ShowdownConverter } from "showdown";
 
 import yesterdayNotes from "../../../scripts/notesGenerator";
 import { githubQuery } from "../../../scripts/githubAPI";
-import { getUsername } from "../helpers";
 import "react-mde/lib/styles/css/react-mde-all.css";
 
 const converter = new ShowdownConverter({
@@ -33,20 +32,17 @@ const StandupNotes = (props) => {
 
   const [selectedTab, setSelectedTab] = useState("write");
   const currentTime = new Date();
-
-  const username = getUsername();
-
   useEffect(() => {
-    githubQuery({ time: currentTime.toISOString(), username: username }).then(
+    githubQuery({ time: currentTime.toISOString() }).then(
       (data) => {
-        console.log(data);
         if (!data.errors)
           setValue(
-            yesterdayNotes(data.data, currentTime.toISOString(), username)
+            yesterdayNotes(data.data, currentTime.toISOString())
           );
       }
     );
-  }, [currentTime, username]);
+// eslint-disable-next-line
+  }, []);
 
   return (
     <CCard accentColor="primary">

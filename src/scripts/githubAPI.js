@@ -8,7 +8,7 @@ function getToken(){
   return { Authorization: `Token ${githubToken}`}
 }
 
-function getUsername(){
+export function getUsername(){
   const bundlyToken = localStorage.getItem('bundly-token');
   let username
   if(bundlyToken) username = JSON.parse(atob(bundlyToken)).username

@@ -1,5 +1,7 @@
 /* eslint-disable no-param-reassign, array-callback-return */
 
+import { getUsername } from './githubAPI'
+
 function getCommentCount(issueComments, currentTime) {
   // Filter All comments from the past 24 hours
   const targetTime = new Date(currentTime);
@@ -28,7 +30,8 @@ function getSuggestions(discussions, username){
 
 }
 
-export default function yesterdayNotes(datadump, currentTime, username) {
+export default function yesterdayNotes(datadump, currentTime) {
+  const username = getUsername()
   let yesterday = `**Yesterday**:\r\n `;
   const summaryData = datadump.data.viewer;
   const commentCount = getCommentCount(summaryData.issueComments, currentTime);

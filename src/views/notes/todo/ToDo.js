@@ -5,14 +5,12 @@ import {
   CSwitch,
   CRow,
   CCol,
-  CButton,
 } from "@coreui/react";
 import React, { useState, useEffect } from "react";
 import ReactMde from "react-mde";
 import { Converter as ShowdownConverter } from "showdown";
 import "react-mde/lib/styles/css/react-mde-all.css";
 import ReactMarkdown from "react-markdown";
-import { saveToDo } from "../helpers";
 
 const converter = new ShowdownConverter({
   tables: true,
@@ -22,19 +20,22 @@ const converter = new ShowdownConverter({
 });
 
 const ToDo = (props) => {
-  const [value, setValue] = useState(`
+  const [value, setValue] = useState(localStorage.getItem('todo') ?? `
 ## To Do
- - Example Task
- `);
+ - Example Task`);
 
   const [selectedTab, setSelectedTab] = useState("write");
   const [preview, setPreview] = useState(false);
-
+  localStorage.setItem('todo',value)
   useEffect(() => {
-    // getToDo().then((todo) => {
-    //   setValue(todo.data.markdown);
-    // });
     setValue(localStorage.getItem('todo'))
+    let updateStorage = setInterval(()=>{
+      setValue(localStorage.getItem('todo'))
+    }, 1000)
+
+    return () => {
+      clearInterval(updateStorage)
+    }
   }, []);
 
   return (
@@ -57,14 +58,6 @@ const ToDo = (props) => {
             />
           </CCol>
           <CCol sm="2" md="2" lg="2">
-            <CButton
-              active
-              block
-              color="primary"
-              onClick={() => saveToDo(value)}
-            >
-              Save
-            </CButton>
           </CCol>
         </CRow>
       </CCardHeader>
@@ -73,7 +66,7 @@ const ToDo = (props) => {
           <CCol>
             <ReactMde
               value={value}
-              onChange={setValue}
+              onChange={(val)=>{setValue(val); localStorage.setItem('todo', val)}}
               selectedTab={selectedTab}
               onTabChange={setSelectedTab}
               minEditorHeight={props.height ?? 650}
@@ -82,13 +75,6 @@ const ToDo = (props) => {
                 Promise.resolve(converter.makeHtml(markdown))
               }
             />
-            {/* <CTextarea
-                      name="textarea-input"
-                      id="textarea-input"
-                      rows={20}
-                      value={value}
-                      onChange={(e)=>{setValue(e.target.value);}}
-      /> */}
           </CCol>
           {preview && (
             <CCol>
