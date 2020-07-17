@@ -1,8 +1,9 @@
 import React from "react";
-import { CCard, CCardBody, CCardHeader, CCol, CRow } from "@coreui/react";
-import GithubNotifications from '../notifications/github/GithubNotifications'
-import StandupNotes from '../notes/standup/StandupNotes'
-import ToDo from '../notes/todo/ToDo'
+import { CCol, CRow } from "@coreui/react";
+import GithubNotifications from '../notifications/github/GithubNotifications';
+import StandupNotes from '../notes/standup/StandupNotes';
+import ToDo from '../notes/todo/ToDo';
+
 const Dashboard = () => {
   return (
     <>

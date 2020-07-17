@@ -5,7 +5,6 @@ import {
   CSwitch,
   CRow,
   CCol,
-  CTextarea,
   CButton
 } from '@coreui/react';
 import React, { useState, useEffect } from 'react';

@@ -1,29 +1,35 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import {
   CBadge,
   CCard,
   CCardBody,
   CCardHeader,
-  CCol,
   CDataTable,
   CButton,
-  CRow,
-} from '@coreui/react';
+} from "@coreui/react";
 
-import { githubNotificationFetcher, markNotification } from '../../../scripts/githubAPI';
+import {
+  githubNotificationFetcher,
+  markNotification,
+} from "../../../scripts/githubAPI";
 
 const getBadge = (type) => {
   switch (type) {
-    case 'Issue': return 'primary';
-    case 'Commit': return 'secondary';
-    case 'PullRequest': return 'warning';
-    default: return 'success';
+    case "Issue":
+      return "primary";
+    case "Commit":
+      return "secondary";
+    case "PullRequest":
+      return "warning";
+    default:
+      return "success";
   }
 };
 
 const cleanData = (data) => {
-  if(data) return data.map(item => {
-    return {
+  if (data)
+    return data.map((item) => {
+      return {
         id: item.id,
         type: item.subject.type,
         title: item.subject.title,
@@ -31,49 +37,60 @@ const cleanData = (data) => {
         reason: item.reason,
         repo: item.repository.full_name,
         repo_url: item.repository.html_url,
-        subject: {type: item.subject.type, url: item.subject.url.replace('api.','').replace('repos/','')}
-    }
-  })
-}
+        subject: {
+          type: item.subject.type,
+          url: item.subject.url.replace("api.", "").replace("repos/", ""),
+        },
+      };
+    });
+};
 
-  const GithubNotifications = () => {
-
+const GithubNotifications = () => {
   const [cleanedData, setcleanedData] = useState(undefined);
   const [error, seterror] = useState(false);
-  useEffect(()=>{
-    githubNotificationFetcher().then( res => {
-      if(res.status === 200){
-        setcleanedData(cleanData(res.data))
+  useEffect(() => {
+    githubNotificationFetcher().then((res) => {
+      if (res.status === 200) {
+        setcleanedData(cleanData(res.data));
+      } else seterror(true);
+    });
+  }, []);
+
+  const handleRead = (id) => {
+    markNotification(id).then((res) => {
+      if (res.status === 205) {
+        setcleanedData(cleanedData.filter((item) => item.id !== id));
       }
-      else seterror(true)
-    })
-  }, [])
-
-  const handleRead = (id) => { markNotification(id).then((res)=>{
-    if(res.status === 205) {
-      setcleanedData(cleanedData.filter(item => item.id!==id));
-    }
-
-  })
-  return false}
-  const fields = ['title', 'repo', 'reason',{key:'type', sorter:true, filter: true} ,'actions'];
+    });
+    return false;
+  };
+  const fields = [
+    "title",
+    "repo",
+    "reason",
+    { key: "type", sorter: true, filter: true },
+    "actions",
+  ];
   const scopedSlots = {
-    type:
-      (item) => (
-        <td>
-          <CBadge color={getBadge(item.subject.type)} shape='pill'>
-            {item.subject.type}
-          </CBadge>
-        </td>
-      ),
+    type: (item) => (
+      <td>
+        <CBadge color={getBadge(item.subject.type)} shape="pill">
+          {item.subject.type}
+        </CBadge>
+      </td>
+    ),
     title: (item) => (
       <td>
-        <a href={item.subject.url} target="_blank">{item.title}</a>
+        <a href={item.subject.url} target="_blank" rel="noopener noreferrer">
+          {item.title}
+        </a>
       </td>
     ),
     repo: (item) => (
       <td>
-        <a href={item.repo_url} target="_blank">{item.repo}</a>
+        <a href={item.repo_url} target="_blank" rel="noopener noreferrer">
+          {item.repo}
+        </a>
       </td>
     ),
     // status: (item) => (
@@ -83,34 +100,39 @@ const cleanData = (data) => {
     // ),
     actions: (item) => (
       <td>
-        <CButton block variant="outline" color="dark" size="sm" onClick={()=>handleRead(item.id)}>{ item.unread ? 'Mark Read' : 'Mark Unread'}</CButton>
+        <CButton
+          block
+          variant="outline"
+          color="dark"
+          size="sm"
+          onClick={() => handleRead(item.id)}
+        >
+          {item.unread ? "Mark Read" : "Mark Unread"}
+        </CButton>
         {/* <CButton block variant="outline" color="success">Add to ToDo</CButton> */}
       </td>
     ),
-
   };
   return (
-          <CCard>
-            <CCardHeader>
-              Github Notifications
-            </CCardHeader>
-            <CCardBody>
-              {error && <p>Error Fetching Data</p>}
+    <CCard>
+      <CCardHeader>Github Notifications</CCardHeader>
+      <CCardBody>
+        {error && <p>Error Fetching Data</p>}
 
-              <CDataTable
-                items={cleanedData}
-                fields={fields}
-                pagination
-                tableFilter
-                sorter
-                striped
-                hover
-                itemsPerPage={3}
-                scopedSlots={scopedSlots}
-                loading={!cleanedData && !error }
-              />
-            </CCardBody>
-          </CCard>
+        <CDataTable
+          items={cleanedData}
+          fields={fields}
+          pagination
+          tableFilter
+          sorter
+          striped
+          hover
+          itemsPerPage={3}
+          scopedSlots={scopedSlots}
+          loading={!cleanedData && !error}
+        />
+      </CCardBody>
+    </CCard>
   );
 };
 
