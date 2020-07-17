@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  <a href="https://github.com/bundly/dash"><img src="https://user-images.githubusercontent.com/28642011/87771943-ae899080-c83e-11ea-80bd-62558a90889d.png" alt="Bundly"></a>
+  <a href="https://github.com/bundly/dash"><img src="https://user-images.githubusercontent.com/28642011/87771943-ae899080-c83e-11ea-80bd-62558a90889d.png" width=600 alt="Bundly"></a>
 </h1>
 
 <h4 align="center">A single heaven to find all your information regarding MLH Fellowship</h4>
