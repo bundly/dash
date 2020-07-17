@@ -40,6 +40,7 @@ As MLH Fellows, we use a lot of applications in our daily life, such as:
 - Keeping in sync with the Google Calendar for current events
 - Monitoring the super active Discord channels so that you don't miss out on any important messages
 - and much more!
+
 Wouldn't it be nice, if there was a platform where all these things mentioned above could be found and modified according to your preferences, all at one place? We present to you, **Bundly** 🎉
 
 ## Key Features
