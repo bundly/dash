@@ -1,6 +1,19 @@
 import axios from 'axios';
 
-const auth = { Authorization: `Token ${process.env.REACT_APP_GITHUB_TOKEN}` }; // Temporary till OAuth is implemented
+function getToken(){
+  const bundlyToken = localStorage.getItem('bundly-token');
+  let githubToken
+  if(bundlyToken) githubToken = JSON.parse(atob(bundlyToken)).tokens[0].token.accessToken
+  // console.log(githubToken)
+  return { Authorization: `Token ${githubToken}`}
+}
+
+function getUsername(){
+  const bundlyToken = localStorage.getItem('bundly-token');
+  let username
+  if(bundlyToken) username = JSON.parse(atob(bundlyToken)).username
+  return username
+}
 
 export const summaryQuery = `
 query summaryQuery($from: DateTime!, $username: [String!]) {
@@ -86,11 +99,14 @@ query summaryQuery($from: DateTime!, $username: [String!]) {
 }`;
 
 export function markNotification(id) {
+  // console.log(`Using`,  getToken())
   return axios.patch(`https://api.github.com/notifications/threads/${id}`, {
-  }, { headers: auth })
+  }, { headers: getToken() })
 }
 
-export function githubQuery({time, username}) {
+export  function githubQuery({time}) {
+  // console.log(getToken(), getUsername())
+
   const targetTime = new Date(time);
   targetTime.setDate(targetTime.getDate() - 1);
   return axios({
@@ -98,10 +114,10 @@ export function githubQuery({time, username}) {
     method: 'post',
     data: JSON.stringify({
       query: summaryQuery,
-      variables: { from: targetTime.toISOString(), username },
+      variables: { from: targetTime.toISOString(), username: getUsername() },
     }),
-    headers: auth,
+    headers: getToken(),
   });
 }
-export const githubNotificationFetcher = () => axios.get('https://api.github.com/notifications', { headers: auth });
-export const githubSearch = (text) => axios.get(`https://api.github.com/search/issues?q=${encodeURI(text)}%20org%3Amlh-Fellowship`, { headers: auth });
+export const githubNotificationFetcher =  () => axios.get('https://api.github.com/notifications', { headers: getToken() });
+export const githubSearch =  (text) => axios.get(`https://api.github.com/search/issues?q=${encodeURI(text)}%20org%3Amlh-Fellowship`, { headers: getToken() });
