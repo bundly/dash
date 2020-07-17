@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
-import { default as axios } from 'axios';
-import jwt_decode from 'jwt-decode';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Auth from './views/auth/Auth';
 import './scss/style.scss';
 
@@ -10,9 +8,6 @@ const loading = (
     <div className="sk-spinner sk-spinner-pulse"></div>
   </div>
 )
-
-// Host
-const host = process.env.NODE_ENV === 'production' ? 'https://bundly.tech/api' : 'http://localhost:5000';
 
 // Containers
 const TheLayout = React.lazy(() => import('./containers/TheLayout'));
@@ -27,50 +22,28 @@ class App extends Component {
     isLoggedIn: false,
   };
 
-  async componentDidUpdate() {
-    let JWTtoken;
-    try {
-      JWTtoken = jwt_decode(localStorage.getItem("bundly-token"));
-    } catch {
-      return;
-    }
-
-    if (!JWTtoken) return;
-
-    const tokens = {};
-    JWTtoken.tokens.forEach((account) => {
-      if (account.kind === "github") {
-        tokens["githubToken"] = account.token.accessToken;
-      } else if (account.kind === "discord") {
-        tokens["discordToken"] = account.token.accessToken;
-      }
-    });
-
-    console.log(`${host}/auth/verify`);
-
-    const isAuthorized = await axios.post(`${host}/auth/verify`, { username: JWTtoken.username, ...tokens });
-
-    if (isAuthorized && isAuthorized.data.success) {
-      return this.setState({ isLoggedIn: true });
+  authorize = (isAuthorized) => {
+    if (isAuthorized) {
+      this.setState({ isLoggedIn: true });
     }
   }
 
   render() {
+    const { isLoggedIn } = this.state;
     return (
       <HashRouter>
           <React.Suspense fallback={loading}>
             <Switch>
-              <Route exact path="/auth" name="Auth Callback" render={props => <Auth {...props} />} />
-              <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
+              <Route exact path="/auth" name="Auth Callback" render={props => <Auth {...props} /> } />
+              <Route exact path="/login" name="Login Page" render={props => !isLoggedIn ? <Login authenticate={this.authorize} {...props}/> : <Redirect to='/' /> } />
               <Route exact path="/404" name="Page 404" render={props => <Page404 {...props}/>} />
               <Route exact path="/500" name="Page 500" render={props => <Page500 {...props}/>} />
-              <Route path="/" name="Home" render={props => <TheLayout {...props}/>} />
+              <Route path="/" name="Home" render={props => isLoggedIn ? <TheLayout {...props}/> : <Redirect to='/login' />} />
             </Switch>
           </React.Suspense>
       </HashRouter>
     );
   }
 }
-
 
 export default App;

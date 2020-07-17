@@ -1,5 +1,4 @@
-import jwt from 'jsonwebtoken';
-import { API_KEY, hosts } from '../env';
+import { hosts } from '../env';
 import passport from '../controller/passportControllers';
 
 export const customAuthenticator = (req, res, next) => {

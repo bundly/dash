@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { default as axios } from 'axios';
 
-const loginUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://bundly.tech/api/auth/github/login"
-    : "http://localhost:5000/auth/github/login";
+// Host
+const host = process.env.NODE_ENV === 'production' ? 'https://bundly.tech/api' : 'http://localhost:5000';
 
-const Login = () => {
+const loginUrl = `${host}/auth/github/login`;
+
+const Login = ({ authenticate }) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      const authorized = await isLoggedIn();
+      return authenticate(authorized);
+    }
+    fetchData();
+  }, []);
+
   return (
     <div className="container">
       <div className="container__item landing-page-container">
@@ -60,6 +69,34 @@ const Login = () => {
       </div>
     </div>
   );
+};
+
+const isLoggedIn = async () => {
+  const base64Enc = localStorage.getItem("bundly-token");
+  if (!base64Enc) { 
+    return false;
+  }
+
+  const tokenb64 = JSON.parse(atob(base64Enc));
+
+  const tokens = {};
+  tokenb64.tokens.forEach((account) => {
+    if (account.kind === "github") {
+      tokens["githubToken"] = account.token.accessToken;
+    } else if (account.kind === "discord") {
+      tokens["discordToken"] = account.token.accessToken;
+    }
+  });
+
+  console.log(`${host}/auth/verify`);
+  console.log(JSON.stringify({ username: tokenb64.username, ...tokens }));
+
+  const isAuthorized = await axios.post(`${host}/auth/verify`, {
+    username: tokenb64.username,
+    ...tokens,
+  });
+
+  return isAuthorized && isAuthorized.data.success;
 };
 
 export default Login;
