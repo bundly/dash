@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "sauravhiremath",
+      "name": "Saurav M H",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/28642011?v=4",
+      "profile": "http://sauravmh.com",
+      "contributions": [
+        "code",
+        "doc",
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "dash",
+  "projectOwner": "bundly",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
