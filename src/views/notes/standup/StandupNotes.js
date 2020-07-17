@@ -32,7 +32,6 @@ const StandupNotes = (props) => {
 
   const [selectedTab, setSelectedTab] = useState("write");
   const currentTime = new Date();
-
   useEffect(() => {
     githubQuery({ time: currentTime.toISOString() }).then(
       (data) => {
@@ -42,7 +41,8 @@ const StandupNotes = (props) => {
           );
       }
     );
-  }, [currentTime]);
+// eslint-disable-next-line
+  }, []);
 
   return (
     <CCard accentColor="primary">
