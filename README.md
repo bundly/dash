@@ -4,7 +4,10 @@
 </h1>
 
 <h4 align="center">A single heaven to find all your information regarding MLH Fellowship</h4>
-
+<p align="center">
+  <img src="https://github.com/bundly/dash/workflows/React%20CI/badge.svg" alt="NodeJS CI Build Status">
+  <img src="https://github.com/bundly/dash/workflows/NodeJS%20Server%20CI/badge.svg" alt="NodeJS CI Build Status">
+</p>
 <p align="center">
   <a href="https://miro.medium.com/max/1240/0*6BJ4tCBLBO2M6JSS.jpg">
     <img src="https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg"
