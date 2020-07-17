@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   CBadge,
   CCard,
@@ -6,43 +6,47 @@ import {
   CCardHeader,
   CDataTable,
   CButton,
-} from "@coreui/react";
+} from '@coreui/react';
 
 import {
   githubNotificationFetcher,
   markNotification,
-} from "../../../scripts/githubAPI";
+} from '../../../scripts/githubAPI';
 
 const getBadge = (type) => {
   switch (type) {
-    case "Issue":
-      return "primary";
-    case "Commit":
-      return "secondary";
-    case "PullRequest":
-      return "warning";
+    case 'Issue':
+      return 'primary';
+    case 'Commit':
+      return 'secondary';
+    case 'PullRequest':
+      return 'warning';
     default:
-      return "success";
+      return 'success';
   }
 };
 
+const handleToDo = (item) => {
+  const currentList = localStorage.getItem('todo');
+  localStorage.setItem('todo', currentList.concat(`\n\r - Take a look at [${item.title}](${item.repo_url})`));
+};
+
 const cleanData = (data) => {
-  if (data)
-    return data.map((item) => {
-      return {
-        id: item.id,
+  if (data) {
+    return data.map((item) => ({
+      id: item.id,
+      type: item.subject.type,
+      title: item.subject.title,
+      unread: item.unread,
+      reason: item.reason,
+      repo: item.repository.full_name,
+      repo_url: item.repository.html_url,
+      subject: {
         type: item.subject.type,
-        title: item.subject.title,
-        unread: item.unread,
-        reason: item.reason,
-        repo: item.repository.full_name,
-        repo_url: item.repository.html_url,
-        subject: {
-          type: item.subject.type,
-          url: item.subject.url.replace("api.", "").replace("repos/", ""),
-        },
-      };
-    });
+        url: item.subject.url.replace('api.', '').replace('repos/', ''),
+      },
+    }));
+  }
 };
 
 const GithubNotifications = () => {
@@ -65,11 +69,11 @@ const GithubNotifications = () => {
     return false;
   };
   const fields = [
-    "title",
-    "repo",
-    "reason",
-    { key: "type", sorter: true, filter: true },
-    "actions",
+    'title',
+    'repo',
+    'reason',
+    { key: 'type', sorter: true, filter: true },
+    'actions',
   ];
   const scopedSlots = {
     type: (item) => (
@@ -93,11 +97,6 @@ const GithubNotifications = () => {
         </a>
       </td>
     ),
-    // status: (item) => (
-    //   <td>
-    //     {item.unread? <CBadge color="danger">Unread</CBadge>:<CBadge color="success">Read</CBadge>}
-    //   </td>
-    // ),
     actions: (item) => (
       <td>
         <CButton
@@ -107,9 +106,9 @@ const GithubNotifications = () => {
           size="sm"
           onClick={() => handleRead(item.id)}
         >
-          {item.unread ? "Mark Read" : "Mark Unread"}
+          {item.unread ? 'Mark Read' : 'Mark Unread'}
         </CButton>
-        {/* <CButton block variant="outline" color="success">Add to ToDo</CButton> */}
+        <CButton block variant="outline" color="success" onClick={() => handleToDo(item)}>Add to ToDo</CButton>
       </td>
     ),
   };
