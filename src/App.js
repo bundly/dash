@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { default as axios } from 'axios';
 import jwt_decode from 'jwt-decode';
 import Auth from './views/auth/Auth';

@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 const loginUrl =
   process.env.NODE_ENV === "production"
@@ -61,11 +60,6 @@ const Login = () => {
       </div>
     </div>
   );
-};
-
-const githubLogin = async () => {
-  const response = await axios.get(loginUrl);
-  console.log(response);
 };
 
 export default Login;
