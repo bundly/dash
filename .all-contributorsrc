@@ -6,6 +6,17 @@
   "commit": false,
   "contributors": [
     {
+      "login": "sauravhiremath",
+      "name": "Saurav M H",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/28642011?v=4",
+      "profile": "http://sauravmh.com",
+      "contributions": [
+        "code",
+        "doc",
+        "design"
+      ]
+    },
+    {
       "login": "darshkpatel",
       "name": "Darsh Patel",
       "avatar_url": "https://avatars0.githubusercontent.com/u/11258286?v=4",
@@ -14,7 +25,7 @@
         "code",
         "doc",
         "infra"
-      ]
+       ]
     }
   ],
   "contributorsPerLine": 7,
