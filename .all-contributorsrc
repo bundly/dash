@@ -26,6 +26,16 @@
         "doc",
         "infra"
        ]
+    },
+    {
+      "login": "kunal-kushwaha",
+      "name": "Kunal Kushwaha",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/42698533?v=4",
+      "profile": "http://github.com/kunal-kushwaha",
+      "contributions": [
+        "doc",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
