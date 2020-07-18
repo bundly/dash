@@ -6,10 +6,32 @@
   "commit": false,
   "contributors": [
     {
-      "login": "kunal",
-      "name": "Kunal P.Bharati",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/24815?v=4",
-      "profile": "http://bharatikunal.wordpress.com",
+      "login": "sauravhiremath",
+      "name": "Saurav M H",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/28642011?v=4",
+      "profile": "http://sauravmh.com",
+      "contributions": [
+        "code",
+        "doc",
+        "design"
+      ]
+    },
+    {
+      "login": "darshkpatel",
+      "name": "Darsh Patel",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/11258286?v=4",
+      "profile": "https://github.com/darshkpatel",
+      "contributions": [
+        "code",
+        "doc",
+        "infra"
+       ]
+    },
+    {
+      "login": "kunal-kushwaha",
+      "name": "Kunal Kushwaha",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/42698533?v=4",
+      "profile": "http://github.com/kunal-kushwaha",
       "contributions": [
         "doc",
         "ideas"
