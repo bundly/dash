@@ -46,9 +46,11 @@ export default function yesterdayNotes(datadump, currentTime) {
   summaryData.contributionsCollection.commitContributionsByRepository.map((contribution) => {
     yesterday = yesterday.concat(`\r\n - Pushed ${contribution.contributions.totalCount} Commits to [${contribution.repository.nameWithOwner}](${contribution.repository.url})\r\n `);
   });
-  summaryData.contributionsCollection.issueContributions.nodes.map((issue) => {
-    issue = issue.issue;
+  summaryData.contributionsCollection.issueContributions.nodes.map((issue_contribution) => {
+    if(issue_contribution){
+    const issue = issue_contribution.issue;
     yesterday = yesterday.concat(`\r\n - Opened Issue [${issue.title} #${issue.number}](${issue.url}) ❗\r\n `);
+  }
   });
   if (commentCount > 0) yesterday = yesterday.concat(`\r\n - ${commentCount} Comments on Issue Discussions 💬\r\n `);
 
