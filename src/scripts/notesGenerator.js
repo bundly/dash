@@ -32,7 +32,7 @@ function getSuggestions(discussions, username){
 
 export default function yesterdayNotes(datadump, currentTime) {
   const username = getUsername()
-  let yesterday = `**Yesterday**:\r\n `;
+  let yesterday = `> Generated using @bundly\r\n\r\n**Yesterday**:\r\n `;
   const summaryData = datadump.data.viewer;
   const commentCount = getCommentCount(summaryData.issueComments, currentTime);
   summaryData.contributionsCollection.pullRequestContributions.nodes.map((pr) => {
