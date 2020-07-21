@@ -1,12 +1,8 @@
 import React, { useEffect } from "react";
 import { default as axios } from "axios";
-import styled from "../../../scss/login.module.scss";
 
-// Host
-const host =
-  process.env.NODE_ENV === "production"
-    ? "https://bundly.tech/api"
-    : "http://localhost:5000";
+import { host } from '../../../App';
+import styled from "../../../scss/login.module.scss";
 
 const loginUrl = `${host}/auth/github/login`;
 

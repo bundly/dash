@@ -9,15 +9,13 @@ import {
   CSubheader,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-
-import {
-  TheHeaderDropdown,
-  TheHeaderDropdownMentions,
-  TheHeaderDropdownTasks
-}  from './index'
+import { TheHeaderDropdown } from './index';
 
 // routes config
 import routes from '../routes'
+import { host } from '../App';
+
+const loginUrl = `${host}/auth/discord/login`;
 
 const TheHeader = () => {
   const dispatch = useDispatch()
@@ -56,14 +54,13 @@ const TheHeader = () => {
         <TheHeaderDropdown/>
       </CHeaderNav>
 
-
       <CSubheader className="px-3 justify-content-between">
         <CBreadcrumbRouter 
           className="border-0 c-subheader-nav m-0 px-0 px-md-3" 
           routes={routes} 
         />
           <div className="d-md-down-none mfe-2 c-subheader-nav">
-            <a href="/">
+            <a href={loginUrl}>
               <button type="button" class="btn btn-dark"><i class="cib-discord"> </i> Login with Discord</button>
             </a>
           </div>
