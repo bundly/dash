@@ -20,7 +20,7 @@ function getSuggestions(discussions, username){
     const podName = teamDiscussion.name
     const discussionTitle = teamDiscussion.discussions.nodes[0].title
     suggestions = suggestions.concat(`\n**From ${podName} - ${discussionTitle}:**\n\t\t`)
-    const discussionComment = teamDiscussion.discussions.nodes[0].comments.nodes.filter((comment)=> comment.author.login === username )
+    const discussionComment = teamDiscussion.discussions.nodes[1].comments.nodes.filter((comment)=> comment.author.login === username )
     discussionComment.map(comment=>{
       suggestions = suggestions.concat('\n')
       suggestions = suggestions.concat(comment.body)
