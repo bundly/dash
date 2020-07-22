@@ -1,16 +1,33 @@
 import { hosts } from '../env';
 import passport from '../controller/passportControllers';
+import User from '../models/usersModel';
+import { ErrorHandler } from './error';
 
-export const customAuthenticator = (req, res, next) => {
-    const { token } = req.query;
-    if (!token) {
-        throw new Error('Bad Request. Login with github first');
+export const customAuthenticator = async (req, res, next) => {
+    try {
+        const token = req?.query?.token;
+        if (!token) {
+            throw new ErrorHandler(401, 'Bad Request. Login with github first');
+        }
+        const state = token ? Buffer.from(JSON.stringify({ token })).toString('base64') : undefined;
+
+        const registeredUser = await User.findOne(
+            {
+                accounts: { $elemMatch: { kind: 'github', 'token.accessToken': token } }
+            },
+            { _id: 0 }
+        );
+
+        if (!registeredUser) {
+            throw new ErrorHandler(500, 'Error with GitHub Login. Token expired, login again');
+        }
+
+        const authenticator = passport.authenticate('discord', { kind: 'discord', state: state });
+
+        authenticator(req, res, next);
+    } catch (err) {
+        next(err);
     }
-    const state = token ? Buffer.from(JSON.stringify({ token })).toString('base64') : undefined;
-
-    const authenticator = passport.authenticate('discord', { kind: 'github', state: state });
-
-    authenticator(req, res, next);
 };
 
 export const authSuccess = (req, res) => {
@@ -18,7 +35,7 @@ export const authSuccess = (req, res) => {
         username: req.user.username,
         tokens: req.user.accounts
     };
-    const token = Buffer.from(JSON.stringify(data)).toString('base64')
+    const token = Buffer.from(JSON.stringify(data)).toString('base64');
     res.redirect(`${hosts[0]}/#/auth?token=${token}`);
 };
 
