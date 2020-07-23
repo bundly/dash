@@ -51,6 +51,7 @@ query summaryQuery($from: DateTime!, $username: [String!]) {
     }
     contributionsCollection(from: $from) {
       commitContributionsByRepository(maxRepositories: 10) {
+        resourcePath
         repository {
           nameWithOwner
           url
