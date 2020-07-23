@@ -52,24 +52,21 @@ passport.use(
             }
 
             try {
-                const user = new User(
-                    {
-                        username: username,
-                        githubProfile: profile,
-                        accounts: [
-                            {
-                                kind: 'github',
-                                uid: profile.id.toString(),
-                                token: {
-                                    accessToken: accessToken
-                                    // No refershToken given with github
-                                }
+                const user = new User({
+                    username: username,
+                    githubProfile: profile,
+                    accounts: [
+                        {
+                            kind: 'github',
+                            uid: profile.id.toString(),
+                            token: {
+                                accessToken: accessToken
+                                // No refershToken given with github
                             }
-                        ],
-                        commits: 0
-                    },
-                    { _id: 0 }
-                );
+                        }
+                    ],
+                    commits: 0
+                });
 
                 await user.save();
                 return cb(null, user);
