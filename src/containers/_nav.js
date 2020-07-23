@@ -52,18 +52,5 @@ export default [
     to: '/calendar',
     icon: 'cil-calendar',
   },
-  {
-    _tag: "CSidebarNavTitle",
-    _children: ["Authentications"],
-  },
-  {
-    _tag: "CSidebarNavItem",
-    name: "Authentication",
-    to: "/auth/Auth",
-    icon: "cil-zoom",
-    badge: {
-      color: "secondary",
-      text: "ALPHA",
-    },
-  },
+
 ];

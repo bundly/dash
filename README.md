@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <a href="https://github.com/bundly/dash"><img src="https://user-images.githubusercontent.com/28642011/87771943-ae899080-c83e-11ea-80bd-62558a90889d.png" width=600 alt="Bundly"></a>
 </h1>
@@ -126,3 +125,21 @@ Want to live on the edge of development with new features? Stay up-to-date with 
 
 ## Contributors ✨
 
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://sauravmh.com"><img src="https://avatars1.githubusercontent.com/u/28642011?v=4" width="100px;" alt=""/><br /><sub><b>Saurav M H</b></sub></a><br /><a href="https://github.com/bundly/dash/commits?author=sauravhiremath" title="Code">💻</a> <a href="https://github.com/bundly/dash/commits?author=sauravhiremath" title="Documentation">📖</a> <a href="#design-sauravhiremath" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/darshkpatel"><img src="https://avatars0.githubusercontent.com/u/11258286?v=4" width="100px;" alt=""/><br /><sub><b>Darsh Patel</b></sub></a><br /><a href="https://github.com/bundly/dash/commits?author=darshkpatel" title="Code">💻</a> <a href="https://github.com/bundly/dash/commits?author=darshkpatel" title="Documentation">📖</a> <a href="#infra-darshkpatel" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/kunal-kushwaha"><img src="https://avatars1.githubusercontent.com/u/42698533?v=4" width="100px;" alt=""/><br /><sub><b>Kunal Kushwaha</b></sub></a><br /><a href="https://github.com/bundly/dash/commits?author=kunal-kushwaha" title="Documentation">📖</a> <a href="#ideas-kunal" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
