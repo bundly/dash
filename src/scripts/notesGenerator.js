@@ -44,7 +44,7 @@ export default function yesterdayNotes(datadump, currentTime) {
     yesterday = yesterday.concat(`\r\n - Reviewed PR [${pr.title} #${pr.number}](${pr.url}) 👀\r\n `);
   });
   summaryData.contributionsCollection.commitContributionsByRepository.map((contribution) => {
-    yesterday = yesterday.concat(`\r\n - Pushed ${contribution.contributions.totalCount} Commits to [${contribution.repository.nameWithOwner}](${contribution.repository.url})\r\n `);
+    yesterday = yesterday.concat(`\r\n - Pushed ${contribution.contributions.totalCount} Commits to [${contribution.repository.nameWithOwner}](${contribution.resourcePath})\r\n `);
   });
   summaryData.contributionsCollection.issueContributions.nodes.map((issue_contribution) => {
     if(issue_contribution){
