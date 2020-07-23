@@ -9,6 +9,12 @@ const loading = (
   </div>
 )
 
+// Host
+export const host =
+  process.env.NODE_ENV === "production"
+    ? "https://bundly.tech/api"
+    : "http://localhost:5000";
+
 // Containers
 const TheLayout = React.lazy(() => import('./containers/TheLayout'));
 

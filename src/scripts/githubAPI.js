@@ -1,18 +1,22 @@
-import axios from 'axios';
+import axios from "axios";
 
-function getToken(){
-  const bundlyToken = localStorage.getItem('bundly-token');
-  let githubToken
-  if(bundlyToken) githubToken = JSON.parse(atob(bundlyToken)).tokens[0].token.accessToken
-  // console.log(githubToken)
-  return { Authorization: `Token ${githubToken}`}
+export function getToken() {
+  const bundlyToken = localStorage.getItem("bundly-token");
+  let githubToken;
+  if (bundlyToken) {
+    githubToken = JSON.parse(atob(bundlyToken)).tokens[0].token.accessToken;
+  }
+  return {
+    token: githubToken,
+    header: { Authorization: `Token ${githubToken}` },
+  };
 }
 
-export function getUsername(){
-  const bundlyToken = localStorage.getItem('bundly-token');
-  let username
-  if(bundlyToken) username = JSON.parse(atob(bundlyToken)).username
-  return username
+export function getUsername() {
+  const bundlyToken = localStorage.getItem("bundly-token");
+  let username;
+  if (bundlyToken) username = JSON.parse(atob(bundlyToken)).username;
+  return username;
 }
 
 export const summaryQuery = `
@@ -101,24 +105,34 @@ query summaryQuery($from: DateTime!, $username: [String!]) {
 
 export function markNotification(id) {
   // console.log(`Using`,  getToken())
-  return axios.patch(`https://api.github.com/notifications/threads/${id}`, {
-  }, { headers: getToken() })
+  return axios.patch(
+    `https://api.github.com/notifications/threads/${id}`,
+    {},
+    { headers: getToken().header }
+  );
 }
 
-export  function githubQuery({time}) {
+export function githubQuery({ time }) {
   // console.log(getToken(), getUsername())
 
   const targetTime = new Date(time);
   targetTime.setDate(targetTime.getDate() - 1);
   return axios({
-    url: 'https://api.github.com/graphql',
-    method: 'post',
+    url: "https://api.github.com/graphql",
+    method: "post",
     data: JSON.stringify({
       query: summaryQuery,
       variables: { from: targetTime.toISOString(), username: getUsername() },
     }),
-    headers: getToken(),
+    headers: getToken().header,
   });
 }
-export const githubNotificationFetcher =  () => axios.get('https://api.github.com/notifications', { headers: getToken() });
-export const githubSearch =  (text) => axios.get(`https://api.github.com/search/issues?q=${encodeURI(text)}%20org%3Amlh-Fellowship`, { headers: getToken() });
+export const githubNotificationFetcher = () =>
+  axios.get("https://api.github.com/notifications", { headers: getToken().header });
+export const githubSearch = (text) =>
+  axios.get(
+    `https://api.github.com/search/issues?q=${encodeURI(
+      text
+    )}%20org%3Amlh-Fellowship`,
+    { headers: getToken().header }
+  );

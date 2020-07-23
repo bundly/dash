@@ -4,7 +4,6 @@ import { Strategy as DiscordStrategy } from 'passport-discord';
 
 import User from '../models/usersModel';
 import { callbackUrl } from '../env';
-import { logger } from '../middlewares';
 
 const discordScopes = ['identify', 'email', 'guilds', 'messages.read'];
 
@@ -27,7 +26,7 @@ passport.use(
         },
         async (accessToken, refreshToken, profile, cb) => {
             const username = profile.username;
-            const duplicate = await User.findOne({ username });
+            const duplicate = await User.findOne({ username }, { _id: 0 });
 
             if (duplicate) {
                 let needsUpdate = false;
@@ -44,7 +43,7 @@ passport.use(
                             'accounts.kind': 'github'
                         },
                         { $set: { 'accounts.$.token.accessToken': accessToken } },
-                        { new: true }
+                        { new: true, fields: { _id: 0 } }
                     );
 
                     return cb(null, updatedUser);
@@ -99,12 +98,43 @@ passport.use(
                 return cb(new Error('GitHub Login not found. Login with GitHub first'), null);
             }
 
-            const registeredUser = await User.findOne({
-                accounts: { $elemMatch: { kind: 'github', 'token.accessToken': token } }
-            });
+            const registeredUser = await User.findOne(
+                {
+                    accounts: { $elemMatch: { kind: 'github', 'token.accessToken': token } }
+                },
+                { _id: 0 }
+            );
 
             if (!registeredUser) {
                 return cb(new Error('Error with GitHub Login. Token expired, login again'), null);
+            }
+
+            let needsUpdate = false,
+                duplicate = false;
+            registeredUser.accounts.forEach(account => {
+                if (account.kind === 'discord') {
+                    duplicate = true;
+                    if (account.token.accessToken !== accessToken) {
+                        needsUpdate = true;
+                    }
+                }
+            });
+
+            if (duplicate && needsUpdate) {
+                const updatedUser = await User.findOneAndUpdate(
+                    {
+                        username: registeredUser.username,
+                        'accounts.kind': 'discord'
+                    },
+                    { $set: { 'accounts.$.token.accessToken': accessToken } },
+                    { new: true, fields: { _id: 0 } }
+                );
+
+                return cb(null, updatedUser);
+            }
+
+            if (duplicate) {
+                return cb(null, registeredUser);
             }
 
             try {
@@ -120,7 +150,7 @@ passport.use(
                         accounts: { $elemMatch: { kind: 'github', 'token.accessToken': token } }
                     },
                     { discordProfile: profile, $push: { accounts: discordTokens } },
-                    { new: true }
+                    { new: true, fields: { _id: 0 } }
                 );
 
                 return cb(null, updatedUser);
