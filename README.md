@@ -99,10 +99,9 @@ Here you can:
 Want to live on the edge of development with new features? Stay up-to-date with our contributor discussions and road-mapping in the [@Bundly/dash-Wiki](https://github.com/bundly/dash/wiki).
 
 ## Tech Stack Used
-- React - SSR
+- React
 - Passport for authentication
-- Apollo
-- GitHub API
+- GitHub's GraphQL APIs
 - Express
 - MongoDB
 
