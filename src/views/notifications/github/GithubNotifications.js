@@ -28,7 +28,7 @@ const getBadge = (type) => {
 
 const handleToDo = (item) => {
   const currentList = localStorage.getItem('todo');
-  localStorage.setItem('todo', currentList.concat(`\n\r - Take a look at [${item.title}](${item.repo_url})`));
+  localStorage.setItem('todo', currentList.concat(`\n\r - [ ] Take a look at [${item.title}](${item.repo_url})`));
 };
 
 const cleanData = (data) => {

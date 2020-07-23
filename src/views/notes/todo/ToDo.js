@@ -20,22 +20,26 @@ const converter = new ShowdownConverter({
 });
 
 const ToDo = (props) => {
-  const [value, setValue] = useState(localStorage.getItem('todo') ?? `
+  const [value, setValue] = useState(
+    localStorage.getItem("todo") ??
+      `
 ## To Do
- - Example Task`);
+ - Example Task
+ `
+  );
 
   const [selectedTab, setSelectedTab] = useState("write");
   const [preview, setPreview] = useState(false);
-  localStorage.setItem('todo',value)
+  localStorage.setItem("todo", value);
   useEffect(() => {
-    setValue(localStorage.getItem('todo'))
-    let updateStorage = setInterval(()=>{
-      setValue(localStorage.getItem('todo'))
-    }, 1000)
+    setValue(localStorage.getItem("todo"));
+    let updateStorage = setInterval(() => {
+      setValue(localStorage.getItem("todo"));
+    }, 1000);
 
     return () => {
-      clearInterval(updateStorage)
-    }
+      clearInterval(updateStorage);
+    };
   }, []);
 
   return (
@@ -57,8 +61,7 @@ const ToDo = (props) => {
               onChange={() => setPreview(!preview)}
             />
           </CCol>
-          <CCol sm="2" md="2" lg="2">
-          </CCol>
+          <CCol sm="2" md="2" lg="2"></CCol>
         </CRow>
       </CCardHeader>
       <CCardBody>
@@ -66,7 +69,10 @@ const ToDo = (props) => {
           <CCol>
             <ReactMde
               value={value}
-              onChange={(val)=>{setValue(val); localStorage.setItem('todo', val)}}
+              onChange={(val) => {
+                setValue(val);
+                localStorage.setItem("todo", val);
+              }}
               selectedTab={selectedTab}
               onTabChange={setSelectedTab}
               minEditorHeight={props.height ?? 650}

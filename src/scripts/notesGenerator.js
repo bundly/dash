@@ -15,7 +15,7 @@ function getCommentCount(issueComments, currentTime) {
 
 // Handles Suggestions for multiple pods from discussions
 function getSuggestions(discussions, username){
-  let suggestions = `\r\n## Suggestions from Previous Discussions`
+  let suggestions = `\r\n### Suggestions from Previous Discussions`
   discussions.nodes.map(teamDiscussion => {
     const podName = teamDiscussion.name
     const discussionTitle = teamDiscussion.discussions.nodes[0].title
