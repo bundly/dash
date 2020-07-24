@@ -79,6 +79,11 @@ const TheHeader = () => {
               <i className="cib-discord"> </i> Discord Logged In
             </button>
           )}
+          <a style={{paddingLeft: 10}}>
+            <button type="button" className="btn btn-dark">
+                <i className="cib-github"> </i> Github Logged In
+            </button>
+          </a>
         </div>
       </CSubheader>
     </CHeader>
