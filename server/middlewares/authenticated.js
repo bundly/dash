@@ -33,7 +33,8 @@ export const customAuthenticator = async (req, res, next) => {
 export const authSuccess = (req, res) => {
     const data = {
         username: req.user.username,
-        tokens: req.user.accounts
+        tokens: req.user.accounts,
+        avatar: req.user.githubProfile._json.avatar_url
     };
     const token = Buffer.from(JSON.stringify(data)).toString('base64');
     res.redirect(`${hosts[0]}/#/auth?token=${token}`);

@@ -7,7 +7,12 @@ import {
   CImg
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-
+function getAvatar() {
+  const bundlyToken = localStorage.getItem("bundly-token");
+  let avatar_url;
+  if (bundlyToken) avatar_url = JSON.parse(atob(bundlyToken)).avatar;
+  return avatar_url;
+}
 const TheHeaderDropdown = () => {
   return (
     <CDropdown
@@ -18,7 +23,7 @@ const TheHeaderDropdown = () => {
       <CDropdownToggle className="c-header-nav-link" caret={false}>
         <div className="c-avatar">
           <CImg
-            src={'avatars/6.jpg'}
+            src={getAvatar()??'https://avatars.dicebear.com/api/male/example.svg'}
             className="c-avatar-img"
             alt="fellowship@mlh.io"
           />
