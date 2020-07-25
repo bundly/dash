@@ -114,29 +114,30 @@ $white: #fff;
 }
 
 .ellipses-container {
-  width: 20vw;
-  height: 20vw;
+  width: 25vw;
+  height: 25vw;
   border-radius: 50%;
   margin: 0 auto;
   position: relative;
-  top: 1.5rem;
+  top: 1rem;
   background: url(https://i.giphy.com/media/l0iVAuEtPF5KRbqmvd/source.gif);
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 0.5;
 }
 
 @media only screen and (max-width: 600px) {
   .ellipses-container {
-    width: 30vw;
-    height: 30vw;
+    width: 60vw;
+    height: 60vw;
   }
 }
 
 .login-github {
   text-align: center;
   text-transform: uppercase;
-  margin-left: 6rem;
-  margin-top: 6rem;
+  margin-top: 9rem;
   letter-spacing: 0.3rem;
   font-size: 1.6rem;
   font-weight: 400;
@@ -298,6 +299,6 @@ $white: #fff;
   margin-bottom: 3rem;
 
   &:hover {
-    color: black;
+    color: $tiber;
   }
 }

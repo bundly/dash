@@ -21,26 +21,6 @@ const Login = ({ authenticate }) => {
         <div className={styled.content__wrapper}>
           <header className={styled.header}>
             <h1 className="d-flex justify-content-center display-3">BUNDLY</h1>
-            {/* <ul
-              className={`${styled["social-container"]} ${styled.header__item}`}
-            >
-              <li
-                className={`${styled.social__icon} ${styled["social__icon--fb"]}`}
-              >
-                <img
-                  src="https://image.flaticon.com/icons/svg/2111/2111425.svg"
-                  alt="github"
-                />
-              </li>
-              <li
-                className={`${styled.social__icon} ${styled["social__icon--dr"]}`}
-              >
-                <img
-                  src="https://image.flaticon.com/icons/svg/841/841568.svg"
-                  alt="website"
-                />
-              </li>
-            </ul> */}
           </header>
           <p className={styled.coords}>S 75° 6' 0.027" / E 123° 19' 59.998"</p>
           <div className={styled["ellipses-container"]}>
