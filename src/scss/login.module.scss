@@ -145,22 +145,6 @@ $white: #fff;
   opacity: 0.8;
 }
 
-@media only screen and (max-width: 561px) {
-  .login-github {
-    font-size: 1rem;
-  }
-}
-@media only screen and (max-width: 470px) {
-  .login-github {
-    margin-top: 15rem;
-    margin-left: 5rem;
-  }
-}
-@media only screen and (max-width: 455px) {
-  .login-github {
-    margin-left: 1rem;
-  }
-}
 
 .ellipses {
   border-radius: 50%;
