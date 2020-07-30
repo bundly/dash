@@ -5,8 +5,10 @@ name: React CI
 
 on:
   push:
+    paths-ignore: [ 'server/**', 'media/**' ]
     branches: [ master ]
   pull_request:
+    paths-ignore: [ 'server/**', 'media/**' ]
     branches: [ master ]
 
 jobs:
