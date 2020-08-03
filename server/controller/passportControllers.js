@@ -15,7 +15,6 @@ passport.use(
             callbackURL: `${callbackUrl}/auth/github/callback`,
             scope: [
                 'repo:status',
-                'public_repo',
                 'read:org',
                 'notifications',
                 'read:user',
