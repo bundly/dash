@@ -61,6 +61,8 @@ export default function yesterdayNotes(datadump, currentTime) {
   } catch (error) {
     console.log('BUNDLY NOT ALLOWED IN ORG PLEASE ASK FOR PERMISSION')
   }
+  if( yesterday === `> Generated using [@bundly](https://github.com/bundly)\r\n\r\n**Yesterday**:\r\n `)
+  yesterday = yesterday.concat(`\r\n  No activity on Github in the last 24 hours  \r\n`);
 
   return yesterday;
 }
