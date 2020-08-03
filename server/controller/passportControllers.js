@@ -20,7 +20,6 @@ passport.use(
                 'notifications',
                 'read:user',
                 'user:email',
-                'user:follow',
                 'read:discussion'
             ]
         },
