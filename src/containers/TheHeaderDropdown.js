@@ -38,7 +38,7 @@ const TheHeaderDropdown = () => {
         >
           <strong>Settings</strong>
         </CDropdownItem>
-        <CDropdownItem>
+        <CDropdownItem onClick={() => { localStorage.removeItem("bundly-token"); window.location.href = "https://bundly.tech";} } >
           <CIcon name="cil-user" className="mfe-2" />Logout
         </CDropdownItem>
 
