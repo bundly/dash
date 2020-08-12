@@ -109,7 +109,7 @@ const Login = ({ authenticate }) => {
 {/* AboutUS */}
 
 <div className={`${styled.slide} ${styled.AboutUs}`} >
-            <div className={`${styled.FeatureIntro} ${styled.TextCard}`}>
+            <div className={`${styled.TextCard}`}>
                 
                 
                 <div className={styled.IntroText}>
@@ -181,7 +181,7 @@ const Login = ({ authenticate }) => {
 {/* Contribute Section */}
 
 <div className={`${styled.slide} ${styled.Contribute}`}>
-            <div className={styled.TextContainer}>
+            <div className={styled.IntroText}>
                 <h1>
                     Contribute
                 </h1>
