@@ -16,6 +16,7 @@ const Login = ({ authenticate }) => {
   }, [authenticate]);
 
   return (
+    <div className="MainContainer">
     <div className="container-fluid">
       <div className={styled["landing-page-container"]}>
         <div className={styled.content__wrapper}>
@@ -54,6 +55,146 @@ const Login = ({ authenticate }) => {
           </div>
         </div>
       </div>
+    </div>
+
+{/* Features Section */}
+
+<div className={`${styled.slide} ${styled.AlternateFeatures}`} >
+            <div className={styled.TextContainer}>
+                <span className={styled.upper}>
+                    UpperLineText
+                </span>
+                
+                <div className={styled.IntroText}>
+                    <h1>Heading</h1>
+                    <p>
+                        Most bee jobs are small ones. But bees know that every small job, if it's done well means a lot. But choose carefully because you'll stay in the job you pick for the rest of your life.
+                        
+                    </p>
+                </div>
+                <span className={styled.lower}>
+                    End Line with Link
+                </span>
+            </div>
+            <div className={styled.CardsContainer}>
+            <div className={styled.FeaturesFlex}>
+                <div className={styled.Feature}>
+                    <h1>Feature</h1>
+                     
+                    <span>link</span>
+                </div>
+                <div className={styled.Feature}>
+                    <h1>Feature</h1>
+                    
+                    <span>link</span>
+                </div>
+               
+            </div>
+            <div className={styled.FeaturesFlex}>
+                <div className={styled.Feature}>
+                    <h1>Feature</h1>
+                     
+                    <span>link</span>
+                </div>
+                <div className={styled.Feature}>
+                    <h1>Feature</h1>
+                    
+                    <span>link</span>
+                </div>
+               
+            </div>
+        </div>
+        </div>
+
+{/* AboutUS */}
+
+<div className={`${styled.slide} ${styled.AboutUs}`} >
+            <div className={`${styled.FeatureIntro} ${styled.TextCard}`}>
+                
+                
+                <div className={styled.IntroText}>
+                    <h1>AboutUs</h1>
+                    <p>
+                        Most bee jobs are small ones. But bees know that every small job, if it's done well means a lot. But choose carefully because you'll stay in the job you pick for the rest of your life.
+                        
+                    </p>
+                </div>
+                <span className={styled.lower}>
+                    End Line with Link
+                </span>
+            </div>
+            <div className={styled.ImageCardContainer}>
+                <div className={styled.ImageCard}>
+                    <span>
+                        WORD
+                    </span>
+                   
+                </div>
+                <div className={styled.ImageCard}>
+                    <span>
+                        WORD
+                    </span>
+                    
+                </div>
+                <div className={styled.ImageCard}>
+                    <span>
+                        WORD
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+
+{/* OptionalSectionAccToTemplate */}
+
+<div className={`${styled.slide} ${styled.OptionalSlide}`}>
+            <div className={styled.TextContainer}>
+                <span className={styled.upper}>
+                    UpperLineText
+                </span>
+                
+                <div className={styled.IntroText}>
+                    <h1>Heading</h1>
+                    <p>
+                        Most bee jobs are small ones. But bees know that every small job, if it's done well means a lot. But choose carefully because you'll stay in the job you pick for the rest of your life.
+                        
+                    </p>
+                </div>
+                <span className={styled.lower}>
+                    End Line with Link
+                </span>
+            </div>
+            <div className={styled.FeaturesFlex}>
+                <div className={styled.Feature}>
+                    <h1>Feature</h1>
+                    
+                    <span>link</span>
+                </div>
+                <div className={styled.Feature}>
+                    <h1>Feature</h1>
+                    
+                    <span>link</span>
+                </div>
+            </div>
+        </div> 
+
+{/* Contribute Section */}
+
+<div className={`${styled.slide} ${styled.Contribute}`}>
+            <div className={styled.TextContainer}>
+                <h1>
+                    Contribute
+                </h1>
+                <p>
+                    If we lived in the topsy-turvy world Mr. Benson imagines, just think of what would it mean. I would have to negotiate with the silkworm for the elastic in my britches!
+                </p>
+                <span className={styled.lower}>
+                    End Line with Link
+                </span>
+            </div>
+            
+        </div>
+
     </div>
   );
 };

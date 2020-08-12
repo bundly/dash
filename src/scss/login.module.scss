@@ -287,3 +287,308 @@ $white: #fff;
     color: $tiber;
   }
 }
+
+
+// Landing Page Sections CSS
+
+// Features Section 
+
+.slide{
+  height:100%;
+  position: relative;
+  padding:1em;
+  }
+
+ 
+  
+  .AlternateFeatures
+	{
+		display: flex;
+		flex-direction: column;
+		gap:2em;
+		margin-top:15vh;
+  }
+  
+  .AlternateFeatures > .TextContainer
+  {
+    padding-right:2em;
+    box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
+  }
+
+  .AlternateFeatures > .TextContainer, #AlternateFeatures .FeaturesFlex
+  {
+    flex-basis:50%;
+  }
+  .Feature
+  {
+    height:100%;
+  }
+
+  .TextContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* margin:1em; */
+    padding:2em;
+    box-shadow:0px 2px 3px 0px rgba(0,0,0,.25);
+    border-radius: 2px;;
+    position: relative;
+    gap:3em;
+  }
+
+
+  .upper,.lower{
+    font-weight: 600;
+  }
+  .IntroText h1::before{
+    position: absolute;
+    content:'';
+    width:100%;
+    left:10%;
+    bottom:0;
+    height: 30%;;
+    z-index: -1;
+    background-color: rgba(0, 81, 255, 0.288);
+  }
+
+  .IntroText h1{
+    margin-bottom: 1em;
+    display: inline-block;
+    position: relative;
+  }
+  .IntroText p{
+    line-height: 1.5em;
+  }
+
+  .CardsContainer{
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+  }
+
+  .FeaturesFlex{
+    display: flex;
+    gap:1em;
+    justify-content: space-between;
+    align-items:center;
+  }
+
+  .Feature{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding:1em;
+    height:40vh;
+    flex-basis:50%;
+    background-size: cover;
+    color: #fff;
+    box-shadow:  0 0 5px 0 rgba(0,0,0,0.25);
+  }
+  
+  .Feature h1{
+    margin-bottom: 1em;;
+  }
+  
+  .Feature p{
+    font-size:0.8em;
+  }
+  
+  .Feature:nth-child(1)
+  {
+    background-image: url(https://images.unsplash.com/photo-1527769929977-c341ee9f2033?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
+  }
+  
+  .Feature:nth-child(2)
+  {
+    background-image: url(https://images.unsplash.com/photo-1527239441953-caffd968d952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
+  }
+
+  // AboutUs Section
+
+  .AboutUs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1em;
+    
+    
+  }
+  .TextCard{
+    padding:1em;
+    box-shadow: none;;
+  }
+
+  .ImageCardContainer{
+    display:flex;
+    gap:2em;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ImageCard{
+    padding:1em;
+    height:150px;
+    width:250px;
+    display:flex;
+    align-items:flex-end;
+    justify-content: space-evenly;
+    color:white;
+    background-size: cover;
+    box-shadow:0 0 10px 1px rgba(0,0,0,0.25);
+    background-color: rgb(0, 0, 0);
+  
+  }
+  .ImageCard:nth-child(1)
+{
+	background-image: url(https://images.unsplash.com/photo-1505676745438-db5586a18848?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
+}
+.ImageCard:nth-child(2){
+	background-image: url(https://images.unsplash.com/photo-1455243629161-1f993797f78d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
+}
+.ImageCard:nth-child(3)
+{
+	background-image: url(https://images.unsplash.com/photo-1484041413168-4489d86c022c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
+}
+
+// Optional Section
+
+.OptionalSlide{
+	display: flex;
+	flex-direction: column;
+	gap:2em;
+}
+
+  // RESPONSIVE CSS FOR LARGE SCREENS
+
+  @media only screen and (min-width: 720px) {
+    body{
+      font-size:17px;
+    }
+    
+    .slide{
+      padding-left:10vw;
+      padding-right:10vw;
+    }
+   
+      
+      .AlternateFeatures
+      {
+        display: flex;
+        gap:2em;
+        margin-top:15vh;
+        flex-direction: row;
+      }
+      .AlternateFeatures > .TextContainer{
+        padding-right:2em;
+        box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
+      }
+    
+      .AlternateFeatures > .TextContainer, .AlternateFeatures .FeaturesFlex{
+        flex-basis:50%;}
+          .Feature{
+          height:100%;
+        }
+  
+      .CardsContainer{
+        display: flex;
+        flex-direction: column;
+        gap:1em;
+      }
+      .CardsContainer {
+        width:50%;
+      }
+      
+      // AboutUs Section
+
+      .AboutUs{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content:space-evenly;
+        align-items: center;
+        gap:1em;
+        margin:3em 0em;
+        padding-left:0;
+        padding-right:0;
+        margin:10vh 10vw;
+      }
+
+      .TextCard{
+        flex-basis:50%;
+        padding:2em;
+      }
+
+      .ImageCardContainer{
+        flex-basis:50%;
+        display:flex;
+        gap:2em;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      // Optional Section
+      .OptionalSlide{
+        margin-top:15vh;
+      }
+    }
+
+    
+
+    
+    
+
+
+  @media only screen and (min-width: 1020px)
+  {
+    .TextContainer{
+      box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
+    }
+    .TextContainer, .FeaturesFlex{
+      flex-basis:50%;}
+        .Feature{
+        height:100%;
+      }
+
+
+      // AboutUs Section
+
+      .AboutUs{
+		
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        gap:1em;
+        
+        background-size:40vw;
+        background-position: left bottom;
+        background-repeat: no-repeat;
+        margin:3em 0em;
+        padding-left:0;
+        padding-right:0;
+        margin:10vh 10vw;
+      }
+      .TextCard{
+	
+        width:50%;
+        padding:2em;
+        
+    
+      }
+
+      .ImageCardContainer{
+        display:flex;
+        gap:2em;
+        justify-content: flex-end;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+  
+      // Optional Section
+      .OptionalSlide{
+        margin-top:15vh;
+        flex-direction: row;
+      }
+  }
