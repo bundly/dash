@@ -194,7 +194,9 @@ const Login = ({ authenticate }) => {
                     If we lived in the topsy-turvy world Mr. Benson imagines, just think of what would it mean. I would have to negotiate with the silkworm for the elastic in my britches!
                 </p>
                 <span className={styled.lower}>
-                    End Line with Link
+                    <a href="https://github.com/bundly/dash/blob/master/CONTRIBUTING.md">
+                      Github
+                    </a>
                 </span>
             </div>
             
