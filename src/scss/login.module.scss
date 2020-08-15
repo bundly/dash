@@ -352,6 +352,7 @@ $white: #fff;
   }
   .GifCard > img{
     width:100%;
+    
     box-shadow:  0 0 5px 0 rgba(0,0,0,0.25);
   }
 
@@ -372,8 +373,11 @@ $white: #fff;
   
   // AboutUs Section
 
- 
-// Optional Section
+  .AboutUs > .GifCard > img{
+    box-shadow: none;
+    height:50vh;
+  }
+
 
 
 .Contribute{
@@ -388,6 +392,7 @@ $white: #fff;
     padding-left:10vw;
     padding-right:10vw;
     margin-top:10em;
+    font-size:17px;
   }
 
   .Features
@@ -455,13 +460,17 @@ $white: #fff;
       }
       .GifCard >img{
         box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
+        
       }
 
       
       // AboutUs Section
-
+      .AboutUs > .GifCard > img{
+        box-shadow: none;
+        height:auto;
+      }
       
-      // Optional Section
+     
       
     }
 

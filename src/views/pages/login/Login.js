@@ -156,15 +156,22 @@ const Login = ({ authenticate }) => {
 
 {/* AboutUS */}
 
-<div className={`${styled.Features} ${styled.slide}`} >
+<div className={`${styled.Features} ${styled.AboutUs} ${styled.slide}`} >
             <div className={styled.TextContainer}>
                 
                 <div className={styled.IntroText}>
-                    <h1>Track tasks easily</h1>
-                    <p>
-                        Most bee jobs are small ones. But bees know that every small job, if it's done well means a lot. But choose carefully because you'll stay in the job you pick for the rest of your life.
-                        
-                    </p>
+                    <h1>About Bundly</h1>
+                    <ul>
+                      <li>
+                      Let Bundly do its work, so you can focus on yours.
+                      </li>
+                      <li>
+                      Bundly is a single heaven to find all your information regarding the MLH Fellowship at once place!
+                      </li>
+                      <li>
+                      It let's you take your utility tools, a step further. Designed specifically to enhance your Fellowship experience.
+                      </li>
+                    </ul>
                 </div>
                 
             </div>
