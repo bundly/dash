@@ -3,10 +3,12 @@ $tiber: #09383e;
 $elephant: #0c383e;
 $white: #fff;
 
+
 .landing-page-container {
   width: 100%;
   min-height: 100%;
   overflow: hidden;
+  
 }
 
 .content__wrapper {
@@ -110,7 +112,7 @@ $white: #fff;
 }
 @media only screen and (max-width: 561px) {
   .coords {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -288,7 +290,7 @@ $white: #fff;
   }
 }
 
-
+// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Landing Page Sections CSS
 
 // Features Section 
@@ -297,59 +299,60 @@ $white: #fff;
   height:100%;
   position: relative;
   padding:1em;
+  font-size:14px;
   margin-top:3em;
   }
 
  
   
-  .AlternateFeatures
+  .Features
 	{
 		display: flex;
-		flex-direction: column;
-		gap:2em;
-		
-  }
-  
-  .AlternateFeatures > .TextContainer
-  {
-    padding-right:2em;
-    // box-shadow:10px 1px 20px 1px rgba(0,0,0,0.25);
-  }
-
-  .AlternateFeatures > .TextContainer, #AlternateFeatures .FeaturesFlex
-  {
-    flex-basis:50%;
-  }
-  .Feature
-  {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0em;
+    margin-top:2em;
     height:100%;
+		
   }
 
   .TextContainer{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* margin:1em; */
     padding:2em;
     box-shadow:0px 2px 3px 0px rgba(0,0,0,.25);
     border-radius: 2px;;
     position: relative;
     gap:3em;
   }
-
-
-  .upper,.lower{
-    font-weight: 600;
+  
+  .Features > .TextContainer
+  {
+    padding-right:2em;
+    height:fit-content;
+    align-self: center;
+    
   }
-  .IntroText h1::before{
-    position: absolute;
-    content:'';
+
+  .Features > .TextContainer
+  {
+    flex-basis:50%;
+    box-shadow:none;
+  }
+
+  .GifCard{
+    
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .GifCard > img{
     width:100%;
-    left:10%;
-    bottom:0;
-    height: 30%;;
-    z-index: -1;
-    background-color: rgba(0, 81, 255, 0.288);
+    box-shadow:  0 0 5px 0 rgba(0,0,0,0.25);
   }
 
   .IntroText h1{
@@ -357,183 +360,109 @@ $white: #fff;
     display: inline-block;
     position: relative;
   }
-  .IntroText p{
+
+  .IntroText li, .IntroText p{
     line-height: 1.5em;
   }
 
-  .CardsContainer{
-    display: flex;
-    flex-direction: column;
-    gap:0.5em;
-  }
+  
 
-  .FeaturesFlex{
-    display: flex;
-    gap:0.5em;
-    justify-content: space-between;
-    align-items:center;
-  }
+  
 
-  .Feature{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding:1em;
-    height:40vh;
-    flex-basis:50%;
-    background-size: cover;
-    color: #fff;
-    box-shadow:  0 0 5px 0 rgba(0,0,0,0.25);
-  }
   
-  .Feature h1{
-    margin-bottom: 1em;;
-  }
-  
-  .Feature p{
-    font-size:0.8em;
-  }
-  
-  .Feature:nth-child(1)
-  {
-    background-image: url(https://images.unsplash.com/photo-1527769929977-c341ee9f2033?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
-  }
-  
-  .Feature:nth-child(2)
-  {
-    background-image: url(https://images.unsplash.com/photo-1527239441953-caffd968d952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
-  }
-
   // AboutUs Section
 
-  .AboutUs{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:1em;
-    
-    
-  }
-  .TextCard{
-    padding:1em;
-    box-shadow: none;;
-  }
-
-  .ImageCardContainer{
-    display:flex;
-    gap:2em;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .ImageCard{
-    padding:1em;
-    height:150px;
-    width:250px;
-    display:flex;
-    align-items:flex-end;
-    justify-content: space-evenly;
-    color:white;
-    background-size: cover;
-    box-shadow:0 0 10px 1px rgba(0,0,0,0.25);
-    background-color: rgb(0, 0, 0);
-  
-  }
-  .ImageCard:nth-child(1)
-{
-	background-image: url(https://images.unsplash.com/photo-1505676745438-db5586a18848?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
-}
-.ImageCard:nth-child(2){
-	background-image: url(https://images.unsplash.com/photo-1455243629161-1f993797f78d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
-}
-.ImageCard:nth-child(3)
-{
-	background-image: url(https://images.unsplash.com/photo-1484041413168-4489d86c022c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60);
-}
-
+ 
 // Optional Section
 
-.OptionalSlide{
-	display: flex;
-	flex-direction: column;
-	gap:2em;
+
+.Contribute{
+  margin-bottom: 10em;;
 }
 
-  // RESPONSIVE CSS FOR LARGE SCREENS
+  // Media Queries
+@media only screen and (min-width:400px)
+{
 
+  .slide{
+    padding-left:10vw;
+    padding-right:10vw;
+    margin-top:10em;
+  }
+
+  .Features
+	{
+		
+    margin-top:4em;
+		
+  }
+  
+
+
+     
+
+}
   @media only screen and (min-width: 720px) {
-    body{
-      font-size:17px;
-    }
     
     .slide{
       padding-left:10vw;
       padding-right:10vw;
+      margin-top:10em;
+    }
+
+    .TextContainer,.TextCard{
+      box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
     }
    
-      
-      .AlternateFeatures
+      .Features
       {
         display: flex;
         gap:2em;
-        margin-top:15vh;
+        flex-direction: row;
+        margin-top:7em;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .Features:nth-child(1)
+      {
+        margin-top:0;
+      }
+
+      .Features:nth-child(odd)
+      {
         flex-direction: row;
       }
-      .AlternateFeatures > .TextContainer{
-        padding-right:2em;
-        box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
+
+      .Features:nth-child(even)
+      {
+        flex-direction: row-reverse;
+      }
+
+      .Features > .TextContainer{
+        flex-basis:50%;
       }
     
-      .AlternateFeatures > .TextContainer, .AlternateFeatures .FeaturesFlex{
-        flex-basis:50%;}
-          .Feature{
-          height:100%;
-        }
-  
-      .CardsContainer{
-        display: flex;
-        flex-direction: column;
-        gap:1em;
+      
+
+        
+
+   
+
+     
+      .GifCard{
+        flex-basis:50%;
       }
-      .CardsContainer {
-        width:50%;
+      .GifCard >img{
+        box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
       }
+
       
       // AboutUs Section
 
-      .AboutUs{
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content:space-evenly;
-        align-items: center;
-        gap:1em;
-        margin:3em 0em;
-        padding-left:0;
-        padding-right:0;
-        margin:10vh 10vw;
-      }
-
-      .TextCard{
-        flex-basis:50%;
-        padding:2em;
-      }
-
-      .ImageCardContainer{
-        flex-basis:50%;
-        display:flex;
-        gap:2em;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-
+      
       // Optional Section
-      .OptionalSlide{
-        margin-top:15vh;
-      }
+      
     }
 
     
@@ -544,52 +473,22 @@ $white: #fff;
 
   @media only screen and (min-width: 1020px)
   {
+    
     .TextContainer{
-      box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
-    }
-    .TextContainer, .FeaturesFlex{
       flex-basis:50%;}
-        .Feature{
-        height:100%;
-      }
+      
 
+      .Features
+      {
+        gap:4em;
+      }
+     
+
+      
 
       // AboutUs Section
 
-      .AboutUs{
-		
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-end;
-        gap:1em;
-        
-        background-size:40vw;
-        background-position: left bottom;
-        background-repeat: no-repeat;
-        margin:3em 0em;
-        padding-left:0;
-        padding-right:0;
-        margin:10vh 10vw;
-      }
-      .TextCard{
-	
-        width:50%;
-        padding:2em;
-        
-    
-      }
+      
+   
 
-      .ImageCardContainer{
-        display:flex;
-        gap:2em;
-        justify-content: flex-end;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-  
-      // Optional Section
-      .OptionalSlide{
-        margin-top:15vh;
-        flex-direction: row;
-      }
   }

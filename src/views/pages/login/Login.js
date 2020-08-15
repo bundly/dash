@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { default as axios } from "axios";
-
+import AboutUsImage from "../../../assets/Images/user_interface_.svg";
 import { host } from "../../../App";
 import styled from "../../../scss/login.module.scss";
 
@@ -17,7 +17,7 @@ const Login = ({ authenticate }) => {
 
   return (
     <div className="MainContainer">
-    <div className="container-fluid">
+    <div className={styled.containerfluid}>
       <div className={styled["landing-page-container"]}>
         <div className={styled.content__wrapper}>
           <header className={styled.header}>
@@ -58,125 +58,123 @@ const Login = ({ authenticate }) => {
     </div>
 
 {/* Features Section */}
-
-<div className={`${styled.slide} ${styled.AlternateFeatures}`} >
+<div className={styled.slide} >
+<div className={`${styled.Features}`} >
             <div className={styled.TextContainer}>
-                <span className={styled.upper}>
-                    UpperLineText
-                </span>
                 
                 <div className={styled.IntroText}>
-                    <h1>Heading</h1>
+                    <h1>Generate Standup Notes in markdown automatically</h1>
+                    <p>
+                    Bundly Looks through the Pull Requests Reviewed, Issues inreracted with, Pull requests opened, commits made and even the previous day's standup and generates standup notes.
+                    </p>
+                    <p>
+                    Also supports people in multiple pods and shows sugessions from previous day's standup notes from all pods !
+                    </p>
+                </div>
+                
+            </div>
+            
+            <div className={styled.GifCard}>
+              <img src="https://user-images.githubusercontent.com/11258286/87809620-50c66a00-c879-11ea-8f1b-b7885c828333.gif" alt="gif-Feature"></img>
+            
+            
+        </div>
+        </div>
+
+        <div className={`${styled.Features}`} >
+            <div className={styled.TextContainer}>
+                <div className={styled.IntroText}>
+                    <h1>Access internal discussions instantly</h1>
+                    <p>
+                    Quickly search through MLH Fellowship Org discussions with the search tool. 
+                    </p>
+                </div>
+            </div>
+            
+            <div className={styled.GifCard}>
+              <img src="https://user-images.githubusercontent.com/28642011/87812445-d6e4af80-c87d-11ea-923e-5efeebf950dc.gif" alt="gif-Feature"></img>
+            
+           
+        </div>
+        </div>
+
+        <div className={`${styled.Features}`} >
+            <div className={styled.TextContainer}>
+                
+                <div className={styled.IntroText}>
+                    <h1>Never miss out on the important stuff</h1>
+                    <p>
+                    Receive personalized notifications for your repositories including:</p>
+                    <ul>
+                      <li>Issues and their comments</li>
+                      <li>Pull Requests and their comments</li>
+                      <li>Comments on any commits</li>
+                      </ul>
+
+                      Notifications are also sent for conversations in unwatched repositories when the user is involved including: 
+                      <ul>
+                        <li>@mentions</li>
+                        <li>Issue assignments</li>
+                        <li>Commits the user authors or commits</li>
+                        <li>Any discussion in which the user actively participates</li>
+                      </ul>
+                     
+                   
+                </div>
+                
+            </div>
+            
+            <div className={styled.GifCard}>
+              <img src="https://user-images.githubusercontent.com/11258286/87809923-cfbba280-c879-11ea-8364-a0dee9df61e2.gif" alt="gif-Feature"></img>
+            </div>
+           
+        
+        </div>
+
+        <div className={`${styled.Features}`} >
+            <div className={styled.TextContainer}>
+                
+                <div className={styled.IntroText}>
+                    <h1>Track tasks easily</h1>
                     <p>
                         Most bee jobs are small ones. But bees know that every small job, if it's done well means a lot. But choose carefully because you'll stay in the job you pick for the rest of your life.
                         
                     </p>
                 </div>
-                <span className={styled.lower}>
-                    End Line with Link
-                </span>
+                
             </div>
-            <div className={styled.CardsContainer}>
-            <div className={styled.FeaturesFlex}>
-                <div className={styled.Feature}>
-                    <h1>Feature</h1>
-                     
-                    <span>link</span>
-                </div>
-                <div className={styled.Feature}>
-                    <h1>Feature</h1>
-                    
-                    <span>link</span>
-                </div>
-               
+        
+            <div className={styled.GifCard}>
+              <img src="https://user-images.githubusercontent.com/11258286/87809923-cfbba280-c879-11ea-8364-a0dee9df61e2.gif" alt="gif-Feature"></img>
             </div>
-            <div className={styled.FeaturesFlex}>
-                <div className={styled.Feature}>
-                    <h1>Feature</h1>
-                     
-                    <span>link</span>
-                </div>
-                <div className={styled.Feature}>
-                    <h1>Feature</h1>
-                    
-                    <span>link</span>
-                </div>
-               
-            </div>
+           
+        
         </div>
+
+        
         </div>
 
 {/* AboutUS */}
 
-<div className={`${styled.slide} ${styled.AboutUs}`} >
-            <div className={`${styled.TextCard}`}>
-                
-                
-                <div className={styled.IntroText}>
-                    <h1>AboutUs</h1>
-                    <p>
-                        Most bee jobs are small ones. But bees know that every small job, if it's done well means a lot. But choose carefully because you'll stay in the job you pick for the rest of your life.
-                        
-                    </p>
-                </div>
-                <span className={styled.lower}>
-                    End Line with Link
-                </span>
-            </div>
-            <div className={styled.ImageCardContainer}>
-                <div className={styled.ImageCard}>
-                    <span>
-                        WORD
-                    </span>
-                   
-                </div>
-                <div className={styled.ImageCard}>
-                    <span>
-                        WORD
-                    </span>
-                    
-                </div>
-                <div className={styled.ImageCard}>
-                    <span>
-                        WORD
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
-
-{/* OptionalSectionAccToTemplate */}
-
-<div className={`${styled.slide} ${styled.OptionalSlide}`}>
+<div className={`${styled.Features} ${styled.slide}`} >
             <div className={styled.TextContainer}>
-                <span className={styled.upper}>
-                    UpperLineText
-                </span>
                 
                 <div className={styled.IntroText}>
-                    <h1>Heading</h1>
+                    <h1>Track tasks easily</h1>
                     <p>
                         Most bee jobs are small ones. But bees know that every small job, if it's done well means a lot. But choose carefully because you'll stay in the job you pick for the rest of your life.
                         
                     </p>
                 </div>
-                <span className={styled.lower}>
-                    End Line with Link
-                </span>
+                
             </div>
-            <div className={styled.FeaturesFlex}>
-                <div className={styled.Feature}>
-                    <h1>Feature</h1>
-                    
-                    <span>link</span>
-                </div>
-                <div className={styled.Feature}>
-                    <h1>Feature</h1>
-                    
-                    <span>link</span>
-                </div>
+        
+            <div className={styled.GifCard}>
+              <img src={AboutUsImage} alt="AboutUS"></img>
             </div>
-        </div> 
+           
+        
+        </div>
 
 {/* Contribute Section */}
 
