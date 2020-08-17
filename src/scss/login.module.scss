@@ -307,7 +307,7 @@ $white: #fff;
   height:100%;
   position: relative;
   padding:1em;
-  font-size:14px;
+  font-size:16px;
   margin-top:8em;
   }
 
@@ -588,7 +588,7 @@ justify-content: space-between;
 
       
 
-      .AboutUs::after{
+      .Contri::after{
         content:"S 75° 6' 0.027` / E 123° 19' 59.998`";
         transform:rotate(-90deg);
         position: absolute;
@@ -597,7 +597,7 @@ justify-content: space-between;
         z-index:10;
       }
   
-      .Contri::after{
+      .AboutUs::after{
         content:"S 75° 6' 0.027` / E 123° 19' 59.998`";
         transform:rotate(90deg);
         position: absolute;
@@ -629,7 +629,4 @@ justify-content: space-between;
    
 
   }
-  @media only screen and (min-width: 1080px)
-  {
-
-  }
+ 
