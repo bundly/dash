@@ -587,7 +587,31 @@ justify-content: space-between;
         left:-3em;
       }
 
-   
+      .slide.AboutUs::after{
+        content: "N 70° 3' 0.057` / W 153° 20' 63.998`";
+      }
+
+      .slide.Contri
+      {
+        content: "S 10° 10' 1.057` / W 203° 17' 71.448`";
+      }
+
+      .Features:nth-child(1)
+      {
+        content:"N 30° 7' 0.357` / E 108° 45' 23.228`"
+      }
+      .Features:nth-child(2)
+      {
+        content:"S 45° 2' 0.327` / W 138° 20' 25.215`"
+      }
+      .Features:nth-child(3)
+      {
+        content:"N 60° 5' 0.157` / W 238° 30' 33.258`"
+      }
+      .Features:nth-child(4)
+      {
+        content:"S 10° 9' 0.857` / E 128° 15' 41.138`"
+      }
 
   }
  
