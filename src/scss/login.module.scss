@@ -123,10 +123,12 @@ $white: #fff;
   margin: 0 auto;
   position: relative;
   top: 1rem;
-  background: url(https://i.giphy.com/media/l0iVAuEtPF5KRbqmvd/source.gif);
-  background-size: contain;
-  background-position: center;
+  // background: url(https://i.giphy.com/media/l0iVAuEtPF5KRbqmvd/source.gif);
+  background-image: url(../assets/Images/logo.png);
+  background-size: 90%;
+  background-position: right;
   background-repeat: no-repeat;
+  background-origin: content-box;
   opacity: 0.5;
 }
 
@@ -263,6 +265,7 @@ $white: #fff;
   }
 }
 
+
 .button--social-login {
   display: inline-block;
   color: white;
@@ -289,6 +292,11 @@ $white: #fff;
     color: $tiber;
   }
 }
+.btnSlideEffect:hover,
+.btnSlideEffect:focus {
+  box-shadow: inset 20em 0 0 0 #333;
+  color:white;
+}
 
 // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Landing Page Sections CSS
@@ -300,7 +308,7 @@ $white: #fff;
   position: relative;
   padding:1em;
   font-size:14px;
-  margin-top:12em;
+  margin-top:8em;
   }
 
  
@@ -333,19 +341,17 @@ $white: #fff;
     gap:3em;
   }
   
-  .Features > .TextContainer
+  .Features > .TextContainer ,.AboutUs > .TextContainer
   {
     padding-right:2em;
     height:fit-content;
     align-self: center;
+    flex-basis:50%;
+    box-shadow:none;
     
   }
 
-  .Features > .TextContainer
-  {
-    flex-basis:50%;
-    box-shadow:none;
-  }
+  
 
   .GifCard{
     
@@ -379,8 +385,8 @@ $white: #fff;
   // AboutUs Section
 
   .AboutUs > .GifCard > img{
-    box-shadow: none;
-    width:100vw;
+   
+    display:none;
   }
 
 
@@ -388,6 +394,71 @@ $white: #fff;
 .Contribute{
   margin-bottom: 10em;;
 }
+
+.Contri{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:3em;
+  margin-bottom:8em;
+}
+.ImgContainer{
+  display: flex;
+  flex-direction: column-reverse;
+align-items: center;
+justify-content: space-between;
+  gap:1.5em;
+  text-align: center;
+}
+.ImgContainer > img{
+  width:50%;
+}
+
+.BtnContainer{
+  display:flex;
+  flex-direction: row;
+  gap:0;
+}
+
+.ContriButton{
+  background: none;
+  border: 2px solid #333;
+  font: inherit;
+  line-height: 1;
+  flex-basis:50%;
+  padding: 1em 2em;
+  transition: all 250ms linear;
+  background-color:#ebedef;
+}
+.ContriButton:nth-child(1){
+  background-color:#333;
+  color:white;
+  border-right:none;
+
+}
+
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #333; }
+}
+.ContriButton:nth-child(1):focus, .ContriButton:nth-child(1):hover{
+  
+  transform: scale(1.2);
+  
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#333,0);
+  
+}
+
+.ContriButton:nth-child(2):focus, .ContriButton:nth-child(2):hover{
+  transform: scale(1.2);
+  
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#333,0);
+  
+}
+
 
   // Media Queries
 @media only screen and (min-width:400px)
@@ -414,17 +485,28 @@ $white: #fff;
       padding-right:10vw;
       margin-top:10em;
     }
+   
+    
+    
 
     .TextContainer,.TextCard{
       box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
     }
    
+    .FeaturesContainer{
+      margin-top:10em;
+    }
+
       .Features
       {
         display: flex;
+        position: relative;
         gap:2em;
+      }
+      .AboutUs
+      {
+        display: flex;
         flex-direction: row;
-        
         align-items: center;
         justify-content: space-between;
       }
@@ -444,7 +526,8 @@ $white: #fff;
         flex-direction: row-reverse;
       }
 
-      .Features > .TextContainer{
+      
+      .Features > .TextContainer, .AboutUs > .TextContainer{
         flex-basis:50%;
       }
     
@@ -468,10 +551,20 @@ $white: #fff;
       .AboutUs > .GifCard > img{
         box-shadow: none;
         width:100%;
+        display: block;
       }
       
-     
       
+     
+      // Contribute
+
+      .ImgContainer{
+        display: flex;
+        flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+        
+      }
     }
 
     
@@ -480,14 +573,14 @@ $white: #fff;
     
 
 
-  @media only screen and (min-width: 1020px)
+  @media only screen and (min-width: 1080px)
   {
     
     .TextContainer{
       flex-basis:50%;}
       
 
-      .Features
+      .Features,.AboutUs
       {
         gap:4em;
       }
@@ -495,9 +588,48 @@ $white: #fff;
 
       
 
-      // AboutUs Section
+      .AboutUs::after{
+        content:"S 75° 6' 0.027` / E 123° 19' 59.998`";
+        transform:rotate(-90deg);
+        position: absolute;
+        left:-3em;
+        top:50%;
+        z-index:10;
+      }
+  
+      .Contri::after{
+        content:"S 75° 6' 0.027` / E 123° 19' 59.998`";
+        transform:rotate(90deg);
+        position: absolute;
+        right:-3em;
+        top:50%;
+        z-index:10;
+      }
+  
 
-      
+      .Features:nth-child(odd)::after,.Features:nth-child(even)::after
+      {
+        content:"S 75° 6' 0.027` / E 123° 19' 59.998`";
+        position: absolute;
+        
+        top:50%;
+        z-index:10;
+      }
+
+      .Features:nth-child(odd)::after{
+        transform:rotate(90deg);
+        right:-3em;
+      }
+
+      .Features:nth-child(even)::after{
+        transform:rotate(-90deg);
+        left:-3em;
+      }
+
    
+
+  }
+  @media only screen and (min-width: 1080px)
+  {
 
   }

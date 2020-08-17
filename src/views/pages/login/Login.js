@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { default as axios } from "axios";
-import AboutUsImage from "../../../assets/Images/user_interface_.svg";
+import AboutUsImage from "../../../assets/Images/abstract-595.png";
+import ContributeImage from "../../../assets/Images/bundlybox.png";
 import { host } from "../../../App";
 import styled from "../../../scss/login.module.scss";
 
@@ -46,7 +47,7 @@ const Login = ({ authenticate }) => {
           <div className="text-center">
             <div className={styled["login-github"]}>
               <a
-                className={`${styled.button} ${styled["button--social-login"]} ${styled["button--github"]}`}
+                className={`${styled.button} ${styled.btnSlideEffect} ${styled["button--social-login"]} ${styled["button--github"]}`}
                 href={loginUrl}
               >
                 Login With Github
@@ -58,8 +59,8 @@ const Login = ({ authenticate }) => {
     </div>
 
 {/* Features Section */}
-<div className={styled.slide} >
-<div className={`${styled.Features}`} >
+<div className={styled.FeaturessContainer}>
+<div className={`${styled.Features} ${styled.slide}`} >
             <div className={styled.TextContainer}>
                 
                 <div className={styled.IntroText}>
@@ -81,7 +82,7 @@ const Login = ({ authenticate }) => {
         </div>
         </div>
 
-        <div className={`${styled.Features}`} >
+        <div className={`${styled.Features} ${styled.slide}`} >
             <div className={styled.TextContainer}>
                 <div className={styled.IntroText}>
                     <h1>Access internal discussions instantly</h1>
@@ -98,7 +99,7 @@ const Login = ({ authenticate }) => {
         </div>
         </div>
 
-        <div className={`${styled.Features}`} >
+        <div className={`${styled.Features} ${styled.slide}`} >
             <div className={styled.TextContainer}>
                 
                 <div className={styled.IntroText}>
@@ -131,7 +132,7 @@ const Login = ({ authenticate }) => {
         
         </div>
 
-        <div className={`${styled.Features}`} >
+        <div className={`${styled.Features} ${styled.slide}`} >
             <div className={styled.TextContainer}>
                 
                 <div className={styled.IntroText}>
@@ -156,11 +157,11 @@ const Login = ({ authenticate }) => {
 
 {/* AboutUS */}
 
-<div className={`${styled.Features} ${styled.AboutUs} ${styled.slide}`} >
+<div className={`${styled.AboutUs} ${styled.slide}`} >
             <div className={styled.TextContainer}>
                 
                 <div className={styled.IntroText}>
-                    <h1>About Bundly</h1>
+                    <h1>What is Bundly?</h1>
                     <ul>
                       <li>
                       Let Bundly do its work, so you can focus on yours.
@@ -185,7 +186,7 @@ const Login = ({ authenticate }) => {
 
 {/* Contribute Section */}
 
-<div className={`${styled.slide} ${styled.Contribute}`}>
+{/* <div className={`${styled.slide} ${styled.Contribute}`}>
             <div className={styled.IntroText}>
                 <h1>
                     Contribute
@@ -200,7 +201,25 @@ const Login = ({ authenticate }) => {
                 </span>
             </div>
             
+        </div> */}
+
+        <div className={`${styled.Contri} ${styled.slide}`}>
+          <div className={styled.ImgContainer}>
+            <img src={ContributeImage}>
+
+            </img>
+            <h2>Let's set up your developer dashboard</h2>
+          </div>
+          <div className={styled.BtnContainer}>
+            <button className={`${styled.ContriButton}`}>
+              Login to Bundly
+            </button>
+            <button className={`${styled.ContriButton}`}>
+              Contribute to development
+            </button>
+          </div>
         </div>
+        
 
     </div>
   );
