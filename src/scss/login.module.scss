@@ -125,8 +125,8 @@ $white: #fff;
   top: 1rem;
   // background: url(https://i.giphy.com/media/l0iVAuEtPF5KRbqmvd/source.gif);
   background-image: url(../assets/Images/logo.png);
-  background-size: 90%;
-  background-position: right;
+  background-size: 70%;
+  background-position: 60%;
   background-repeat: no-repeat;
   background-origin: content-box;
   opacity: 0.5;
@@ -284,7 +284,7 @@ $white: #fff;
 }
 
 .button--github {
-  color: #333;
+  color: #3c4b64;
   line-height: 46px;
   margin-bottom: 3rem;
 
@@ -293,15 +293,24 @@ $white: #fff;
   }
 }
 .btnSlideEffect:hover,
-.btnSlideEffect:focus {
-  box-shadow: inset 20em 0 0 0 #333;
-  color:white;
+.btnSlideEffect:focus {  
+  animation: pulse 1s;
+  background-color: #3c4b64;
+  color:#ebedef;
+  box-shadow: 0 0 0 2em rgba(#3c4b64,0);
 }
 
 // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Landing Page Sections CSS
 
 // Features Section 
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 
 .slide{
   height:100%;
@@ -423,7 +432,7 @@ justify-content: space-between;
 
 .ContriButton{
   background: none;
-  border: 2px solid #333;
+  border: 2px solid #3c4b64;
   font: inherit;
   line-height: 1;
   flex-basis:50%;
@@ -432,7 +441,7 @@ justify-content: space-between;
   background-color:#ebedef;
 }
 .ContriButton:nth-child(1){
-  background-color:#333;
+  background-color:#3c4b64;
   color:white;
   border-right:none;
 
@@ -440,24 +449,14 @@ justify-content: space-between;
 
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 #333; }
+  0% { box-shadow: 0 0 0 0 #3c4b64; }
 }
-.ContriButton:nth-child(1):focus, .ContriButton:nth-child(1):hover{
-  
+.ContriButton:focus, .ContriButton:hover{
   transform: scale(1.2);
-  
   animation: pulse 1s;
-  box-shadow: 0 0 0 2em rgba(#333,0);
-  
+  box-shadow: 0 0 0 2em rgba(#3c4b64,0);  
 }
 
-.ContriButton:nth-child(2):focus, .ContriButton:nth-child(2):hover{
-  transform: scale(1.2);
-  
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em rgba(#333,0);
-  
-}
 
 
   // Media Queries
@@ -471,12 +470,6 @@ justify-content: space-between;
     font-size:17px;
   }
 
- 
-  
-
-
-     
-
 }
   @media only screen and (min-width: 720px) {
     
@@ -485,9 +478,6 @@ justify-content: space-between;
       padding-right:10vw;
       margin-top:10em;
     }
-   
-    
-    
 
     .TextContainer,.TextCard{
       box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
@@ -530,14 +520,7 @@ justify-content: space-between;
       .Features > .TextContainer, .AboutUs > .TextContainer{
         flex-basis:50%;
       }
-    
-      
 
-        
-
-   
-
-     
       .GifCard{
         flex-basis:50%;
       }
@@ -585,43 +568,21 @@ justify-content: space-between;
         gap:4em;
       }
      
-
       
-
-      .Contri::after{
-        content:"S 75° 6' 0.027` / E 123° 19' 59.998`";
-        transform:rotate(-90deg);
-        position: absolute;
-        left:-3em;
-        top:50%;
-        z-index:10;
-      }
-  
-      .AboutUs::after{
-        content:"S 75° 6' 0.027` / E 123° 19' 59.998`";
-        transform:rotate(90deg);
-        position: absolute;
-        right:-3em;
-        top:50%;
-        z-index:10;
-      }
-  
-
-      .Features:nth-child(odd)::after,.Features:nth-child(even)::after
+      .Features:nth-child(odd)::after,.Features:nth-child(even)::after,.slide:nth-child(odd)::after,.slide:nth-child(even)::after
       {
         content:"S 75° 6' 0.027` / E 123° 19' 59.998`";
         position: absolute;
-        
         top:50%;
         z-index:10;
       }
 
-      .Features:nth-child(odd)::after{
+      .Features:nth-child(odd)::after,.slide:nth-child(odd)::after{
         transform:rotate(90deg);
         right:-3em;
       }
 
-      .Features:nth-child(even)::after{
+      .Features:nth-child(even)::after,.slide:nth-child(even)::after{
         transform:rotate(-90deg);
         left:-3em;
       }
