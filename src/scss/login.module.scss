@@ -413,12 +413,14 @@ justify-content: space-between;
 .ContriButton{
   background: none;
   border: 2px solid #3c4b64;
+  position: relative;
   font: inherit;
   line-height: 1;
   flex-basis:50%;
   padding: 1em 2em;
   transition: all 250ms linear;
   background-color:#ebedef;
+  pointer-events: click;
 }
 .ContriButton:nth-child(1){
   background-color:#3c4b64;
@@ -426,6 +428,36 @@ justify-content: space-between;
   border-right:none;
 
 }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #3c4b64; }
+}
+
+.ContriButton:focus
+      {
+        outline:none;
+      }
+
+      .ContriButton:after {
+        content: "";
+        display: block;
+        position: absolute;
+        height:100%;
+        width:100%;
+       top:0;
+       left:0;
+       
+        opacity: 0;
+        box-shadow:0 0 0 2em #3c4b64;
+        transition: all 2s
+      }
+      
+      .ContriButton:active:after {
+        
+        opacity: 1;
+        box-shadow:0 0 0 0 #3c4b64;
+        transition: 0s
+      }
 
 // Copyright
 .Copyright
@@ -518,16 +550,13 @@ justify-content: space-between;
       justify-content: space-between;
         
       }
-      @keyframes pulse {
-        0% { box-shadow: 0 0 0 0 #3c4b64; }
-      }
+      
        .ContriButton:hover{
         transform: scale(1.2);
-        animation: pulse 1s;
-        box-shadow: 0 0 0 2em rgba(#3c4b64,0);  
+        z-index:10;
       }
-      .ContriButton:active
-      {
+      
+      .ContriButton:active{
         transform: scale(1);
       }
     }
