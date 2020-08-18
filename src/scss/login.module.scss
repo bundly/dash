@@ -302,18 +302,7 @@ $white: #fff;
 
 // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Landing Page Sections CSS
-
-// Features Section 
-
-
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-}
-
-
+// Section Container
 .slide{
   height:100%;
   position: relative;
@@ -323,7 +312,7 @@ $white: #fff;
   }
 
  
-  
+  // Feature Section
   .Features
 	{
 		display: flex;
@@ -337,9 +326,9 @@ $white: #fff;
   }
 
   .Features:nth-child(1)
-      {
+    {
         margin-top:0;
-      } 
+    } 
 
   .TextContainer{
     display: flex;
@@ -361,8 +350,6 @@ $white: #fff;
     box-shadow:none;
     
   }
-
-  
 
   .GifCard{
     
@@ -388,32 +375,22 @@ $white: #fff;
     line-height: 1.5em;
   }
 
-  
-
-  
-
-  
   // AboutUs Section
-
   .AboutUs > .GifCard > img{
-   
     display:none;
   }
 
 
-
-.Contribute{
-  margin-bottom: 10em;;
-}
-
+  // Contribute Section
 .Contri{
   display:flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap:3em;
-  margin-bottom:8em;
+  margin-bottom:5em;
 }
+
 .ImgContainer{
   display: flex;
   flex-direction: column-reverse;
@@ -422,6 +399,7 @@ justify-content: space-between;
   gap:1.5em;
   text-align: center;
 }
+
 .ImgContainer > img{
   width:50%;
 }
@@ -444,11 +422,19 @@ justify-content: space-between;
 }
 .ContriButton:nth-child(1){
   background-color:#3c4b64;
-  color:white;
+  color:#ebedef;
   border-right:none;
 
 }
 
+// Copyright
+.Copyright
+{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  padding:1em;
+}
 
 
 
@@ -466,34 +452,28 @@ justify-content: space-between;
   }
 
 }
+
   @media only screen and (min-width: 720px) {
     
-    .slide{
-      padding-left:10vw;
-      padding-right:10vw;
-      margin-top:10em;
-    }
+      .slide{
+        padding-left:10vw;
+        padding-right:10vw;
+        margin-top:10em;
+      }
 
-    .TextContainer,.TextCard{
-      box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
-    }
-   
-    .FeaturesContainer{
-      margin-top:10em;
-    }
+      .TextContainer,.TextCard{
+        box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
+      }
+    
+      .FeaturesContainer{
+        margin-top:10em;
+      }
 
       .Features
       {
         display: flex;
         position: relative;
         gap:2em;
-      }
-      .AboutUs
-      {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
       }
 
       .Features:nth-child(1)
@@ -516,26 +496,21 @@ justify-content: space-between;
         flex-basis:50%;
       }
 
-      .GifCard{
-        flex-basis:50%;
-      }
-      .GifCard >img{
-        box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
-        
+      .AboutUs
+      {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
       }
 
-      
-      // AboutUs Section
       .AboutUs > .GifCard > img{
         box-shadow: none;
         width:100%;
         display: block;
       }
-      
-      
-     
-      // Contribute
 
+      // Contribute
       .ImgContainer{
         display: flex;
         flex-direction: column;
@@ -568,14 +543,12 @@ justify-content: space-between;
     
     .TextContainer{
       flex-basis:50%;}
-      
 
       .Features,.AboutUs
       {
         gap:4em;
       }
      
-      
       .Features:nth-child(odd)::after,.Features:nth-child(even)::after,.slide:nth-child(odd)::after,.slide:nth-child(even)::after
       {
         font-size:1.1em;
@@ -583,9 +556,8 @@ justify-content: space-between;
         top:50%;
         z-index:10;
         -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
- 
-
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: lighter;
       }
 
       .Features:nth-child(odd)::after,.slide:nth-child(odd)::after{
@@ -600,13 +572,12 @@ justify-content: space-between;
 
       .slide.AboutUs::after{
         content: "N 70° 3' 0.057` / W 153° 20' 63.998`";
+        top:45%;
       }
 
       .slide.Contri::After
       {
-        content: "Copyright © 2020 Bundly";
-        bottom:5%;
-        left:5%;
+        content: '';
       }
 
       .Features:nth-child(1)::after
@@ -615,7 +586,8 @@ justify-content: space-between;
       }
       .Features:nth-child(2)::after
       {
-        content:"S 45° 2' 0.327` / W 138° 20' 25.215`"
+        content:"S 45° 2' 0.327` / W 138° 20' 25.215`";
+        top:45%;
       }
       .Features:nth-child(3)::after
       {

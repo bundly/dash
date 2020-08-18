@@ -59,10 +59,11 @@ const Login = ({ authenticate }) => {
     </div>
 
 {/* Features Section */}
+
 <div className={styled.FeaturessContainer}>
-<div className={`${styled.Features} ${styled.slide}`} >
-            <div className={styled.TextContainer}>
-                
+
+    <div className={`${styled.Features} ${styled.slide}`}>
+          <div className={styled.TextContainer}>
                 <div className={styled.IntroText}>
                     <h1>Generate Standup Notes in markdown automatically</h1>
                     <p>
@@ -72,94 +73,73 @@ const Login = ({ authenticate }) => {
                     Also supports people in multiple pods and shows sugessions from previous day's standup notes from all pods !
                     </p>
                 </div>
-                
-            </div>
-            
-            <div className={styled.GifCard}>
-              <img src="https://user-images.githubusercontent.com/11258286/87809620-50c66a00-c879-11ea-8f1b-b7885c828333.gif" alt="gif-Feature"></img>
-            
-            
-        </div>
-        </div>
+          </div>
+          <div className={styled.GifCard}>
+              <img src="https://user-images.githubusercontent.com/11258286/87809620-50c66a00-c879-11ea-8f1b-b7885c828333.gif" alt="gif-Feature">
+              </img>
+          </div>
+    </div>
 
-        <div className={`${styled.Features} ${styled.slide}`} >
-            <div className={styled.TextContainer}>
+    <div className={`${styled.Features} ${styled.slide}`} >
+          <div className={styled.TextContainer}>
                 <div className={styled.IntroText}>
                     <h1>Access internal discussions instantly</h1>
                     <p>
                     Quickly search through MLH Fellowship Org discussions with the search tool. 
                     </p>
                 </div>
-            </div>
-            
-            <div className={styled.GifCard}>
+          </div>
+          <div className={styled.GifCard}>
               <img src="https://user-images.githubusercontent.com/28642011/87812445-d6e4af80-c87d-11ea-923e-5efeebf950dc.gif" alt="gif-Feature"></img>
-            
-           
-        </div>
-        </div>
+          </div>
+    </div>
 
-        <div className={`${styled.Features} ${styled.slide}`} >
-            <div className={styled.TextContainer}>
-                
+    <div className={`${styled.Features} ${styled.slide}`} >
+          <div className={styled.TextContainer}>
                 <div className={styled.IntroText}>
                     <h1>Never miss out on the important stuff</h1>
-                    <p>
-                    Receive personalized notifications for your repositories including:</p>
+                    <p>Receive personalized notifications for your repositories including:</p>
                     <ul>
                       <li>Issues and their comments</li>
                       <li>Pull Requests and their comments</li>
                       <li>Comments on any commits</li>
-                      </ul>
+                    </ul>
 
-                      Notifications are also sent for conversations in unwatched repositories when the user is involved including: 
-                      <ul>
-                        <li>@mentions</li>
-                        <li>Issue assignments</li>
-                        <li>Commits the user authors or commits</li>
-                        <li>Any discussion in which the user actively participates</li>
-                      </ul>
-                     
-                   
+                    Notifications are also sent for conversations in unwatched repositories when the user is involved including: 
+                    <ul>
+                      <li>@mentions</li>
+                      <li>Issue assignments</li>
+                      <li>Commits the user authors or commits</li>
+                      <li>Any discussion in which the user actively participates</li>
+                    </ul>
                 </div>
-                
-            </div>
-            
-            <div className={styled.GifCard}>
+          </div>
+          <div className={styled.GifCard}>
               <img src="https://user-images.githubusercontent.com/11258286/87809923-cfbba280-c879-11ea-8364-a0dee9df61e2.gif" alt="gif-Feature"></img>
-            </div>
-           
-        
-        </div>
+          </div>
+    </div>
 
-        <div className={`${styled.Features} ${styled.slide}`} >
+    <div className={`${styled.Features} ${styled.slide}`} >
             <div className={styled.TextContainer}>
                 
                 <div className={styled.IntroText}>
                     <h1>Track tasks easily</h1>
                     <p>
-                        Most bee jobs are small ones. But bees know that every small job, if it's done well means a lot. But choose carefully because you'll stay in the job you pick for the rest of your life.
-                        
+                    Add notifications from github to your ToDo list directly 
                     </p>
                 </div>
-                
             </div>
-        
             <div className={styled.GifCard}>
               <img src="https://user-images.githubusercontent.com/11258286/87809923-cfbba280-c879-11ea-8364-a0dee9df61e2.gif" alt="gif-Feature"></img>
             </div>
-           
-        
-        </div>
+    </div>
+  </div>
 
-        
-        </div>
+
 
 {/* AboutUS */}
-
-<div className={`${styled.AboutUs} ${styled.slide}`} >
+  <div className={`${styled.AboutUs} ${styled.slide}`} >
             <div className={styled.TextContainer}>
-                
                 <div className={styled.IntroText}>
                     <h1>What is Bundly?</h1>
                     <ul>
@@ -174,38 +154,18 @@ const Login = ({ authenticate }) => {
                       </li>
                     </ul>
                 </div>
-                
             </div>
-        
             <div className={styled.GifCard}>
               <img src={AboutUsImage} alt="AboutUS"></img>
             </div>
-           
-        
-        </div>
+  </div>
+
+
 
 {/* Contribute Section */}
-
-{/* <div className={`${styled.slide} ${styled.Contribute}`}>
-            <div className={styled.IntroText}>
-                <h1>
-                    Contribute
-                </h1>
-                <p>
-                    If we lived in the topsy-turvy world Mr. Benson imagines, just think of what would it mean. I would have to negotiate with the silkworm for the elastic in my britches!
-                </p>
-                <span className={styled.lower}>
-                    <a href="https://github.com/bundly/dash/blob/master/CONTRIBUTING.md">
-                      Github
-                    </a>
-                </span>
-            </div>
-            
-        </div> */}
-
         <div className={`${styled.Contri} ${styled.slide}`}>
           <div className={styled.ImgContainer}>
-            <img src={ContributeImage}>
+            <img src={ContributeImage} alt="ContributeImg">
 
             </img>
             <h2>Let's set up your developer dashboard</h2>
@@ -219,7 +179,14 @@ const Login = ({ authenticate }) => {
             </button>
           </div>
         </div>
-        
+
+
+{/* Copyright */}
+          <div className={styled.Copyright}>
+            Copyright &copy; 2020 Bundly
+          </div>
+
+
 
     </div>
   );
