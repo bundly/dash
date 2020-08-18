@@ -412,15 +412,23 @@ justify-content: space-between;
 
 .ContriButton{
   background: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid #3c4b64;
   position: relative;
   font: inherit;
   line-height: 1;
-  flex-basis:50%;
-  padding: 1em 2em;
+  
+  padding:2em;
   transition: all 250ms linear;
   background-color:#ebedef;
-  pointer-events: click;
+}
+
+.ContriButton:hover,.ContriButton:active,.ContriButton{
+  text-decoration: none;;
+  color:#3c4b64;
 }
 .ContriButton:nth-child(1){
   background-color:#3c4b64;
