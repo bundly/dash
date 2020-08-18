@@ -125,8 +125,8 @@ $white: #fff;
   top: 1rem;
   // background: url(https://i.giphy.com/media/l0iVAuEtPF5KRbqmvd/source.gif);
   background-image: url(../assets/Images/logo.png);
-  background-size: 70%;
-  background-position: 60%;
+  background-size: 60%;
+  background-position: 55%;
   background-repeat: no-repeat;
   background-origin: content-box;
   opacity: 0.5;
@@ -256,7 +256,7 @@ $white: #fff;
 %button,
 .button {
   padding: 2px 8px 0 10px;
-  border-radius: 5px;
+  
   text-decoration: none;
   transition: all 250ms linear;
 
@@ -451,10 +451,14 @@ justify-content: space-between;
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 #3c4b64; }
 }
-.ContriButton:focus, .ContriButton:hover{
+ .ContriButton:hover{
   transform: scale(1.2);
   animation: pulse 1s;
   box-shadow: 0 0 0 2em rgba(#3c4b64,0);  
+}
+.ContriButton:active
+{
+  transform: scale(1);
 }
 
 
@@ -571,7 +575,7 @@ justify-content: space-between;
       
       .Features:nth-child(odd)::after,.Features:nth-child(even)::after,.slide:nth-child(odd)::after,.slide:nth-child(even)::after
       {
-        content:"S 75° 6' 0.027` / E 123° 19' 59.998`";
+        
         position: absolute;
         top:50%;
         z-index:10;
@@ -591,24 +595,24 @@ justify-content: space-between;
         content: "N 70° 3' 0.057` / W 153° 20' 63.998`";
       }
 
-      .slide.Contri
+      .slide.Contri::After
       {
-        content: "S 10° 10' 1.057` / W 203° 17' 71.448`";
+        content: "COPYRIGHT © 2020 Bundly";
       }
 
-      .Features:nth-child(1)
+      .Features:nth-child(1)::after
       {
         content:"N 30° 7' 0.357` / E 108° 45' 23.228`"
       }
-      .Features:nth-child(2)
+      .Features:nth-child(2)::after
       {
         content:"S 45° 2' 0.327` / W 138° 20' 25.215`"
       }
-      .Features:nth-child(3)
+      .Features:nth-child(3)::after
       {
         content:"N 60° 5' 0.157` / W 238° 30' 33.258`"
       }
-      .Features:nth-child(4)
+      .Features:nth-child(4)::after
       {
         content:"S 10° 9' 0.857` / E 128° 15' 41.138`"
       }
