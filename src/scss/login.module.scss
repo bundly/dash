@@ -307,7 +307,7 @@ $white: #fff;
   height:100%;
   position: relative;
   padding:1em;
-  font-size:16px;
+  font-size:14px;
   margin-top:8em;
   }
 
@@ -339,6 +339,11 @@ $white: #fff;
     border-radius: 2px;;
     position: relative;
     gap:3em;
+    text-align: left;
+  }
+
+  .TextContainer >h2{
+    text-align:center;
   }
   
   .Features > .TextContainer ,.AboutUs > .TextContainer
@@ -376,8 +381,10 @@ $white: #fff;
   }
 
   // AboutUs Section
+
   .AboutUs > .GifCard > img{
-    display:none;
+    width:70%;
+    box-shadow:none;
   }
 
 
@@ -416,12 +423,13 @@ justify-content: space-between;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align:center;
   border: 2px solid #3c4b64;
   position: relative;
   font: inherit;
   line-height: 1;
-  
-  padding:2em;
+  flex-basis: 50%;
+  padding:1em;
   transition: all 250ms linear;
   background-color:#ebedef;
 }
@@ -528,7 +536,16 @@ justify-content: space-between;
         flex-direction: row-reverse;
       }
 
-      
+      .Features:nth-child(3)
+      {
+        flex-direction: column;
+      }
+
+      .GifCard
+      {
+        flex-basis: 50%;;
+      }
+
       .Features > .TextContainer, .AboutUs > .TextContainer{
         flex-basis:50%;
       }
@@ -540,7 +557,10 @@ justify-content: space-between;
         align-items: center;
         justify-content: space-between;
       }
-
+      .GifCard
+      {
+        flex-basis: 50%;;
+      }
       .AboutUs > .GifCard > img{
         box-shadow: none;
         width:100%;
@@ -559,6 +579,7 @@ justify-content: space-between;
        .ContriButton:hover{
         transform: scale(1.2);
         z-index:10;
+        
       }
       
       .ContriButton:active{
@@ -602,6 +623,11 @@ justify-content: space-between;
       .Features:nth-child(even)::after,.slide:nth-child(even)::after{
         transform:rotate(-90deg);
         left:-3em;
+      }
+
+      .Features:nth-child(3)
+      {
+        flex-direction: row;
       }
 
       .slide.AboutUs::after{
