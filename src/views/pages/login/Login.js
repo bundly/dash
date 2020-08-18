@@ -171,12 +171,12 @@ const Login = ({ authenticate }) => {
             <h2>Let's set up your developer dashboard</h2>
           </div>
           <div className={styled.BtnContainer}>
-            <button className={`${styled.ContriButton}`}>
+            <a href={loginUrl} className={`${styled.ContriButton}`}>
               Login to Bundly
-            </button>
-            <button className={`${styled.ContriButton}`}>
+            </a>
+            <a href="https://github.com/bundly/dash/blob/master/CONTRIBUTING.md" className={`${styled.ContriButton}`}>
               Contribute to development
-            </button>
+            </a>
           </div>
         </div>
 
