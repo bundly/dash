@@ -429,9 +429,6 @@ justify-content: space-between;
 
 }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 #3c4b64; }
-}
 
 .ContriButton:focus
       {
@@ -449,7 +446,7 @@ justify-content: space-between;
        
         opacity: 0;
         box-shadow:0 0 0 2em #3c4b64;
-        transition: all 2s
+        transition: all 1s
       }
       
       .ContriButton:active:after {
