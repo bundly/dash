@@ -448,18 +448,7 @@ justify-content: space-between;
 }
 
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 #3c4b64; }
-}
- .ContriButton:hover{
-  transform: scale(1.2);
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em rgba(#3c4b64,0);  
-}
-.ContriButton:active
-{
-  transform: scale(1);
-}
+
 
 
 
@@ -552,6 +541,18 @@ justify-content: space-between;
       justify-content: space-between;
         
       }
+      @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 #3c4b64; }
+      }
+       .ContriButton:hover{
+        transform: scale(1.2);
+        animation: pulse 1s;
+        box-shadow: 0 0 0 2em rgba(#3c4b64,0);  
+      }
+      .ContriButton:active
+      {
+        transform: scale(1);
+      }
     }
 
     
@@ -597,7 +598,7 @@ justify-content: space-between;
 
       .slide.Contri::After
       {
-        content: "COPYRIGHT © 2020 Bundly";
+        content: "Copyright © 2020 Bundly";
       }
 
       .Features:nth-child(1)::after
