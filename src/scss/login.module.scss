@@ -309,6 +309,8 @@ $white: #fff;
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
 
@@ -576,10 +578,14 @@ justify-content: space-between;
       
       .Features:nth-child(odd)::after,.Features:nth-child(even)::after,.slide:nth-child(odd)::after,.slide:nth-child(even)::after
       {
-        
+        font-size:1.1em;
         position: absolute;
         top:50%;
         z-index:10;
+        -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+
       }
 
       .Features:nth-child(odd)::after,.slide:nth-child(odd)::after{
@@ -599,6 +605,8 @@ justify-content: space-between;
       .slide.Contri::After
       {
         content: "Copyright © 2020 Bundly";
+        bottom:5%;
+        left:5%;
       }
 
       .Features:nth-child(1)::after
