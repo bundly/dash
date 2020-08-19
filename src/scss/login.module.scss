@@ -3,12 +3,10 @@ $tiber: #09383e;
 $elephant: #0c383e;
 $white: #fff;
 
-
 .landing-page-container {
   width: 100%;
   min-height: 100%;
   overflow: hidden;
-  
 }
 
 .content__wrapper {
@@ -123,7 +121,6 @@ $white: #fff;
   margin: 0 auto;
   position: relative;
   top: 1rem;
-  // background: url(https://i.giphy.com/media/l0iVAuEtPF5KRbqmvd/source.gif);
   background-image: url(../assets/Images/logo.png);
   background-size: 60%;
   background-position: 55%;
@@ -148,7 +145,6 @@ $white: #fff;
   font-weight: 400;
   opacity: 0.8;
 }
-
 
 .ellipses {
   border-radius: 50%;
@@ -256,7 +252,7 @@ $white: #fff;
 %button,
 .button {
   padding: 2px 8px 0 10px;
-  
+
   text-decoration: none;
   transition: all 250ms linear;
 
@@ -264,7 +260,6 @@ $white: #fff;
     text-decoration: none;
   }
 }
-
 
 .button--social-login {
   display: inline-block;
@@ -292,371 +287,329 @@ $white: #fff;
     color: $tiber;
   }
 }
-.btnSlideEffect:hover,
-.btnSlideEffect:focus {  
+.btn-effect:hover,
+.btn-effect:focus {
   animation: pulse 1s;
   background-color: #3c4b64;
-  color:#ebedef;
-  box-shadow: 0 0 0 2em rgba(#3c4b64,0);
+  color: #ebedef;
+  box-shadow: 0 0 0 2em rgba(#3c4b64, 0);
 }
 
-// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Landing Page Sections CSS
-// Section Container
-.slide{
-  height:100%;
+.slide {
+  height: 100%;
   position: relative;
-  padding:1em;
-  font-size:14px;
-  margin-top:8em;
-  }
-
- 
-  // Feature Section
-  .Features
-	{
-		display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:0em;
-    margin-top:7em;
-    height:100%;
-		
-  }
-
-  .Features:nth-child(1)
-    {
-        margin-top:0;
-    } 
-
-  .TextContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding:2em;
-    box-shadow:0px 2px 3px 0px rgba(0,0,0,.25);
-    border-radius: 2px;;
-    position: relative;
-    gap:3em;
-    text-align: left;
-  }
-
-  .TextContainer >h2{
-    text-align:center;
-  }
-  
-  .Features > .TextContainer ,.AboutUs > .TextContainer
-  {
-    padding-right:2em;
-    height:fit-content;
-    align-self: center;
-    flex-basis:50%;
-    box-shadow:none;
-    
-  }
-
-  .GifCard{
-    
-    height:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-  }
-  .GifCard > img{
-    width:100%;
-    
-    box-shadow:  0 0 5px 0 rgba(0,0,0,0.25);
-  }
-
-  .IntroText h1{
-    margin-bottom: 1em;
-    display: inline-block;
-    position: relative;
-  }
-
-  .IntroText li, .IntroText p{
-    line-height: 1.5em;
-  }
-
-  // AboutUs Section
-
-  .AboutUs > .GifCard > img{
-    width:70%;
-    box-shadow:none;
-  }
-
-
-  // Contribute Section
-.Contri{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap:3em;
-  margin-bottom:5em;
+  padding: 1em;
+  font-size: 14px;
+  margin-top: 8em;
 }
 
-.ImgContainer{
+// feature Section
+.features {
   display: flex;
-  flex-direction: column-reverse;
-align-items: center;
-justify-content: space-between;
-  gap:1.5em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0em;
+  margin-top: 7em;
+  height: 100%;
+}
+
+.features:nth-child(1) {
+  margin-top: 0;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2em;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  position: relative;
+  gap: 3em;
+  text-align: left;
+}
+
+.text-container > h2 {
   text-align: center;
 }
 
-.ImgContainer > img{
-  width:50%;
+.features > .text-container,
+.about > .text-container {
+  padding-right: 2em;
+  height: fit-content;
+  align-self: center;
+  flex-basis: 50%;
+  box-shadow: none;
 }
 
-.BtnContainer{
-  display:flex;
+.gif-card {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gif-card > img {
+  width: 100%;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.intro-text h1 {
+  margin-bottom: 1em;
+  display: inline-block;
+  position: relative;
+}
+
+.intro-text li,
+.intro-text p {
+  line-height: 1.5em;
+}
+
+// AboutUs Section
+.about > .gif-card > img {
+  width: 70%;
+  box-shadow: none;
+}
+
+// Contribute Section
+.contribute {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  margin-bottom: 5em;
+}
+
+.img-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5em;
+  text-align: center;
+}
+
+.img-container > img {
+  width: 50%;
+}
+
+.btn-container {
+  display: flex;
   flex-direction: row;
-  gap:0;
+  gap: 0;
 }
 
-.ContriButton{
+.contribute-button {
   background: none;
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align:center;
+  text-align: center;
   border: 2px solid #3c4b64;
   position: relative;
   font: inherit;
   line-height: 1;
   flex-basis: 50%;
-  padding:1em;
+  padding: 1em;
   transition: all 250ms linear;
-  background-color:#ebedef;
+  background-color: #ebedef;
 }
 
-.ContriButton:hover,.ContriButton:active,.ContriButton{
-  text-decoration: none;;
-  color:#3c4b64;
+.contribute-button:hover,
+.contribute-button:active,
+.contribute-button {
+  text-decoration: none;
+  color: #3c4b64;
 }
-.ContriButton:nth-child(1){
-  background-color:#3c4b64;
-  color:#ebedef;
-  border-right:none;
-
+.contribute-button:nth-child(1) {
+  background-color: #3c4b64;
+  color: #ebedef;
+  border-right: none;
 }
 
+.contribute-button:focus {
+  outline: none;
+}
 
-.ContriButton:focus
-      {
-        outline:none;
-      }
+.contribute-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
 
-      .ContriButton:after {
-        content: "";
-        display: block;
-        position: absolute;
-        height:100%;
-        width:100%;
-       top:0;
-       left:0;
-       
-        opacity: 0;
-        box-shadow:0 0 0 2em #3c4b64;
-        transition: all 1s
-      }
-      
-      .ContriButton:active:after {
-        
-        opacity: 1;
-        box-shadow:0 0 0 0 #3c4b64;
-        transition: 0s
-      }
+  opacity: 0;
+  box-shadow: 0 0 0 2em #3c4b64;
+  transition: all 1s;
+}
+
+.contribute-button:active:after {
+  opacity: 1;
+  box-shadow: 0 0 0 0 #3c4b64;
+  transition: 0s;
+}
 
 // Copyright
-.Copyright
-{
-  width:100%;
-  display:flex;
+.copyright {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  padding:1em;
+  padding: 1em;
 }
 
-
-
-
-
-  // Media Queries
-@media only screen and (min-width:400px)
-{
-
-  .slide{
-    padding-left:10vw;
-    padding-right:10vw;
-    margin-top:10em;
-    font-size:17px;
+// Media Queries
+@media only screen and (min-width: 400px) {
+  .slide {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin-top: 10em;
+    font-size: 17px;
   }
-
 }
 
-  @media only screen and (min-width: 720px) {
-    
-      .slide{
-        padding-left:10vw;
-        padding-right:10vw;
-        margin-top:10em;
-      }
-
-      .TextContainer,.TextCard{
-        box-shadow:10px 10px 20px 1px rgba(0,0,0,0.25);
-      }
-    
-      .FeaturesContainer{
-        margin-top:10em;
-      }
-
-      .Features
-      {
-        display: flex;
-        position: relative;
-        gap:2em;
-      }
-
-      .Features:nth-child(1)
-      {
-        margin-top:0;
-      }
-
-      .Features:nth-child(odd)
-      {
-        flex-direction: row;
-      }
-
-      .Features:nth-child(even)
-      {
-        flex-direction: row-reverse;
-      }
-
-      .Features:nth-child(3)
-      {
-        flex-direction: column;
-      }
-
-      .GifCard
-      {
-        flex-basis: 50%;;
-      }
-
-      .Features > .TextContainer, .AboutUs > .TextContainer{
-        flex-basis:50%;
-      }
-
-      .AboutUs
-      {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .GifCard
-      {
-        flex-basis: 50%;;
-      }
-      .AboutUs > .GifCard > img{
-        box-shadow: none;
-        width:100%;
-        display: block;
-      }
-
-      // Contribute
-      .ImgContainer{
-        display: flex;
-        flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-        
-      }
-      
-       .ContriButton:hover{
-        transform: scale(1.2);
-        z-index:10;
-        
-      }
-      
-      .ContriButton:active{
-        transform: scale(1);
-      }
-    }
-
-    
-
-    
-    
-
-
-  @media only screen and (min-width: 1080px)
-  {
-    
-    .TextContainer{
-      flex-basis:50%;}
-
-      .Features,.AboutUs
-      {
-        gap:4em;
-      }
-     
-      .Features:nth-child(odd)::after,.Features:nth-child(even)::after,.slide:nth-child(odd)::after,.slide:nth-child(even)::after
-      {
-        font-size:1.1em;
-        position: absolute;
-        top:50%;
-        z-index:10;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-weight: lighter;
-      }
-
-      .Features:nth-child(odd)::after,.slide:nth-child(odd)::after{
-        transform:rotate(90deg);
-        right:-3em;
-      }
-
-      .Features:nth-child(even)::after,.slide:nth-child(even)::after{
-        transform:rotate(-90deg);
-        left:-3em;
-      }
-
-      .Features:nth-child(3)
-      {
-        flex-direction: row;
-      }
-
-      .slide.AboutUs::after{
-        content: "N 70° 3' 0.057` / W 153° 20' 63.998`";
-        top:45%;
-      }
-
-      .slide.Contri::After
-      {
-        content: '';
-      }
-
-      .Features:nth-child(1)::after
-      {
-        content:"N 30° 7' 0.357` / E 108° 45' 23.228`"
-      }
-      .Features:nth-child(2)::after
-      {
-        content:"S 45° 2' 0.327` / W 138° 20' 25.215`";
-        top:45%;
-      }
-      .Features:nth-child(3)::after
-      {
-        content:"N 60° 5' 0.157` / W 238° 30' 33.258`"
-      }
-      .Features:nth-child(4)::after
-      {
-        content:"S 10° 9' 0.857` / E 128° 15' 41.138`"
-      }
-
+@media only screen and (min-width: 720px) {
+  .slide {
+    padding-left: 10vw;
+    padding-right: 10vw;
+    margin-top: 10em;
   }
- 
+
+  .text-container,
+  .text-card {
+    box-shadow: 10px 10px 20px 1px rgba(0, 0, 0, 0.25);
+  }
+
+  .features-container {
+    margin-top: 10em;
+  }
+
+  .features {
+    display: flex;
+    position: relative;
+    gap: 2em;
+  }
+
+  .features:nth-child(1) {
+    margin-top: 0;
+  }
+
+  .features:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  .features:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .features:nth-child(3) {
+    flex-direction: column;
+  }
+
+  .gif-card {
+    flex-basis: 50%;
+  }
+
+  .features > .text-container,
+  .about > .text-container {
+    flex-basis: 50%;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .gif-card {
+    flex-basis: 50%;
+  }
+  .about > .gif-card > img {
+    box-shadow: none;
+    width: 100%;
+    display: block;
+  }
+
+  // Contribute
+  .img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contribute-button:hover {
+    transform: scale(1.2);
+    z-index: 10;
+  }
+
+  .contribute-button:active {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .text-container {
+    flex-basis: 50%;
+  }
+
+  .features,
+  .about {
+    gap: 4em;
+  }
+
+  .features:nth-child(odd)::after,
+  .features:nth-child(even)::after,
+  .slide:nth-child(odd)::after,
+  .slide:nth-child(even)::after {
+    font-size: 1.1em;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: lighter;
+  }
+
+  .features:nth-child(odd)::after,
+  .slide:nth-child(odd)::after {
+    transform: rotate(90deg);
+    right: -3em;
+  }
+
+  .features:nth-child(even)::after,
+  .slide:nth-child(even)::after {
+    transform: rotate(-90deg);
+    left: -3em;
+  }
+
+  .features:nth-child(3) {
+    flex-direction: row;
+  }
+
+  .slide.about::after {
+    content: "N 70° 3' 0.057` / W 153° 20' 63.998`";
+    top: 45%;
+  }
+
+  .slide.contribute::after {
+    content: "";
+  }
+
+  .features:nth-child(1)::after {
+    content: "N 30° 7' 0.357` / E 108° 45' 23.228`";
+  }
+  .features:nth-child(2)::after {
+    content: "S 45° 2' 0.327` / W 138° 20' 25.215`";
+    top: 45%;
+  }
+  .features:nth-child(3)::after {
+    content: "N 60° 5' 0.157` / W 238° 30' 33.258`";
+  }
+  .features:nth-child(4)::after {
+    content: "S 10° 9' 0.857` / E 128° 15' 41.138`";
+  }
+}
