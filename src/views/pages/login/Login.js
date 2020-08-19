@@ -51,7 +51,7 @@ const Login = ({ authenticate }) => {
             <div className="text-center">
               <div className={styled["login-github"]}>
                 <a
-                  className={`${styled.button} ${styled.btnSlideEffect} ${styled["button--social-login"]} ${styled["button--github"]}`}
+                  className={`${styled.button} ${styled["btn-effect"]} ${styled["button--social-login"]} ${styled["button--github"]}`}
                   href={loginUrl}
                 >
                   Login With Github
@@ -183,7 +183,7 @@ const Login = ({ authenticate }) => {
             Login to Bundly
           </a>
           <a
-            href="https://github.com/bundly/dash/blob/master/CONTRIBUTING.md"
+            href="https://github.com/bundly/dash"
             className={`${styled["contribute-button"]}`}
           >
             Contribute to development
